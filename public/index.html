@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar Hammouda - UI/UX Designer</title>
+    <link rel="stylesheet" href="output.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-900 min-h-screen font-['DM_Sans']">
+    <!-- Navigation -->
+    <div class="hidden lg:block">
+        <div class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
+            <nav class="backdrop-blur-xl bg-black/70 border border-white/10 rounded-full px-6 py-3">
+                <div class="flex items-center space-x-8">
+                    <div class="flex items-center space-x-6">
+                        <a href="#services" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium">Home</a>
+                        <a href="./projects" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium">Projects</a>
+                        <a href="#testimonials" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium">About</a>
+                        <a href="./contact" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium">Process</a>
+                        <a href="./contact" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium">Why Me?</a>
+                    </div>
+                    <div class="ml-6">
+                        <a href="https://framer.link/rioO8iI" target="_blank" rel="noopener" 
+                           class="inline-flex items-center px-6 py-3 bg-gradient-to-b from-black/90 to-white/10 border border-white/10 rounded-full text-white font-medium hover:bg-gradient-to-b hover:from-black/95 hover:to-white/20 transition-all duration-200 shadow-lg hover:shadow-xl">
+                            Say Hello!
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="lg:hidden">
+        <div class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-md">
+            <nav class="bg-black border border-white/10 rounded-full px-4 py-3">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4 overflow-x-auto scrollbar-hide">
+                        <a href="#services" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">Home</a>
+                        <a href="./projects" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">Projects</a>
+                        <a href="#testimonials" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">About</a>
+                        <a href="./contact" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">Process</a>
+                        <a href="./contact" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">Why Me?</a>
+                    </div>
+                    <div class="ml-4 flex-shrink-0">
+                        <a href="https://framer.link/rioO8iI" target="_blank" rel="noopener" 
+                           class="inline-flex items-center px-4 py-2 bg-gradient-to-b from-black/90 to-white/10 border border-white/10 rounded-full text-white text-sm font-medium hover:bg-gradient-to-b hover:from-black/95 hover:to-white/20 transition-all duration-200 shadow-lg hover:shadow-xl">
+                            Say Hello!
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="pt-32 px-4 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header Section -->
+            <div class="relative mb-16">
+                <!-- Role Badge -->
+                <div class="inline-flex items-center bg-gray-900 rounded-xl px-4 py-2 mb-8 shadow-2xl border border-white/10">
+                    <div class="w-3 h-3 bg-white rounded-full mr-3"></div>
+                    <span class="text-white text-sm font-['Inter']">UI/UX & Product Designer</span>
+                </div>
+
+                <!-- Main Heading -->
+                <div class="mb-8">
+                    <h1 class="text-4xl md:text-6xl lg:text-8xl font-semibold text-gray-100 leading-tight">
+                        <span class="text-gray-100">Omar</span>
+                        <span class="text-white font-['Inter']"> </span>
+                        <span class="text-white/60">Hammouda</span>
+                    </h1>
+                </div>
+
+                <!-- Description -->
+                <div class="max-w-2xl mb-12">
+                    <p class="text-white/60 text-lg md:text-xl font-medium leading-relaxed">
+                        I'm a versatile designer specializing in graphic, web, and product design to help grow your business. Let's build something great!
+                    </p>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 mb-16">
+                    <!-- Primary Button -->
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-b from-orange-600 to-orange-500 rounded-xl blur-sm"></div>
+                        <button class="relative bg-gradient-to-b from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl">
+                            See All Projects
+                        </button>
+                    </div>
+
+                    <!-- Secondary Button -->
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-b from-gray-300 to-gray-400 rounded-xl blur-sm"></div>
+                        <button class="relative bg-gradient-to-b from-white to-gray-200 hover:from-gray-50 hover:to-gray-100 text-gray-800 font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            Contact Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="relative mb-16">
+                <!-- Testimonial 1 -->
+                <div class="absolute top-0 left-0 lg:left-20 transform -rotate-12 z-10">
+                    <div class="bg-gray-900 rounded-xl p-6 shadow-2xl border border-white/10 max-w-xs">
+                        <p class="text-white text-sm font-['Inter'] mb-4">" Working with him was a game changer! "</p>
+                        <p class="text-white/50 text-sm font-['Inter'] text-right">-Eric Stanley</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="absolute top-20 right-0 lg:right-20 transform rotate-6 z-10">
+                    <div class="bg-gray-900 rounded-xl p-6 shadow-2xl border border-white/10 max-w-xs">
+                        <p class="text-white text-sm font-['Inter'] mb-4">" We Increased our conversions by 200%"</p>
+                        <p class="text-white/50 text-sm font-['Inter'] text-right">-Letu Stuke</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="group">
+                    <div class="bg-gray-900 rounded-2xl shadow-2xl border border-white/10 overflow-hidden">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x400" alt="Project 1" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-white text-2xl font-['Inter'] mb-2">Design Project Title #1</h3>
+                            <p class="text-gray-400 text-lg font-['Inter']">UI/UX Design</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group">
+                    <div class="bg-gray-900 rounded-2xl shadow-2xl border border-white/10 overflow-hidden">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x400" alt="Project 2" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-white text-2xl font-['Inter'] mb-2">Design Project Title #2</h3>
+                            <p class="text-gray-400 text-lg font-['Inter']">Product Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom CSS for scrollbar hiding -->
+    <style>
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</body>
+</html> 
