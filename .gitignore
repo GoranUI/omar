@@ -7,6 +7,9 @@ yarn-error.log*
 # Build outputs
 public/output.css
 
+# Tailwind CSS binary (large file, should be downloaded separately)
+tailwindcss
+
 # Environment variables
 .env
 .env.local
