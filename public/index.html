@@ -1,171 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omar Hammouda - UI/UX Designer</title>
-    <link rel="stylesheet" href="output.css">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omar Hammouda - UI/UX Designer</title>
+  <!-- <link rel="stylesheet" href="output.css"> -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
 </head>
-<body class="bg-gray-900 min-h-screen font-['DM_Sans']">
-    <!-- Navigation -->
-    <div class="hidden lg:block">
-        <div class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
-            <nav class="backdrop-blur-xl bg-black/70 border border-white/10 rounded-full px-6 py-3">
-                <div class="flex items-center space-x-8">
-                    <div class="flex items-center space-x-6">
-                        <a href="#services" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium">Home</a>
-                        <a href="./projects" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium">Projects</a>
-                        <a href="#testimonials" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium">About</a>
-                        <a href="./contact" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium">Process</a>
-                        <a href="./contact" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium">Why Me?</a>
-                    </div>
-                    <div class="ml-6">
-                        <a href="https://framer.link/rioO8iI" target="_blank" rel="noopener" 
-                           class="inline-flex items-center px-6 py-3 bg-gradient-to-b from-black/90 to-white/10 border border-white/10 rounded-full text-white font-medium hover:bg-gradient-to-b hover:from-black/95 hover:to-white/20 transition-all duration-200 shadow-lg hover:shadow-xl">
-                            Say Hello!
-                        </a>
-                    </div>
-                </div>
-            </nav>
+
+<body class="bg-black min-h-screen font-['DM_Sans']">
+  <!-- Navigation -->
+  <div class="hidden lg:block">
+    <div class="fixed top-6 bg-[#111111]/70 left-1/2 transform -translate-x-1/2 z-50 rounded-2xl">
+      <nav class="backdrop-blur-xl bg-[#111111]/70 border border-white/10 rounded-2xl px-6 py-3">
+        <div class="flex items-center space-x-8">
+          <div class="flex items-center space-x-6 text-white/60 font-medium mr-6">
+            <a href="#services" class="hover:text-white transition-colors duration-200">Home</a>
+            <a href="./projects" class="hover:text-white transition-colors duration-200">Projects</a>
+            <a href="#testimonials" class="hover:text-white transition-colors duration-200">About</a>
+            <a href="./contact" class="hover:text-white transition-colors duration-200">Process</a>
+            <a href="./contact" class="hover:text-white transition-colors duration-200">Why Me?</a>
+          </div>
+          <div>
+            <a href="https://framer.link/rioO8iI" target="_blank" rel="noopener"
+              class="inline-flex items-center py-3 text-white/60 font-medium hover:text-white transition-all duration-200 group">
+              <svg class="w-6 h-6 mr-1 transition-all duration-200" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.6409 9.37499L19.0181 6.56249C18.67 5.95977 18.0969 5.51996 17.4246 5.33976C16.7523 5.15956 16.036 5.25373 15.4331 5.60155C15.0969 5.7958 14.8086 6.06298 14.5894 6.38343L12.9562 3.56249C12.7257 3.16382 12.3944 2.83281 11.9955 2.60268C11.5967 2.37255 11.1443 2.2514 10.6837 2.2514C10.2232 2.2514 9.77084 2.37255 9.37195 2.60268C8.97307 2.83281 8.64175 3.16382 8.41125 3.56249C7.93188 3.18503 7.33599 2.98635 6.72602 3.0006C6.11605 3.01485 5.53009 3.24113 5.06887 3.64056C4.60764 4.03998 4.29996 4.5876 4.19871 5.18927C4.09746 5.79095 4.20897 6.40911 4.51406 6.93749L4.66312 7.19624C4.27523 7.22632 3.89907 7.34327 3.5625 7.53843C2.95968 7.88666 2.51988 8.46009 2.33985 9.13258C2.15982 9.80507 2.25429 10.5215 2.6025 11.1244L6.3525 17.6231C6.89201 18.563 7.61248 19.3867 8.47226 20.0464C9.33204 20.7062 10.3141 21.189 11.3616 21.4669C12.0624 21.6541 12.7848 21.7486 13.5103 21.7481C14.9573 21.7456 16.3782 21.3626 17.6304 20.6375C18.8826 19.9125 19.922 18.8708 20.6445 17.617C21.3669 16.3633 21.7468 14.9416 21.7462 13.4946C21.7456 12.0476 21.3644 10.6262 20.6409 9.37312V9.37499ZM20.0166 15.2475C19.6708 16.5367 18.9506 17.6945 17.9469 18.5745C16.9432 19.4544 15.7012 20.0171 14.3778 20.1913C13.0544 20.3654 11.7091 20.1434 10.512 19.5531C9.31477 18.9628 8.31947 18.0308 7.65187 16.875L3.90187 10.3762C3.75912 10.1183 3.72333 9.81461 3.8022 9.53054C3.88107 9.24647 4.0683 9.00472 4.3236 8.85728C4.5789 8.70985 4.88188 8.66853 5.16734 8.7422C5.4528 8.81588 5.69793 8.99867 5.85 9.25124L7.65281 12.375C7.7006 12.463 7.76554 12.5406 7.84379 12.6031C7.92204 12.6656 8.01202 12.7118 8.10841 12.739C8.20481 12.7661 8.30567 12.7737 8.40505 12.7613C8.50443 12.7488 8.60031 12.7166 8.68704 12.6665C8.77376 12.6164 8.84958 12.5495 8.91 12.4696C8.97043 12.3897 9.01425 12.2986 9.03888 12.2015C9.06351 12.1044 9.06844 12.0034 9.05339 11.9044C9.03834 11.8054 9.00361 11.7104 8.95125 11.625L5.8125 6.18749C5.7354 6.05944 5.6846 5.91732 5.66305 5.76941C5.6415 5.62151 5.64964 5.4708 5.68699 5.32608C5.72435 5.18136 5.79016 5.04553 5.8806 4.92653C5.97103 4.80753 6.08427 4.70774 6.2137 4.633C6.34314 4.55825 6.48617 4.51005 6.63444 4.4912C6.78271 4.47235 6.93325 4.48324 7.07726 4.52323C7.22128 4.56321 7.35588 4.63149 7.47322 4.72408C7.59055 4.81667 7.68825 4.93172 7.76062 5.06249L10.6875 10.125C10.7353 10.213 10.8002 10.2906 10.8785 10.3531C10.9567 10.4156 11.0467 10.4618 11.1431 10.489C11.2395 10.5161 11.3404 10.5237 11.4397 10.5113C11.5391 10.4988 11.635 10.4666 11.7217 10.4165C11.8084 10.3664 11.8843 10.2995 11.9447 10.2196C12.0051 10.1397 12.0489 10.0486 12.0736 9.9515C12.0982 9.85442 12.1031 9.7534 12.0881 9.65438C12.073 9.55536 12.0383 9.46037 11.9859 9.37499L9.70968 5.43749C9.63259 5.30944 9.58179 5.16732 9.56024 5.01941C9.53869 4.87151 9.54683 4.7208 9.58418 4.57608C9.62153 4.43136 9.68735 4.29553 9.77778 4.17653C9.86822 4.05753 9.98146 3.95774 10.1109 3.883C10.2403 3.80825 10.3834 3.76005 10.5316 3.7412C10.6799 3.72235 10.8304 3.73324 10.9745 3.77323C11.1185 3.81321 11.2531 3.88149 11.3704 3.97408C11.4877 4.06667 11.5854 4.18172 11.6578 4.31249L14.7909 9.74061C14.0612 10.4817 13.6106 11.4527 13.5159 12.4884C13.4212 13.5242 13.6882 14.5608 14.2716 15.4219C14.3834 15.5865 14.5561 15.6999 14.7516 15.7371C14.9472 15.7744 15.1495 15.7325 15.3141 15.6206C15.4787 15.5087 15.5921 15.336 15.6293 15.1405C15.6666 14.945 15.6247 14.7427 15.5128 14.5781C15.0821 13.9402 14.913 13.1612 15.0406 12.4021C15.1681 11.643 15.5825 10.9621 16.1981 10.5C16.3449 10.39 16.4462 10.23 16.483 10.0504C16.5198 9.87073 16.4895 9.68382 16.3978 9.52499L15.7716 8.43749C15.6919 8.30942 15.6388 8.16665 15.6155 8.01766C15.5921 7.86867 15.5989 7.71651 15.6355 7.57021C15.6722 7.42391 15.7378 7.28647 15.8286 7.16605C15.9194 7.04563 16.0335 6.9447 16.1641 6.86926C16.2947 6.79381 16.4391 6.74539 16.5888 6.72688C16.7384 6.70836 16.8903 6.72013 17.0353 6.76148C17.1804 6.80282 17.3156 6.87291 17.433 6.96757C17.5504 7.06223 17.6476 7.17953 17.7187 7.31249L19.3416 10.125C19.7868 10.8916 20.0757 11.7388 20.1916 12.6177C20.3074 13.4967 20.248 14.3898 20.0166 15.2456V15.2475ZM17.2734 2.9728C17.3239 2.78075 17.4485 2.61654 17.6198 2.51619C17.7912 2.41584 17.9953 2.38754 18.1875 2.43749C18.9038 2.62627 19.5754 2.95555 20.1634 3.40619C20.7513 3.85683 21.2438 4.41984 21.6122 5.06249L21.6431 5.11593C21.6955 5.2013 21.7302 5.2963 21.7453 5.39532C21.7603 5.49433 21.7554 5.59536 21.7308 5.69244C21.7061 5.78952 21.6623 5.88068 21.6019 5.96055C21.5415 6.04042 21.4656 6.10738 21.3789 6.15747C21.2922 6.20757 21.1963 6.23978 21.0969 6.25222C20.9975 6.26466 20.8967 6.25707 20.8003 6.22989C20.7039 6.20272 20.6139 6.15652 20.5357 6.094C20.4574 6.03149 20.3925 5.95394 20.3447 5.86593L20.3137 5.81249C20.0434 5.34152 19.682 4.92904 19.2506 4.59909C18.8193 4.26914 18.3266 4.02831 17.8012 3.89062C17.6097 3.83858 17.4467 3.71277 17.3477 3.54075C17.2488 3.36872 17.2221 3.16449 17.2734 2.9728ZM7.58343 22.2187C7.4603 22.3748 7.28025 22.4756 7.08283 22.499C6.88542 22.5224 6.6868 22.4664 6.53062 22.3434C5.40886 21.4574 4.46693 20.3649 3.75562 19.125C3.70638 19.0397 3.67442 18.9455 3.66157 18.8478C3.64872 18.7502 3.65524 18.6509 3.68074 18.5558C3.70625 18.4606 3.75025 18.3714 3.81023 18.2933C3.87021 18.2151 3.94499 18.1495 4.03031 18.1003C4.11563 18.0511 4.20981 18.0191 4.30748 18.0063C4.40515 17.9934 4.50439 17.9999 4.59954 18.0254C4.69469 18.0509 4.78389 18.0949 4.86204 18.1549C4.94018 18.2149 5.00575 18.2897 5.055 18.375C5.67151 19.4483 6.48738 20.394 7.45875 21.1612C7.5367 21.2222 7.6018 21.2981 7.6503 21.3844C7.6988 21.4707 7.72973 21.5657 7.74133 21.664C7.75292 21.7623 7.74493 21.862 7.71783 21.9572C7.69073 22.0524 7.64506 22.1413 7.58343 22.2187Z" />
+              </svg>
+              Contact
+            </a>
+          </div>
         </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div class=" lg:hidden">
+    <div class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-md">
+      <nav class="bg-black border border-white/10 rounded-full px-4 py-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-4 overflow-x-auto scrollbar-hide">
+            <a href="#services"
+              class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">Home</a>
+            <a href="./projects"
+              class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">Projects</a>
+            <a href="#testimonials"
+              class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">About</a>
+            <a href="./contact"
+              class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">Process</a>
+            <a href="./contact"
+              class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">Why
+              Me?</a>
+          </div>
+          <div class="ml-4 flex-shrink-0">
+            <a href="https://framer.link/rioO8iI" target="_blank" rel="noopener"
+              class="inline-flex items-center px-4 py-2 bg-gradient-to-b from-black/90 to-white/10 border border-white/10 rounded-full text-white text-sm font-medium hover:bg-gradient-to-b hover:from-black/95 hover:to-white/20 transition-all duration-200 shadow-lg hover:shadow-xl">
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="relative pb-20">
+    <video src="https://videos.pexels.com/video-files/9694443/9694443-hd_1920_1080_25fps.mp4"
+      src="https://videos.pexels.com/video-files/9694443/9694443-hd_1920_1080_25fps.webm" loop="" preload="metadata"
+      muted="" playsinline=""
+      style="cursor:auto;width:100%;height:100%;border-radius:0px;display:block;object-fit:cover;background-color:rgba(0, 0, 0, 0);object-position:50% 50%;filter:brightness(0.5) contrast(1.1);"
+      autoplay=""></video>
+    <div class="max-w-7xl mx-auto absolute top-48 left-1/2 transform -translate-x-1/2 w-full h-full">
+      <!-- Header Section -->
+      <div class="relative mb-8">
+        <!-- Role Badge -->
+        <div class="inline-flex items-center bg-[#0f0f0f] rounded-xl px-4 py-2 mb-4"
+          style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
+          <div class="w-3 h-3 bg-transparent border-2 border-white rounded-full mr-3 flex items-center justify-center">
+            <div class="w-1 h-1 bg-white rounded-full"></div>
+          </div>
+          <span class="text-white text-sm font-['Inter']">UI/UX & Product Designer</span>
+        </div>
+
+        <!-- Main Heading -->
+        <div class="mb-4 relative">
+          <h1 class="text-4xl md:text-6xl lg:text-[80px] font-semibold text-gray-100 leading-tight">
+            <span class="text-gray-100">Omar</span>
+            <span class="text-white font-['Inter']"> </span>
+            <span class="text-white/60">Hammouda</span>
+          </h1>
+
+          <!-- Testimonial 1 -->
+          <div class="absolute -top-10 right-[15%] transform -rotate-12 z-10">
+            <div class="bg-[#0F0F0F] rounded-xl p-6 shadow-2xl w-[65%]"
+              style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
+              <p class="text-white text-[15px] font-['Inter'] mb-4">" Working with him was a game
+                changer! "</p>
+              <p class="text-white/50 text-[15px] font-['Inter'] text-right">-Eric Stanley</p>
+            </div>
+            <svg class="w-6 h-6 absolute -bottom-5 right-27">
+              <use href="./assets/icons/cursor-right.svg#cursor-right" />
+            </svg>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="absolute -bottom-30 -right-20 transform rotate-6 z-10">
+            <div class="bg-[#0F0F0F] rounded-xl p-6 shadow-2xl w-[65%]"
+              style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
+              <p class="text-white text-sm font-['Inter'] mb-4">" We Increased our conversions
+                by 200%"</p>
+              <p class="text-white/50 text-sm font-['Inter'] text-right">-Letu Stuke</p>
+            </div>
+            <svg class="w-6 h-6 absolute -top-4 -left-4">
+              <use href="./assets/icons/cursor-left.svg#cursor-left" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="max-w-2xl mb-12">
+          <p class="text-white/60 text-lg md:text-xl font-medium leading-relaxed">
+            I'm a versatile designer specializing in graphic, web, and product design to
+            help grow your
+            business. Let's build something great!
+          </p>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-16">
+          <!-- Primary Button -->
+          <div class="relative flex items-center justify-center w-[168px] h-[57px]">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#C85A00] to-[#F58427] rounded-2xl">
+            </div>
+            <div class="absolute inset-0.5 bg-gradient-to-b from-[#FFA255] via-[#934200] to-[#FFA255] rounded-[15px]">
+            </div>
+            <a class="relative bg-gradient-to-b from-[#F58427] to-[#C85A00] text-white font-semibold px-5 py-3 rounded-xl"
+              style="box-shadow: 0px -1px 0px 0px #FFFFFF3D inset;" href="./projects">
+              See All Projects
+            </a>
+          </div>
+
+          <!-- Secondary Button -->
+          <div class="relative flex items-center justify-center w-[178px] h-[57px]">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
+            </div>
+            <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
+            </div>
+            <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl"
+              style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="./projects">
+              <div class="flex items-center gap-2 ">
+
+                <svg class="w-4 h-4">
+                  <use href="./assets/icons/thunderbolt.svg#thunderbolt" />
+                </svg>
+                <span
+                  class="bg-gradient-to-b from-[#1F2937] from-40% to-[#6B7280] to-60% bg-clip-text text-transparent font-bold">
+
+                  Contact Now
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+    <!-- Project Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mx-14 absolute top-[41%] translate-y-[-50%]">
+      <!-- Project 1 -->
+      <div
+        class="relative w-[709px] h-[508px] bg-gradient-to-b from-[#000000] via-[#000000]/80 to-[#000000] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden">
+
+        <div class="relative">
+          <img src="./assets/images/project-1.png" alt="Project 1" class="rounded-2xl" />
+
+          <div class="absolute bottom-14 left-0 p-6">
+
+            <h3 class="text-white text-[36px] font-['Inter'] mb-2">Design Project Title #1
+            </h3>
+            <p class="text-[#787878] text-[20px] font-['Inter']">UI/UX Design</p>
+          </div>
+
+          <div
+            class="absolute top-[40%] right-[40%] w-[110px] h-[110px] bg-[#080808] rounded-full group cursor-pointer overflow-hidden">
+            <!-- First arrow (original) -->
+            <svg
+              class="w-20 h-20 absolute top-[60%] left-[56%] transform -translate-x-1/2 -translate-y-1/2 arrow-first">
+              <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+            </svg>
+            <!-- Second arrow (appears on hover) -->
+            <svg
+              class="w-20 h-20 absolute top-[95%] left-[90%] transform -translate-x-1/2 -translate-y-1/2 arrow-second">
+              <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div
+        class="relative w-[709px] h-[508px] bg-gradient-to-b from-[#000000] via-[#000000]/80 to-[#000000] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden">
+
+        <div class="relative">
+          <img src="./assets/images/project-1.png" alt="Project 1" class="rounded-2xl" />
+
+          <div class="absolute bottom-14 left-0 p-6">
+
+            <h3 class="text-white text-[36px] font-['Inter'] mb-2">Design Project Title #2
+            </h3>
+            <p class="text-[#787878] text-[20px] font-['Inter']">UI/UX Design</p>
+          </div>
+
+          <div
+            class="absolute top-[40%] right-[40%] w-[110px] h-[110px] bg-[#080808] rounded-full group cursor-pointer overflow-hidden">
+            <!-- First arrow (original) -->
+            <svg
+              class="w-20 h-20 absolute top-[60%] left-[56%] transform -translate-x-1/2 -translate-y-1/2 arrow-first">
+              <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+            </svg>
+            <!-- Second arrow (appears on hover) -->
+            <svg
+              class="w-20 h-20 absolute top-[95%] left-[90%] transform -translate-x-1/2 -translate-y-1/2 arrow-second">
+              <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div
+        class="relative w-[709px] h-[508px] bg-gradient-to-b from-[#000000] via-[#000000]/80 to-[#000000] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden">
+
+        <div class="relative">
+          <img src="./assets/images/project-1.png" alt="Project 1" class="rounded-2xl" />
+
+          <div class="absolute bottom-14 left-0 p-6">
+
+            <h3 class="text-white text-[36px] font-['Inter'] mb-2">Design Project Title #3
+            </h3>
+            <p class="text-[#787878] text-[20px] font-['Inter']">UI/UX Design</p>
+          </div>
+
+          <div
+            class="absolute top-[40%] right-[40%] w-[110px] h-[110px] bg-[#080808] rounded-full group cursor-pointer overflow-hidden">
+            <!-- First arrow (original) -->
+            <svg
+              class="w-20 h-20 absolute top-[60%] left-[56%] transform -translate-x-1/2 -translate-y-1/2 arrow-first">
+              <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+            </svg>
+            <!-- Second arrow (appears on hover) -->
+            <svg
+              class="w-20 h-20 absolute top-[95%] left-[90%] transform -translate-x-1/2 -translate-y-1/2 arrow-second">
+              <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+
     </div>
 
-    <!-- Mobile Navigation -->
-    <div class="lg:hidden">
-        <div class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-md">
-            <nav class="bg-black border border-white/10 rounded-full px-4 py-3">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center space-x-4 overflow-x-auto scrollbar-hide">
-                        <a href="#services" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">Home</a>
-                        <a href="./projects" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">Projects</a>
-                        <a href="#testimonials" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">About</a>
-                        <a href="./contact" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">Process</a>
-                        <a href="./contact" class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">Why Me?</a>
-                    </div>
-                    <div class="ml-4 flex-shrink-0">
-                        <a href="https://framer.link/rioO8iI" target="_blank" rel="noopener" 
-                           class="inline-flex items-center px-4 py-2 bg-gradient-to-b from-black/90 to-white/10 border border-white/10 rounded-full text-white text-sm font-medium hover:bg-gradient-to-b hover:from-black/95 hover:to-white/20 transition-all duration-200 shadow-lg hover:shadow-xl">
-                            Say Hello!
-                        </a>
-                    </div>
-                </div>
-            </nav>
-        </div>
+    <div class="flex justify-center items-center mt-14 absolute top-[53%] left-1/2 transform -translate-x-1/2">
+      <svg class="w-6 h-6">
+        <use href="./assets/icons/chevron-down.svg#chevron-down" />
+      </svg>
     </div>
 
-    <!-- Hero Section -->
-    <div class="pt-32 px-4 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <!-- Header Section -->
-            <div class="relative mb-16">
-                <!-- Role Badge -->
-                <div class="inline-flex items-center bg-gray-900 rounded-xl px-4 py-2 mb-8 shadow-2xl border border-white/10">
-                    <div class="w-3 h-3 bg-white rounded-full mr-3"></div>
-                    <span class="text-white text-sm font-['Inter']">UI/UX & Product Designer</span>
-                </div>
-
-                <!-- Main Heading -->
-                <div class="mb-8">
-                    <h1 class="text-4xl md:text-6xl lg:text-8xl font-semibold text-gray-100 leading-tight">
-                        <span class="text-gray-100">Omar</span>
-                        <span class="text-white font-['Inter']"> </span>
-                        <span class="text-white/60">Hammouda</span>
-                    </h1>
-                </div>
-
-                <!-- Description -->
-                <div class="max-w-2xl mb-12">
-                    <p class="text-white/60 text-lg md:text-xl font-medium leading-relaxed">
-                        I'm a versatile designer specializing in graphic, web, and product design to help grow your business. Let's build something great!
-                    </p>
-                </div>
-
-                <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4 mb-16">
-                    <!-- Primary Button -->
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-b from-orange-600 to-orange-500 rounded-xl blur-sm"></div>
-                        <button class="relative bg-gradient-to-b from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl">
-                            See All Projects
-                        </button>
-                    </div>
-
-                    <!-- Secondary Button -->
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-b from-gray-300 to-gray-400 rounded-xl blur-sm"></div>
-                        <button class="relative bg-gradient-to-b from-white to-gray-200 hover:from-gray-50 hover:to-gray-100 text-gray-800 font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                            </svg>
-                            Contact Now
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonials -->
-            <div class="relative mb-16">
-                <!-- Testimonial 1 -->
-                <div class="absolute top-0 left-0 lg:left-20 transform -rotate-12 z-10">
-                    <div class="bg-gray-900 rounded-xl p-6 shadow-2xl border border-white/10 max-w-xs">
-                        <p class="text-white text-sm font-['Inter'] mb-4">" Working with him was a game changer! "</p>
-                        <p class="text-white/50 text-sm font-['Inter'] text-right">-Eric Stanley</p>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="absolute top-20 right-0 lg:right-20 transform rotate-6 z-10">
-                    <div class="bg-gray-900 rounded-xl p-6 shadow-2xl border border-white/10 max-w-xs">
-                        <p class="text-white text-sm font-['Inter'] mb-4">" We Increased our conversions by 200%"</p>
-                        <p class="text-white/50 text-sm font-['Inter'] text-right">-Letu Stuke</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Project 1 -->
-                <div class="group">
-                    <div class="bg-gray-900 rounded-2xl shadow-2xl border border-white/10 overflow-hidden">
-                        <div class="relative">
-                            <img src="https://placehold.co/600x400" alt="Project 1" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"/>
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-white text-2xl font-['Inter'] mb-2">Design Project Title #1</h3>
-                            <p class="text-gray-400 text-lg font-['Inter']">UI/UX Design</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="group">
-                    <div class="bg-gray-900 rounded-2xl shadow-2xl border border-white/10 overflow-hidden">
-                        <div class="relative">
-                            <img src="https://placehold.co/600x400" alt="Project 2" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"/>
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-white text-2xl font-['Inter'] mb-2">Design Project Title #2</h3>
-                            <p class="text-gray-400 text-lg font-['Inter']">Product Design</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Recent Designs -->
+    <div class="w-full bg-gradient-to-b from-[#000000] to-[#000000]/16 h-[100vh] mt-[400px] rounded-2xl"
+      style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
+      <div class="max-w-7xl mx-auto pt-24">
+        <!-- Role Badge -->
+        <div class="inline-flex items-center bg-[#0f0f0f] rounded-xl px-4 py-2 mb-4"
+          style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
+          <div class="w-3 h-3 bg-transparent border-2 border-white rounded-full mr-3 flex items-center justify-center">
+            <div class="w-1 h-1 bg-white rounded-full"></div>
+          </div>
+          <span class="text-white text-sm font-['Inter']">Recent Projects</span>
         </div>
+
+        <div class="flex items-center gap-2 text-5xl mt-6">
+          <span class="text-white font-['Inter']">Recent</span>
+          <span class="text-white/50 font-['Inter']">Designs</span>
+        </div>
+        <div class="flex justify-between items-center mt-5">
+          <div class="text-[16px] text-white/60 font-medium font-['Plus Jakarta Sans']">Showcase of some of my recent
+            sleek websites</div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <!-- Primary Button -->
+            <div class="relative flex items-center justify-center w-[168px] h-[57px]">
+              <div class="absolute inset-0 bg-gradient-to-b from-[#C85A00] to-[#F58427] rounded-2xl">
+              </div>
+              <div class="absolute inset-0.5 bg-gradient-to-b from-[#FFA255] via-[#934200] to-[#FFA255] rounded-[15px]">
+              </div>
+              <a class="relative bg-gradient-to-b from-[#F58427] to-[#C85A00] text-white font-semibold px-5 py-3 rounded-xl"
+                style="box-shadow: 0px -1px 0px 0px #FFFFFF3D inset;" href="./projects">
+                See All Projects
+              </a>
+            </div>
+
+            <!-- Secondary Button -->
+            <div class="relative flex items-center justify-center w-[178px] h-[57px]">
+              <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
+              </div>
+              <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
+              </div>
+              <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl"
+                style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="./projects">
+                <div class="flex items-center gap-2 ">
+
+                  <svg class="w-4 h-4">
+                    <use href="./assets/icons/thunderbolt.svg#thunderbolt" />
+                  </svg>
+                  <span
+                    class="bg-gradient-to-b from-[#1F2937] from-40% to-[#6B7280] to-60% bg-clip-text text-transparent font-bold">
+
+                    Contact Now
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="relative w-full mt-11 h-[549px] bg-gradient-to-b from-[#000000] via-[#000000]/80 to-[#000000] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden">
+
+          <div class="relative">
+            <img src="./assets/images/project-1.png" alt="Project 1" class="rounded-2xl" />
+
+            <div class="absolute bottom-14 left-0 p-6">
+
+              <h3 class="text-white text-[36px] font-['Inter'] mb-2">Design Project Title #1
+              </h3>
+              <p class="text-[#787878] text-[20px] font-['Inter']">UI/UX Design</p>
+            </div>
+
+            <div
+              class="absolute top-[25%] right-[45%] w-[110px] h-[110px] bg-[#080808] rounded-full group cursor-pointer overflow-hidden">
+              <!-- First arrow (original) -->
+              <svg
+                class="w-20 h-20 absolute top-[60%] left-[56%] transform -translate-x-1/2 -translate-y-1/2 arrow-first">
+                <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+              </svg>
+              <!-- Second arrow (appears on hover) -->
+              <svg
+                class="w-20 h-20 absolute top-[95%] left-[90%] transform -translate-x-1/2 -translate-y-1/2 arrow-second">
+                <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- Custom CSS for scrollbar hiding -->
     <style>
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Arrow animation styles */
+      .arrow-first {
+        transition: all 0.5s ease-in-out;
+      }
+
+      .arrow-second {
+        transition: all 0.5s ease-in-out;
+        transform: translate(-50%, 80px) !important;
+        opacity: 0;
+      }
+
+      .group:hover .arrow-first {
+        transform: translate(-50%, -80px) !important;
+        opacity: 0;
+      }
+
+      .group:hover .arrow-second {
+        transform: translate(-50%, -50%) !important;
+        opacity: 1;
+      }
     </style>
 </body>
-</html> 
+
+</html>

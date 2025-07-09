@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:css": "./tailwindcss -i src/input.css -o public/output.css",
-    "watch:css": "./tailwindcss -i src/input.css -o public/output.css --watch"
+    "build:css": "npx @tailwindcss/cli -i src/input.css -o public/output.css",
+    "watch:css": "npx @tailwindcss/cli -i src/input.css -o public/output.css --watch"
   },
   "repository": {
     "type": "git",
