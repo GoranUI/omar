@@ -1,0 +1,6 @@
+<svg id="instagram" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="40" height="40" rx="20" fill="#080808"/>
+<path d="M15.5 29C13.015 29 11 26.985 11 24.5V15.5C11 13.015 13.015 11 15.5 11H24.5C26.985 11 29 13.015 29 15.5V24.5C29 26.985 26.985 29 24.5 29H15.5Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.25 20C16.25 17.929 17.929 16.25 20 16.25C22.071 16.25 23.75 17.929 23.75 20C23.75 22.071 22.071 23.75 20 23.75C17.929 23.75 16.25 22.071 16.25 20Z" stroke="white" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M23.75 15.125C23.75 14.504 24.254 14 24.875 14C25.496 14 26 14.504 26 15.125C26 15.746 25.496 16.25 24.875 16.25C24.254 16.25 23.75 15.746 23.75 15.125Z" fill="white"/>
+</svg>
