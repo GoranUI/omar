@@ -1,0 +1,9 @@
+<svg id="check-list-step-two" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 23.2803V8.28027H25.3125V23.2803H15Z" fill="white" fill-opacity="0.2"/>
+<path d="M15 15.7803H25.3125" stroke="white" stroke-width="1.875" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 8.28027H25.3125" stroke="white" stroke-width="1.875" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 23.2803H25.3125" stroke="white" stroke-width="1.875" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.6875 8.28027L6.5625 10.1553L10.3125 6.40527" stroke="white" stroke-width="1.875" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.6875 15.7803L6.5625 17.6553L10.3125 13.9053" stroke="white" stroke-width="1.875" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.6875 23.2803L6.5625 25.1553L10.3125 21.4053" stroke="white" stroke-width="1.875" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
