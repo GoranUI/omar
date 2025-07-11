@@ -1,0 +1,13 @@
+@config "../tailwind.config.js";
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #0a0a0a;
+  --color-dark-card: #111111;
+  --color-dark-nav: rgba(17, 17, 17, 0.7);
+  --color-white-text: #ffffff;
+  --color-white-muted: rgba(255, 255, 255, 0.6);
+  --color-border-light: rgba(255, 255, 255, 0.1);
+  --color-grey-light: #787878;
+  --color-accent-gold: #ffd700;
+}
