@@ -111,3 +111,98 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(card);
   });
 });
+
+// FAQ Accordion functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const faqItems = document.querySelectorAll('#faq-section .bg-\\[\\#0f0f0f\\]');
+  
+  faqItems.forEach((item) => {
+    const header = item.querySelector('.flex.items-center.justify-between');
+    const content = item.querySelector('.text-white\\/70');
+    const icon = item.querySelector('.w-6.h-6');
+    
+    if (header && content && icon) {
+      // Initially hide all content except the first one
+      if (!item.classList.contains('first-faq')) {
+        content.style.display = 'none';
+      }
+      
+      header.addEventListener('click', () => {
+        const isOpen = content.style.display !== 'none';
+        
+        // Close all other items
+        faqItems.forEach((otherItem) => {
+          const otherContent = otherItem.querySelector('.text-white\\/70');
+          const otherIcon = otherItem.querySelector('.w-6.h-6');
+          if (otherContent && otherIcon && otherItem !== item) {
+            otherContent.style.display = 'none';
+            otherIcon.classList.remove('rotate-45');
+          }
+        });
+        
+        // Toggle current item
+        if (isOpen) {
+          content.style.display = 'none';
+          icon.classList.remove('rotate-45');
+        } else {
+          content.style.display = 'block';
+          icon.classList.add('rotate-45');
+        }
+      });
+    }
+  });
+});
+
+// New FAQ Toggle functionality
+function toggleFAQ(faqNumber) {
+  const answer = document.getElementById(`faq-answer-${faqNumber}`);
+  const icon = document.getElementById(`faq-icon-${faqNumber}`);
+  
+  if (answer && icon) {
+    const isHidden = answer.classList.contains('hidden');
+    
+    // Close all other FAQ answers
+    for (let i = 1; i <= 5; i++) {
+      const otherAnswer = document.getElementById(`faq-answer-${i}`);
+      const otherIcon = document.getElementById(`faq-icon-${i}`);
+      
+      if (otherAnswer && otherIcon && i !== faqNumber) {
+        otherAnswer.classList.add('hidden');
+        otherIcon.classList.remove('rotate-180');
+      }
+    }
+    
+    // Toggle current FAQ
+    if (isHidden) {
+      answer.classList.remove('hidden');
+      icon.classList.add('rotate-180');
+    } else {
+      answer.classList.add('hidden');
+      icon.classList.remove('rotate-180');
+    }
+  }
+}
+
+// FAQ Animation on scroll
+document.addEventListener("DOMContentLoaded", function () {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const faqItem = entry.target;
+        faqItem.style.transform = "translateY(0)";
+        faqItem.style.opacity = "1";
+      }
+    });
+  }, observerOptions);
+
+  // Observe all FAQ items
+  const faqItems = document.querySelectorAll('[data-faq]');
+  faqItems.forEach((item) => {
+    observer.observe(item);
+  });
+});
