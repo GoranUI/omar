@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
+    rootMargin: "0px 0px -50px 0px",
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }, observerOptions);
 
   // Observe all benefit cards
-  const benefitCards = document.querySelectorAll('[data-card]');
+  const benefitCards = document.querySelectorAll("[data-card]");
   benefitCards.forEach((card) => {
     observer.observe(card);
   });
@@ -114,39 +114,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // FAQ Accordion functionality
 document.addEventListener("DOMContentLoaded", function () {
-  const faqItems = document.querySelectorAll('#faq-section .bg-\\[\\#0f0f0f\\]');
-  
+  const faqItems = document.querySelectorAll("#faq-section .bg-\\[\\#0f0f0f\\]");
+
   faqItems.forEach((item) => {
-    const header = item.querySelector('.flex.items-center.justify-between');
-    const content = item.querySelector('.text-white\\/70');
-    const icon = item.querySelector('.w-6.h-6');
-    
+    const header = item.querySelector(".flex.items-center.justify-between");
+    const content = item.querySelector(".text-white\\/70");
+    const icon = item.querySelector(".w-6.h-6");
+
     if (header && content && icon) {
       // Initially hide all content except the first one
-      if (!item.classList.contains('first-faq')) {
-        content.style.display = 'none';
+      if (!item.classList.contains("first-faq")) {
+        content.style.display = "none";
       }
-      
-      header.addEventListener('click', () => {
-        const isOpen = content.style.display !== 'none';
-        
+
+      header.addEventListener("click", () => {
+        const isOpen = content.style.display !== "none";
+
         // Close all other items
         faqItems.forEach((otherItem) => {
-          const otherContent = otherItem.querySelector('.text-white\\/70');
-          const otherIcon = otherItem.querySelector('.w-6.h-6');
+          const otherContent = otherItem.querySelector(".text-white\\/70");
+          const otherIcon = otherItem.querySelector(".w-6.h-6");
           if (otherContent && otherIcon && otherItem !== item) {
-            otherContent.style.display = 'none';
-            otherIcon.classList.remove('rotate-45');
+            otherContent.style.display = "none";
+            otherIcon.classList.remove("rotate-45");
           }
         });
-        
+
         // Toggle current item
         if (isOpen) {
-          content.style.display = 'none';
-          icon.classList.remove('rotate-45');
+          content.style.display = "none";
+          icon.classList.remove("rotate-45");
         } else {
-          content.style.display = 'block';
-          icon.classList.add('rotate-45');
+          content.style.display = "block";
+          icon.classList.add("rotate-45");
         }
       });
     }
@@ -157,28 +157,28 @@ document.addEventListener("DOMContentLoaded", function () {
 function toggleFAQ(faqNumber) {
   const answer = document.getElementById(`faq-answer-${faqNumber}`);
   const icon = document.getElementById(`faq-icon-${faqNumber}`);
-  
+
   if (answer && icon) {
-    const isHidden = answer.classList.contains('hidden');
-    
+    const isHidden = answer.classList.contains("hidden");
+
     // Close all other FAQ answers
     for (let i = 1; i <= 5; i++) {
       const otherAnswer = document.getElementById(`faq-answer-${i}`);
       const otherIcon = document.getElementById(`faq-icon-${i}`);
-      
+
       if (otherAnswer && otherIcon && i !== faqNumber) {
-        otherAnswer.classList.add('hidden');
-        otherIcon.classList.remove('rotate-180');
+        otherAnswer.classList.add("hidden");
+        otherIcon.classList.remove("rotate-180");
       }
     }
-    
+
     // Toggle current FAQ
     if (isHidden) {
-      answer.classList.remove('hidden');
-      icon.classList.add('rotate-180');
+      answer.classList.remove("hidden");
+      icon.classList.add("rotate-180");
     } else {
-      answer.classList.add('hidden');
-      icon.classList.remove('rotate-180');
+      answer.classList.add("hidden");
+      icon.classList.remove("rotate-180");
     }
   }
 }
@@ -187,7 +187,7 @@ function toggleFAQ(faqNumber) {
 document.addEventListener("DOMContentLoaded", function () {
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
+    rootMargin: "0px 0px -50px 0px",
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -201,8 +201,29 @@ document.addEventListener("DOMContentLoaded", function () {
   }, observerOptions);
 
   // Observe all FAQ items
-  const faqItems = document.querySelectorAll('[data-faq]');
+  const faqItems = document.querySelectorAll("[data-faq]");
   faqItems.forEach((item) => {
     observer.observe(item);
   });
 });
+
+// Custom Budget Dropdown
+const btn = document.getElementById("budgetDropdownBtn");
+const options = document.getElementById("budgetDropdownOptions");
+const selected = document.getElementById("budgetSelected");
+if (btn && options && selected) {
+  btn.addEventListener("click", function (e) {
+    options.classList.toggle("hidden");
+  });
+  options.querySelectorAll("div").forEach((option) => {
+    option.addEventListener("click", function () {
+      selected.textContent = this.textContent;
+      options.classList.add("hidden");
+    });
+  });
+  document.addEventListener("click", function (e) {
+    if (!btn.contains(e.target) && !options.contains(e.target)) {
+      options.classList.add("hidden");
+    }
+  });
+}
