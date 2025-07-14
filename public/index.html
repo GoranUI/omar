@@ -80,10 +80,10 @@
     <video src="https://videos.pexels.com/video-files/9694443/9694443-hd_1920_1080_25fps.mp4"
       src="https://videos.pexels.com/video-files/9694443/9694443-hd_1920_1080_25fps.webm" loop="" preload="metadata"
       muted="" playsinline=""
-      style="cursor:auto;width:100vw;height:100vh;border-radius:0px;display:block;object-fit:cover;background-color:rgba(0, 0, 0, 0);object-position:50% 50%;filter:brightness(0.5) contrast(1.1); position: absolute; top: 0; left: 0; opacity: 0.5;"
+      style="cursor:auto;width:100vw;height:100vh;border-radius:0px;display:block;object-fit:cover;background-color:rgba(0, 0, 0, 0);object-position:50% 50%;filter:brightness(0.5) contrast(1.1); position: absolute; top: 0; left: 0; opacity: 0.5; mask-image: linear-gradient(to bottom, black 70%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);"
       autoplay=""></video>
 
-    <div class="max-w-7xl mx-auto pt-32 lg:pt-48 pb-20 px-6 xl:px-0">
+    <div class="max-w-7xl mx-auto pt-32 lg:pt-48 pb-8 px-6 xl:px-0">
       <!-- Header Section -->
       <div class="relative mb-8">
         <!-- Role Badge -->
@@ -105,7 +105,7 @@
 
           <!-- Testimonial 1 -->
           <div
-            class="absolute xl:-top-10 xl:right-[15%] top-105 md:top-85 md:right-80 xl:transform -rotate-12 z-10 animate-bounce">
+            class="absolute xl:-top-10 xl:right-[15%] top-105 md:top-85 md:right-80 xl:transform -rotate-12 z-10 transform animate-soft-bounce">
             <div class="bg-[#0F0F0F] rounded-xl p-6 shadow-2xl w-[65%]"
               style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
               <p class="text-white text-[15px] font-['Inter'] mb-4">" Working with him was a game
@@ -119,7 +119,7 @@
 
           <!-- Testimonial 2 -->
           <div
-            class="absolute xl:-bottom-30 xl:-right-20 lg:-bottom-80 md:-bottom-130 md:right-10 -bottom-180 -right-0 xl:transform rotate-6 z-10 animate-bounce">
+            class="absolute xl:-bottom-30 xl:-right-20 lg:-bottom-80 md:-bottom-130 md:right-10 -bottom-180 -right-0 xl:transform rotate-6 z-10 animate-soft-bounce">
             <div class="bg-[#0F0F0F] rounded-xl p-6 shadow-2xl w-[65%]"
               style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
               <p class="text-white text-sm font-['Inter'] mb-4">" We Increased our conversions
@@ -144,7 +144,8 @@
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 mb-16">
           <!-- Primary Button -->
-          <div class="relative flex items-center justify-center w-[168px] h-[57px]">
+          <div
+            class="relative flex items-center justify-center w-[168px] h-[57px] hover:opacity-80 transition-all duration-300">
             <div class="absolute inset-0 bg-gradient-to-b from-[#C85A00] to-[#F58427] rounded-2xl">
             </div>
             <div class="absolute inset-0.5 bg-gradient-to-b from-[#FFA255] via-[#934200] to-[#FFA255] rounded-[15px]">
@@ -156,7 +157,8 @@
           </div>
 
           <!-- Secondary Button -->
-          <div class="relative flex items-center justify-center w-[178px] h-[57px]">
+          <div
+            class="relative flex items-center justify-center w-[178px] h-[57px] hover:opacity-80 transition-all duration-300">
             <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
             </div>
             <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
@@ -179,150 +181,150 @@
         </div>
       </div>
 
+      <!-- Project Carousel -->
+      <div class="max-w-[1450px] mx-auto relative overflow-hidden">
+        <!-- Carousel Container -->
+        <div class="flex gap-8 transition-transform duration-500 ease-in-out" id="projectCarousel">
+          <!-- Project 1 -->
+          <div class="rounded-2xl pt-0.5 bg-[#0f0f0f]"
+            style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
 
+            <div
+              class="relative w-[709px] h-[508px] bg-gradient-to-b from-[#000000] via-[#000000]/80 to-[#000000] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden flex-shrink-0 group">
+
+              <div class="relative">
+                <img src="./assets/images/futuri.png" alt="Project 1" class="rounded-2xl" />
+
+                <div
+                  class="absolute bottom-14 left-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+
+                  <h3 class="text-white text-[36px] font-['Inter'] mb-2">Design Project Title #1
+                  </h3>
+                  <p class="text-[#787878] text-[20px] font-['Inter']">UI/UX Design</p>
+                </div>
+
+                <!-- Arrow Right Center -->
+                <div
+                  class="absolute top-[40%] right-[40%] w-[110px] h-[110px] bg-[#080808] rounded-full group cursor-pointer overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <svg class="w-20 h-20 absolute top-[60%] left-[56%] transform -translate-x-1/2 -translate-y-1/2">
+                    <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Arrow Right Small -->
+              <div
+                class="absolute bottom-1 left-1 w-9 h-9 bg-[#080808] rounded-full group cursor-pointer overflow-hidden opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                <svg class="w-10 h-10 absolute top-[52%] left-[55%] transform -translate-x-1/2 -translate-y-1/2">
+                  <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="rounded-2xl pt-0.5 bg-[#0f0f0f]"
+            style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
+            <div
+              class="relative w-[709px] h-[508px] bg-gradient-to-b from-[#000000] via-[#000000]/80 to-[#000000] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden flex-shrink-0 group">
+
+              <div class="relative">
+                <img src="./assets/images/project-1.png" alt="Project 2" class="rounded-2xl" />
+
+                <div
+                  class="absolute bottom-14 left-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+
+                  <h3 class="text-white text-[36px] font-['Inter'] mb-2">Design Project Title #2
+                  </h3>
+                  <p class="text-[#787878] text-[20px] font-['Inter']">UI/UX Design</p>
+                </div>
+
+                <!-- Arrow Right Center -->
+                <div
+                  class="absolute top-[40%] right-[40%] w-[110px] h-[110px] bg-[#080808] rounded-full group cursor-pointer overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <svg class="w-20 h-20 absolute top-[60%] left-[56%] transform -translate-x-1/2 -translate-y-1/2">
+                    <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+                  </svg>
+                </div>
+              </div>
+              <!-- Arrow Right Small -->
+              <div
+                class="absolute bottom-1 left-1 w-9 h-9 bg-[#080808] rounded-full group cursor-pointer overflow-hidden opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                <svg class="w-10 h-10 absolute top-[52%] left-[55%] transform -translate-x-1/2 -translate-y-1/2">
+                  <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="rounded-2xl pt-0.5 bg-[#0f0f0f]"
+            style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
+            <div
+              class="relative w-[709px] h-[508px] bg-gradient-to-b from-[#000000] via-[#000000]/80 to-[#000000] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden flex-shrink-0 group">
+
+              <div class="relative">
+                <img src="./assets/images/project-1.png" alt="Project 3" class="rounded-2xl" />
+
+                <div
+                  class="absolute bottom-14 left-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+
+                  <h3 class="text-white text-[36px] font-['Inter'] mb-2">Design Project Title #3
+                  </h3>
+                  <p class="text-[#787878] text-[20px] font-['Inter']">UI/UX Design</p>
+                </div>
+
+                <!-- Arrow Right Center -->
+                <div
+                  class="absolute top-[40%] right-[40%] w-[110px] h-[110px] bg-[#080808] rounded-full group cursor-pointer overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <svg class="w-20 h-20 absolute top-[60%] left-[56%] transform -translate-x-1/2 -translate-y-1/2">
+                    <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Arrow Right Small -->
+              <div
+                class="absolute bottom-1 left-1 w-9 h-9 bg-[#080808] rounded-full group cursor-pointer overflow-hidden opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                <svg class="w-10 h-10 absolute top-[52%] left-[55%] transform -translate-x-1/2 -translate-y-1/2">
+                  <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button id="prevBtn"
+          class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-200 z-10">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+
+        <button id="nextBtn"
+          class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-200 z-10">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+
+        <!-- Dots Indicator -->
+        <div class="flex justify-center mt-6 space-x-2">
+          <button class="w-3 h-3 bg-white/30 rounded-full transition-all duration-200 dot-indicator active"
+            data-slide="0"></button>
+          <button class="w-3 h-3 bg-white/30 rounded-full transition-all duration-200 dot-indicator"
+            data-slide="1"></button>
+          <button class="w-3 h-3 bg-white/30 rounded-full transition-all duration-200 dot-indicator"
+            data-slide="2"></button>
+        </div>
+      </div>
 
     </div>
   </div>
 
-  <!-- Project Carousel -->
-  <div class="max-w-[1450px] mx-auto relative overflow-hidden py-20">
-    <!-- Carousel Container -->
-    <div class="flex gap-8 transition-transform duration-500 ease-in-out" id="projectCarousel">
-      <!-- Project 1 -->
-      <div class="rounded-2xl pt-0.5 bg-[#0f0f0f]"
-        style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
 
-        <div
-          class="relative w-[709px] h-[508px] bg-gradient-to-b from-[#000000] via-[#000000]/80 to-[#000000] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden flex-shrink-0 group">
-
-          <div class="relative">
-            <img src="./assets/images/futuri.png" alt="Project 1" class="rounded-2xl" />
-
-            <div
-              class="absolute bottom-14 left-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-
-              <h3 class="text-white text-[36px] font-['Inter'] mb-2">Design Project Title #1
-              </h3>
-              <p class="text-[#787878] text-[20px] font-['Inter']">UI/UX Design</p>
-            </div>
-
-            <!-- Arrow Right Center -->
-            <div
-              class="absolute top-[40%] right-[40%] w-[110px] h-[110px] bg-[#080808] rounded-full group cursor-pointer overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <svg class="w-20 h-20 absolute top-[60%] left-[56%] transform -translate-x-1/2 -translate-y-1/2">
-                <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
-              </svg>
-            </div>
-          </div>
-
-          <!-- Arrow Right Small -->
-          <div
-            class="absolute bottom-1 left-1 w-9 h-9 bg-[#080808] rounded-full group cursor-pointer overflow-hidden opacity-100 group-hover:opacity-0 transition-opacity duration-300">
-            <svg class="w-10 h-10 absolute top-[52%] left-[55%] transform -translate-x-1/2 -translate-y-1/2">
-              <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="rounded-2xl pt-0.5 bg-[#0f0f0f]"
-        style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
-        <div
-          class="relative w-[709px] h-[508px] bg-gradient-to-b from-[#000000] via-[#000000]/80 to-[#000000] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden flex-shrink-0 group">
-
-          <div class="relative">
-            <img src="./assets/images/project-1.png" alt="Project 2" class="rounded-2xl" />
-
-            <div
-              class="absolute bottom-14 left-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-
-              <h3 class="text-white text-[36px] font-['Inter'] mb-2">Design Project Title #2
-              </h3>
-              <p class="text-[#787878] text-[20px] font-['Inter']">UI/UX Design</p>
-            </div>
-
-            <!-- Arrow Right Center -->
-            <div
-              class="absolute top-[40%] right-[40%] w-[110px] h-[110px] bg-[#080808] rounded-full group cursor-pointer overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <svg class="w-20 h-20 absolute top-[60%] left-[56%] transform -translate-x-1/2 -translate-y-1/2">
-                <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
-              </svg>
-            </div>
-          </div>
-          <!-- Arrow Right Small -->
-          <div
-            class="absolute bottom-1 left-1 w-9 h-9 bg-[#080808] rounded-full group cursor-pointer overflow-hidden opacity-100 group-hover:opacity-0 transition-opacity duration-300">
-            <svg class="w-10 h-10 absolute top-[52%] left-[55%] transform -translate-x-1/2 -translate-y-1/2">
-              <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="rounded-2xl pt-0.5 bg-[#0f0f0f]"
-        style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
-        <div
-          class="relative w-[709px] h-[508px] bg-gradient-to-b from-[#000000] via-[#000000]/80 to-[#000000] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden flex-shrink-0 group">
-
-          <div class="relative">
-            <img src="./assets/images/project-1.png" alt="Project 3" class="rounded-2xl" />
-
-            <div
-              class="absolute bottom-14 left-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-
-              <h3 class="text-white text-[36px] font-['Inter'] mb-2">Design Project Title #3
-              </h3>
-              <p class="text-[#787878] text-[20px] font-['Inter']">UI/UX Design</p>
-            </div>
-
-            <!-- Arrow Right Center -->
-            <div
-              class="absolute top-[40%] right-[40%] w-[110px] h-[110px] bg-[#080808] rounded-full group cursor-pointer overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <svg class="w-20 h-20 absolute top-[60%] left-[56%] transform -translate-x-1/2 -translate-y-1/2">
-                <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
-              </svg>
-            </div>
-          </div>
-
-          <!-- Arrow Right Small -->
-          <div
-            class="absolute bottom-1 left-1 w-9 h-9 bg-[#080808] rounded-full group cursor-pointer overflow-hidden opacity-100 group-hover:opacity-0 transition-opacity duration-300">
-            <svg class="w-10 h-10 absolute top-[52%] left-[55%] transform -translate-x-1/2 -translate-y-1/2">
-              <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Navigation Buttons -->
-    <button id="prevBtn"
-      class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-200 z-10">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-      </svg>
-    </button>
-
-    <button id="nextBtn"
-      class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-200 z-10">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-      </svg>
-    </button>
-
-    <!-- Dots Indicator -->
-    <div class="flex justify-center mt-6 space-x-2">
-      <button class="w-3 h-3 bg-white/30 rounded-full transition-all duration-200 dot-indicator active"
-        data-slide="0"></button>
-      <button class="w-3 h-3 bg-white/30 rounded-full transition-all duration-200 dot-indicator"
-        data-slide="1"></button>
-      <button class="w-3 h-3 bg-white/30 rounded-full transition-all duration-200 dot-indicator"
-        data-slide="2"></button>
-    </div>
-  </div>
 
   <div class="flex justify-center items-center mt-14 animate-bounce">
     <svg class="w-6 h-6">
@@ -348,14 +350,15 @@
         <span class="text-white font-['Inter']">Recent</span>
         <span class="text-white/50 font-['Inter']">Designs</span>
       </div>
-      <div class="flex flex-col lg:flex-row lg:justify-between items-start lg:items-center mt-5 gap-6 lg:gap-0">
+      <div class="flex flex-col lg:flex-row lg:justify-between items-start lg:items-center mt-1 gap-6 lg:gap-0">
         <div class="text-[16px] text-white/60 font-medium font-['Plus Jakarta Sans']">Showcase of some of my recent
           sleek websites</div>
 
         <!-- CTA Buttons -->
         <div class="flex flex-col md:flex-row gap-4">
           <!-- Primary Button -->
-          <div class="relative flex items-center justify-center w-[168px] h-[57px]">
+          <div
+            class="relative flex items-center justify-center w-[168px] h-[57px] hover:opacity-80 transition-all duration-300">
             <div class="absolute inset-0 bg-gradient-to-b from-[#C85A00] to-[#F58427] rounded-2xl">
             </div>
             <div class="absolute inset-0.5 bg-gradient-to-b from-[#FFA255] via-[#934200] to-[#FFA255] rounded-[15px]">
@@ -367,7 +370,8 @@
           </div>
 
           <!-- Secondary Button -->
-          <div class="relative flex items-center justify-center w-[178px] h-[57px]">
+          <div
+            class="relative flex items-center justify-center w-[178px] h-[57px] hover:opacity-80 transition-all duration-300">
             <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
             </div>
             <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
@@ -485,7 +489,8 @@
 
             </div>
             <!-- Secondary button -->
-            <div class="relative flex items-center justify-center w-[178px] h-[57px] mt-8">
+            <div
+              class="relative flex items-center justify-center w-[178px] h-[57px] mt-8 hover:opacity-80 transition-all duration-300">
               <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
               </div>
               <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
@@ -519,28 +524,28 @@
             </div>
 
             <!-- Skills -->
-            <div class="grid grid-cols-2 xl:grid-cols-4 gap-4 mt-10 border-b border-white/10 pb-10">
-              <div class="col-span-1 bg-[#080808] px-2 py-4 rounded-2xl flex justify-center items-center">
+            <div class="flex flex-wrap gap-4 mt-10 border-b border-white/10 pb-10">
+              <div class="flex-1 min-w-[140px] bg-[#080808] px-4 py-2 rounded-2xl flex justify-center items-center">
                 <div class="text-white/60 font-jakarta font-medium">Product Design</div>
               </div>
 
-              <div class="col-span-1 bg-[#080808] px-2 py-4 rounded-2xl flex justify-center items-center">
+              <div class="flex-1 min-w-[140px] bg-[#080808] px-4 py-2 rounded-2xl flex justify-center items-center">
                 <div class="text-white/60 font-jakarta font-medium">UX Design</div>
               </div>
 
-              <div class="col-span-1 bg-[#080808] px-2 py-4 rounded-2xl flex justify-center items-center">
+              <div class="flex-1 min-w-[140px] bg-[#080808] px-4 py-2 rounded-2xl flex justify-center items-center">
                 <div class="text-white/60 font-jakarta font-medium">UI Design</div>
               </div>
 
-              <div class="col-span-1 bg-[#080808] px-2 py-4 rounded-2xl flex justify-center items-center">
+              <div class="flex-1 min-w-[140px] bg-[#080808] px-4 py-2 rounded-2xl flex justify-center items-center">
                 <div class="text-white/60 font-jakarta font-medium">Framer</div>
               </div>
 
-              <div class="col-span-1 bg-[#080808] px-2 py-4 rounded-2xl flex justify-center items-center">
+              <div class="flex-1 min-w-[140px] bg-[#080808] px-4 py-2 rounded-2xl flex justify-center items-center">
                 <div class="text-white/60 font-jakarta font-medium">Branding</div>
               </div>
 
-              <div class="col-span-1 bg-[#080808] px-2 py-4 rounded-2xl flex justify-center items-center">
+              <div class="flex-1 min-w-[140px] bg-[#080808] px-4 py-2 rounded-2xl flex justify-center items-center">
                 <div class="text-white/60 font-jakarta font-medium">Webflow</div>
               </div>
             </div>
@@ -735,7 +740,8 @@
         <div class="lg:w-1/2 flex justify-end">
           <div class="flex flex-col sm:flex-row gap-4">
             <!-- Primary Button -->
-            <div class="relative flex items-center justify-center w-[168px] h-[57px]">
+            <div
+              class="relative flex items-center justify-center w-[168px] h-[57px] hover:opacity-80 transition-all duration-300">
               <div class="absolute inset-0 bg-gradient-to-b from-[#C85A00] to-[#F58427] rounded-2xl">
               </div>
               <div class="absolute inset-0.5 bg-gradient-to-b from-[#FFA255] via-[#934200] to-[#FFA255] rounded-[15px]">
@@ -747,7 +753,8 @@
             </div>
 
             <!-- Secondary Button -->
-            <div class="relative flex items-center justify-center w-[178px] h-[57px]">
+            <div
+              class="relative flex items-center justify-center w-[178px] h-[57px] hover:opacity-80 transition-all duration-300">
               <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
               </div>
               <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
@@ -1207,19 +1214,21 @@
           <!-- CTA Buttons -->
           <div class="flex flex-col md:flex-row gap-4 mt-6">
             <!-- Primary Button -->
-            <div class="relative flex items-center justify-center w-[168px] h-[57px]">
-              <div class="absolute inset-0 bg-gradient-to-b from-[#128954] to-[#1FAA6A] rounded-2xl">
+            <div
+              class="relative flex items-center justify-center w-[168px] h-[57px] hover:opacity-80 transition-all duration-300">
+              <div class="absolute inset-0 bg-gradient-to-b from-[#C85A00] to-[#F58427] rounded-2xl">
               </div>
-              <div class="absolute inset-0.5 bg-gradient-to-b from-[#79DCA8] via-[#0E5738] to-[#79DCA8] rounded-[15px]">
+              <div class="absolute inset-0.5 bg-gradient-to-b from-[#FFA255] via-[#934200] to-[#FFA255] rounded-[15px]">
               </div>
-              <a class="relative bg-gradient-to-b from-[#44C585] to-[#128954] text-white font-semibold px-5 py-3 rounded-xl"
+              <a class="relative bg-gradient-to-b from-[#F58427] to-[#C85A00] text-white font-semibold px-5 py-3 rounded-xl"
                 style="box-shadow: 0px -1px 0px 0px #FFFFFF3D inset;" href="./projects">
                 See All Projects
               </a>
             </div>
 
             <!-- Secondary Button -->
-            <div class="relative flex items-center justify-center w-[178px] h-[57px]">
+            <div
+              class="relative flex items-center justify-center w-[178px] h-[57px] hover:opacity-80 transition-all duration-300">
               <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
               </div>
               <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
@@ -1242,13 +1251,14 @@
           <div class="space-y-6">
             <!-- FAQ Item 1 -->
             <div
-              class="bg-[#0f0f0f] rounded-2xl p-8 transform translate-y-8 opacity-0 transition-all duration-1000 ease-out"
+              class="bg-[#0f0f0f] rounded-2xl px-8 py-4 transform translate-y-8 opacity-0 transition-all duration-1000 ease-out"
               style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;" data-faq="1">
               <div class="flex justify-between items-start cursor-pointer" onclick="toggleFAQ(1)">
                 <div class="flex-1">
-                  <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px] mb-3">What
+                  <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px]">What
                     services do you offer?</h4>
-                  <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer" id="faq-answer-1">
+                  <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer mt-3 transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
+                    id="faq-answer-1">
                     I specialize in UI/UX design, product design, branding, and web development. This includes user
                     interface design, user experience optimization, brand identity creation, and full-stack web
                     development using modern technologies.
@@ -1265,13 +1275,13 @@
 
             <!-- FAQ Item 2 -->
             <div
-              class="bg-[#0f0f0f] rounded-2xl p-8 transform translate-y-8 opacity-0 transition-all duration-1000 ease-out delay-200"
+              class="bg-[#0f0f0f] rounded-2xl px-8 py-4 transform translate-y-8 opacity-0 transition-all duration-1000 ease-out delay-200"
               style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;" data-faq="2">
               <div class="flex justify-between items-start cursor-pointer" onclick="toggleFAQ(2)">
                 <div class="flex-1">
-                  <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px] mb-3">How
+                  <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px]">How
                     long does a typical project take?</h4>
-                  <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer hidden"
+                  <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer mt-3 transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
                     id="faq-answer-2">
                     Project timelines vary based on complexity. A simple website might take 2-4 weeks, while complex
                     applications can take 8-12 weeks. I'll provide a detailed timeline during our initial consultation
@@ -1289,13 +1299,13 @@
 
             <!-- FAQ Item 3 -->
             <div
-              class="bg-[#0f0f0f] rounded-2xl p-8 transform translate-y-8 opacity-0 transition-all duration-1000 ease-out delay-400"
+              class="bg-[#0f0f0f] rounded-2xl px-8 py-4 transform translate-y-8 opacity-0 transition-all duration-1000 ease-out delay-400"
               style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;" data-faq="3">
               <div class="flex justify-between items-start cursor-pointer" onclick="toggleFAQ(3)">
                 <div class="flex-1">
-                  <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px] mb-3">What
+                  <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px]">What
                     is your pricing structure?</h4>
-                  <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer hidden"
+                  <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer mt-3 transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
                     id="faq-answer-3">
                     I offer both fixed-price projects and hourly rates. Pricing depends on project scope, complexity,
                     and timeline. I provide detailed quotes after understanding your requirements, with no hidden fees
@@ -1313,13 +1323,13 @@
 
             <!-- FAQ Item 4 -->
             <div
-              class="bg-[#0f0f0f] rounded-2xl p-8 transform translate-y-8 opacity-0 transition-all duration-1000 ease-out delay-600"
+              class="bg-[#0f0f0f] rounded-2xl px-8 py-4 transform translate-y-8 opacity-0 transition-all duration-1000 ease-out delay-600"
               style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;" data-faq="4">
               <div class="flex justify-between items-start cursor-pointer" onclick="toggleFAQ(4)">
                 <div class="flex-1">
-                  <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px] mb-3">Do you
+                  <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px]">Do you
                     provide ongoing support?</h4>
-                  <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer hidden"
+                  <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer mt-3 transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
                     id="faq-answer-4">
                     Yes! I offer ongoing support and maintenance packages. This includes updates, bug fixes, performance
                     optimization, and feature additions. I believe in building long-term relationships with my clients.
@@ -1336,13 +1346,13 @@
 
             <!-- FAQ Item 5 -->
             <div
-              class="bg-[#0f0f0f] rounded-2xl p-8 transform translate-y-8 opacity-0 transition-all duration-1000 ease-out delay-800"
+              class="bg-[#0f0f0f] rounded-2xl px-8 py-4 transform translate-y-8 opacity-0 transition-all duration-1000 ease-out delay-800"
               style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;" data-faq="5">
               <div class="flex justify-between items-start cursor-pointer" onclick="toggleFAQ(5)">
                 <div class="flex-1">
-                  <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px] mb-3">What
+                  <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px]">What
                     technologies do you work with?</h4>
-                  <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer hidden"
+                  <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer mt-3 transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
                     id="faq-answer-5">
                     I work with modern technologies including React, Next.js, Node.js, TypeScript, and various design
                     tools like Figma, Adobe Creative Suite, and Framer. I stay updated with the latest industry trends
@@ -1373,7 +1383,8 @@
           <span class="bg-gradient-to-b from-[#F5F5F5] to-[#CFF0E1] text-transparent bg-clip-text">Work Together</span>
         </div>
         <div class="mb-4">
-          <div class="relative flex items-center justify-center w-[178px] h-[57px]">
+          <div
+            class="relative flex items-center justify-center w-[178px] h-[57px] hover:opacity-80 transition-all duration-300">
             <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
             </div>
             <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
@@ -1396,25 +1407,25 @@
         </div>
       </div>
       <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6 lg:gap-0">
-        <div class="flex items-center">
-          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
-          San Francisco, USA
+        <div class="flex items-center cursor-pointer footer-hover">
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2 footer-dot"></span>
+          <span class="footer-text">San Francisco, USA</span>
         </div>
-        <div class="flex items-center">
-          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
-          HELLO@OMARHAMMOUDA.COM
+        <div class="flex items-center cursor-pointer footer-hover">
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2 footer-dot"></span>
+          <span class="footer-text">HELLO@OMARHAMMOUDA.COM</span>
         </div>
-        <div class="flex items-center">
-          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
-          Dribbble
+        <div class="flex items-center cursor-pointer footer-hover">
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2 footer-dot"></span>
+          <span class="footer-text">Dribbble</span>
         </div>
-        <div class="flex items-center">
-          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
-          LinkedIn
+        <div class="flex items-center cursor-pointer footer-hover">
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2 footer-dot"></span>
+          <span class="footer-text">LinkedIn</span>
         </div>
-        <div>
-          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
-          Behance
+        <div class="flex items-center cursor-pointer footer-hover">
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2 footer-dot"></span>
+          <span class="footer-text">Behance</span>
         </div>
       </div>
     </div>
@@ -1454,11 +1465,38 @@
       background-color: #F58427;
     }
 
+    /* Footer hover gradient */
+    .footer-hover {
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 10;
+    }
+
+    .footer-hover:hover .footer-text {
+      background: linear-gradient(to bottom, #C85A00, #F58427);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-hover:hover .footer-dot {
+      background: linear-gradient(to bottom, #C85A00, #F58427) !important;
+    }
+
 
 
     /* Carousel styles */
     .dot-indicator.active {
       background-color: white;
+    }
+
+    /* FAQ Animation styles */
+    .faq-answer {
+      transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease-in-out;
     }
   </style>
 

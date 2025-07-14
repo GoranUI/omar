@@ -68,6 +68,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const interactiveElements = document.querySelectorAll('a, button, [role="button"], input, textarea, select, .group');
 
   interactiveElements.forEach((element) => {
+    // Skip footer hover elements to avoid conflicts
+    if (element.classList.contains("footer-hover")) {
+      return;
+    }
+
     element.addEventListener("mouseenter", () => {
       cursor.classList.add("hover");
     });
@@ -159,7 +164,7 @@ function toggleFAQ(faqNumber) {
   const icon = document.getElementById(`faq-icon-${faqNumber}`);
 
   if (answer && icon) {
-    const isHidden = answer.classList.contains("hidden");
+    const isOpen = answer.style.maxHeight && answer.style.maxHeight !== "0px";
 
     // Close all other FAQ answers
     for (let i = 1; i <= 5; i++) {
@@ -167,18 +172,23 @@ function toggleFAQ(faqNumber) {
       const otherIcon = document.getElementById(`faq-icon-${i}`);
 
       if (otherAnswer && otherIcon && i !== faqNumber) {
-        otherAnswer.classList.add("hidden");
+        otherAnswer.style.maxHeight = "0px";
+        otherAnswer.style.opacity = "0";
         otherIcon.classList.remove("rotate-180");
       }
     }
 
     // Toggle current FAQ
-    if (isHidden) {
-      answer.classList.remove("hidden");
-      icon.classList.add("rotate-180");
-    } else {
-      answer.classList.add("hidden");
+    if (isOpen) {
+      answer.style.maxHeight = "0px";
+      answer.style.opacity = "0";
       icon.classList.remove("rotate-180");
+    } else {
+      // Calculate the height of the content
+      const scrollHeight = answer.scrollHeight;
+      answer.style.maxHeight = scrollHeight + "px";
+      answer.style.opacity = "1";
+      icon.classList.add("rotate-180");
     }
   }
 }
@@ -205,6 +215,23 @@ document.addEventListener("DOMContentLoaded", function () {
   faqItems.forEach((item) => {
     observer.observe(item);
   });
+
+  // Initialize first FAQ as open
+  const firstAnswer = document.getElementById("faq-answer-1");
+  const firstIcon = document.getElementById("faq-icon-1");
+  if (firstAnswer && firstIcon) {
+    // Set initial state
+    firstAnswer.style.maxHeight = "0px";
+    firstAnswer.style.opacity = "0";
+
+    // Open first FAQ after a short delay
+    setTimeout(() => {
+      const scrollHeight = firstAnswer.scrollHeight;
+      firstAnswer.style.maxHeight = scrollHeight + "px";
+      firstAnswer.style.opacity = "1";
+      firstIcon.classList.add("rotate-180");
+    }, 100);
+  }
 });
 
 // Custom Budget Dropdown
