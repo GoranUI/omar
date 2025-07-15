@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NuVie - Omar Hammouda - UI/UX Designer</title>
+  <link rel="stylesheet" href="../output.css">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="bg-black min-h-screen font-['DM_Sans']">
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="customCursor"></div>
+  <!-- Navigation -->
+  <!-- Desktop Navigation -->
+  <div class="hidden lg:block">
+    <div class="fixed top-6 bg-[#111111]/70 left-1/2 transform -translate-x-1/2 z-50 rounded-2xl">
+      <nav class="backdrop-blur-xl bg-[#111111]/70 border border-white/10 rounded-2xl px-6 py-3">
+        <div class="flex items-center space-x-8">
+          <div class="flex items-center space-x-6 text-white/60 font-medium mr-6">
+            <a href="#home" class="hover:text-white transition-colors duration-200 scroll-smooth">Home</a>
+            <a href="#projects" class="hover:text-white transition-colors duration-200 scroll-smooth">Projects</a>
+            <a href="#about" class="hover:text-white transition-colors duration-200 scroll-smooth">About</a>
+            <a href="#process" class="hover:text-white transition-colors duration-200 scroll-smooth">Process</a>
+            <a href="#why-me" class="hover:text-white transition-colors duration-200 scroll-smooth">Why Me?</a>
+            <a href="#faq" class="hover:text-white transition-colors duration-200 scroll-smooth">FAQ</a>
+          </div>
+          <div>
+            <a href="../contact.html" rel="noopener"
+              class="inline-flex items-center py-3 text-white/60 font-medium hover:text-white transition-all duration-200 group">
+              <svg class="w-6 h-6 mr-1 transition-all duration-200" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.6409 9.37499L19.0181 6.56249C18.67 5.95977 18.0969 5.51996 17.4246 5.33976C16.7523 5.15956 16.036 5.25373 15.4331 5.60155C15.0969 5.7958 14.8086 6.06298 14.5894 6.38343L12.9562 3.56249C12.7257 3.16382 12.3944 2.83281 11.9955 2.60268C11.5967 2.37255 11.1443 2.2514 10.6837 2.2514C10.2232 2.2514 9.77084 2.37255 9.37195 2.60268C8.97307 2.83281 8.64175 3.16382 8.41125 3.56249C7.93188 3.18503 7.33599 2.98635 6.72602 3.0006C6.11605 3.01485 5.53009 3.24113 5.06887 3.64056C4.60764 4.03998 4.29996 4.5876 4.19871 5.18927C4.09746 5.79095 4.20897 6.40911 4.51406 6.93749L4.66312 7.19624C4.27523 7.22632 3.89907 7.34327 3.5625 7.53843C2.95968 7.88666 2.51988 8.46009 2.33985 9.13258C2.15982 9.80507 2.25429 10.5215 2.6025 11.1244L6.3525 17.6231C6.89201 18.563 7.61248 19.3867 8.47226 20.0464C9.33204 20.7062 10.3141 21.189 11.3616 21.4669C12.0624 21.6541 12.7848 21.7486 13.5103 21.7481C14.9573 21.7456 16.3782 21.3626 17.6304 20.6375C18.8826 19.9125 19.922 18.8708 20.6445 17.617C21.3669 16.3633 21.7468 14.9416 21.7462 13.4946C21.7456 12.0476 21.3644 10.6262 20.6409 9.37312V9.37499ZM20.0166 15.2475C19.6708 16.5367 18.9506 17.6945 17.9469 18.5745C16.9432 19.4544 15.7012 20.0171 14.3778 20.1913C13.0544 20.3654 11.7091 20.1434 10.512 19.5531C9.31477 18.9628 8.31947 18.0308 7.65187 16.875L3.90187 10.3762C3.75912 10.1183 3.72333 9.81461 3.8022 9.53054C3.88107 9.24647 4.0683 9.00472 4.3236 8.85728C4.5789 8.70985 4.88188 8.66853 5.16734 8.7422C5.4528 8.81588 5.69793 8.99867 5.85 9.25124L7.65281 12.375C7.7006 12.463 7.76554 12.5406 7.84379 12.6031C7.92204 12.6656 8.01202 12.7118 8.10841 12.739C8.20481 12.7661 8.30567 12.7737 8.40505 12.7613C8.50443 12.7488 8.60031 12.7166 8.68704 12.6665C8.77376 12.6164 8.84958 12.5495 8.91 12.4696C8.97043 12.3897 9.01425 12.2986 9.03888 12.2015C9.06351 12.1044 9.06844 12.0034 9.05339 11.9044C9.03834 11.8054 9.00361 11.7104 8.95125 11.625L5.8125 6.18749C5.7354 6.05944 5.6846 5.91732 5.66305 5.76941C5.6415 5.62151 5.64964 5.4708 5.68699 5.32608C5.72435 5.18136 5.79016 5.04553 5.8806 4.92653C5.97103 4.80753 6.08427 4.70774 6.2137 4.633C6.34314 4.55825 6.48617 4.51005 6.63444 4.4912C6.78271 4.47235 6.93325 4.48324 7.07726 4.52323C7.22128 4.56321 7.35588 4.63149 7.47322 4.72408C7.59055 4.81667 7.68825 4.93172 7.76062 5.06249L10.6875 10.125C10.7353 10.213 10.8002 10.2906 10.8785 10.3531C10.9567 10.4156 11.0467 10.4618 11.1431 10.489C11.2395 10.5161 11.3404 10.5237 11.4397 10.5113C11.5391 10.4988 11.635 10.4666 11.7217 10.4165C11.8084 10.3664 11.8843 10.2995 11.9447 10.2196C12.0051 10.1397 12.0489 10.0486 12.0736 9.9515C12.0982 9.85442 12.1031 9.7534 12.0881 9.65438C12.073 9.55536 12.0383 9.46037 11.9859 9.37499L9.70968 5.43749C9.63259 5.30944 9.58179 5.16732 9.56024 5.01941C9.53869 4.87151 9.54683 4.7208 9.58418 4.57608C9.62153 4.43136 9.68735 4.29553 9.77778 4.17653C9.86822 4.05753 9.98146 3.95774 10.1109 3.883C10.2403 3.80825 10.3834 3.76005 10.5316 3.7412C10.6799 3.72235 10.8304 3.73324 10.9745 3.77323C11.1185 3.81321 11.2531 3.88149 11.3704 3.97408C11.4877 4.06667 11.5854 4.18172 11.6578 4.31249L14.7909 9.74061C14.0612 10.4817 13.6106 11.4527 13.5159 12.4884C13.4212 13.5242 13.6882 14.5608 14.2716 15.4219C14.3834 15.5865 14.5561 15.6999 14.7516 15.7371C14.9472 15.7744 15.1495 15.7325 15.3141 15.6206C15.4787 15.5087 15.5921 15.336 15.6293 15.1405C15.6666 14.945 15.6247 14.7427 15.5128 14.5781C15.0821 13.9402 14.913 13.1612 15.0406 12.4021C15.1681 11.643 15.5825 10.9621 16.1981 10.5C16.3449 10.39 16.4462 10.23 16.483 10.0504C16.5198 9.87073 16.4895 9.68382 16.3978 9.52499L15.7716 8.43749C15.6919 8.30942 15.6388 8.16665 15.6155 8.01766C15.5921 7.86867 15.5989 7.71651 15.6355 7.57021C15.6722 7.42391 15.7378 7.28647 15.8286 7.16605C15.9194 7.04563 16.0335 6.9447 16.1641 6.86926C16.2947 6.79381 16.4391 6.74539 16.5888 6.72688C16.7384 6.70836 16.8903 6.72013 17.0353 6.76148C17.1804 6.80282 17.3156 6.87291 17.433 6.96757C17.5504 7.06223 17.6476 7.17953 17.7187 7.31249L19.3416 10.125C19.7868 10.8916 20.0757 11.7388 20.1916 12.6177C20.3074 13.4967 20.248 14.3898 20.0166 15.2456V15.2475ZM17.2734 2.9728C17.3239 2.78075 17.4485 2.61654 17.6198 2.51619C17.7912 2.41584 17.9953 2.38754 18.1875 2.43749C18.9038 2.62627 19.5754 2.95555 20.1634 3.40619C20.7513 3.85683 21.2438 4.41984 21.6122 5.06249L21.6431 5.11593C21.6955 5.2013 21.7302 5.2963 21.7453 5.39532C21.7603 5.49433 21.7554 5.59536 21.7308 5.69244C21.7061 5.78952 21.6623 5.88068 21.6019 5.96055C21.5415 6.04042 21.4656 6.10738 21.3789 6.15747C21.2922 6.20757 21.1963 6.23978 21.0969 6.25222C20.9975 6.26466 20.8967 6.25707 20.8003 6.22989C20.7039 6.20272 20.6139 6.15652 20.5357 6.094C20.4574 6.03149 20.3925 5.95394 20.3447 5.86593L20.3137 5.81249C20.0434 5.34152 19.682 4.92904 19.2506 4.59909C18.8193 4.26914 18.3266 4.02831 17.8012 3.89062C17.6097 3.83858 17.4467 3.71277 17.3477 3.54075C17.2488 3.36872 17.2221 3.16449 17.2734 2.9728ZM7.58343 22.2187C7.4603 22.3748 7.28025 22.4756 7.08283 22.499C6.88542 22.5224 6.6868 22.4664 6.53062 22.3434C5.40886 21.4574 4.46693 20.3649 3.75562 19.125C3.70638 19.0397 3.67442 18.9455 3.66157 18.8478C3.64872 18.7502 3.65524 18.6509 3.68074 18.5558C3.70625 18.4606 3.75025 18.3714 3.81023 18.2933C3.87021 18.2151 3.94499 18.1495 4.03031 18.1003C4.11563 18.0511 4.20981 18.0191 4.30748 18.0063C4.40515 17.9934 4.50439 17.9999 4.59954 18.0254C4.69469 18.0509 4.78389 18.0949 4.86204 18.1549C4.94018 18.2149 5.00575 18.2897 5.055 18.375C5.67151 19.4483 6.48738 20.394 7.45875 21.1612C7.5367 21.2222 7.6018 21.2981 7.6503 21.3844C7.6988 21.4707 7.72973 21.5657 7.74133 21.664C7.75292 21.7623 7.74493 21.862 7.71783 21.9572C7.69073 22.0524 7.64506 22.1413 7.58343 22.2187Z" />
+              </svg>
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div class="lg:hidden">
+    <div class="fixed top-4 left-4 right-4 z-50">
+      <nav class="bg-black/90 backdrop-blur-xl border border-white/10 rounded-full px-4 py-3">
+        <div class="flex items-center justify-between">
+          <div class="text-white font-semibold text-lg">Omar</div>
+          <!-- Hamburger Menu Button -->
+          <button id="mobileMenuBtn" class="flex flex-col justify-center items-center w-8 h-8 space-y-1.5">
+            <span class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="hamburger-line-1"></span>
+            <span class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="hamburger-line-2"></span>
+            <span class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="hamburger-line-3"></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay"
+      class="fixed inset-0 bg-[#0f0f0f] rounded-2xl backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 ease-in-out"
+      style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
+      <div class="flex flex-col h-full pt-24 px-8">
+        <!-- Navigation Links -->
+        <div class="flex flex-col space-y-6 text-white mb-12">
+          <a href="#home"
+            class="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200 mobile-menu-link">Home</a>
+          <a href="#projects"
+            class="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200 mobile-menu-link">Projects</a>
+          <a href="#about"
+            class="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200 mobile-menu-link">About</a>
+          <a href="#process"
+            class="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200 mobile-menu-link">Process</a>
+          <a href="#why-me"
+            class="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200 mobile-menu-link">Why
+            Me?</a>
+          <a href="#faq"
+            class="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200 mobile-menu-link">FAQ</a>
+        </div>
+        <!-- Action Buttons -->
+        <div class="flex flex-col space-y-4">
+          <!-- Orange Projects Button -->
+          <div
+            class="relative flex items-center justify-center w-full h-[57px] hover:opacity-80 transition-all duration-300">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#C85A00] to-[#F58427] rounded-2xl"></div>
+            <div class="absolute inset-0.5 bg-gradient-to-b from-[#FFA255] via-[#934200] to-[#FFA255] rounded-[15px]">
+            </div>
+            <a class="relative bg-gradient-to-b from-[#F58427] to-[#C85A00] text-white font-semibold px-5 py-3 rounded-xl w-full text-center"
+              style="box-shadow: 0px -1px 0px 0px #FFFFFF3D inset;" href="#projects">
+              See All Projects
+            </a>
+          </div>
+          <!-- White Contact Button -->
+          <div
+            class="relative flex items-center justify-center w-full h-[57px] hover:opacity-80 transition-all duration-300">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl"></div>
+            <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
+            </div>
+            <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl w-full text-center flex items-center justify-center gap-2"
+              style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="../contact.html">
+              <svg class="w-4 h-4">
+                <use href="../assets/icons/thunderbolt.svg#thunderbolt" />
+              </svg>
+              <span
+                class="bg-gradient-to-b from-[#1F2937] from-40% to-[#6B7280] to-60% bg-clip-text text-transparent font-bold">
+                Contact Now
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 xl:px-0">
+
+    <section class="mt-24 pb-10 lg:pb-24 pt-24">
+      <div class="w-full flex flex-col lg:flex-row gap-4">
+        <div class="lg:w-1/2 flex flex-col gap-4">
+          <!-- <button class="w-32 h-16 text-white font-bold uppercase bg-[#237d7d] rounded-2xl">Sanctify</button> -->
+          <div class="w-32 h-16">
+
+            <img src="../assets/images/sanctify/omar-sanctify-logo.png" alt="sanctify logo" class="rounded-2xl" />
+          </div>
+          <h1 class="text-[54px] text-white leading-[60px] mb-2">NuVIE</h1>
+          <h3 class="text-[28px] text-white font-inter">Watch. Track. Repeat.</h3>
+          <p class="p-style">A movie list app that helps you keep track of what you've watched, organize your watch lists, find where to stream each title, and get personalized movie recommendations through simple and guided questions.</p>
+          <div class="flex flex-col md:flex-row gap-10">
+            <div class="flex flex-col">
+              <span class="heading-style">Year</span>
+              <div class="text-white/60 font-medium">2022</div>
+            </div>
+            <div class="flex flex-col">
+              <span class="heading-style">Tools</span>
+              <div class="text-white/60 font-medium">Figma</div>
+            </div>
+            <div class="flex flex-col">
+              <span class="heading-style">Industry</span>
+              <div class="text-white/60 font-medium">Entertaintment, Movie Streaming</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:w-1/2 bg-[#0f0f0f] rounded-2xl p-6" style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset;">
+          <img src="../assets/images/nuvie/omar-nuvie-app.png" alt="nuvie app mockup"
+            class="w-full h-full object-cover rounded-2xl">
+        </div>
+
+      </div>
+    </section>
+
+    <section class="mt-24 pb-10">
+      <div class="bg-[#0f0f0f] rounded-2xl p-6" style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset;">
+
+        <!-- 1 -->
+        <div>
+          <div class="flex justify-between items-center">
+            <div class="flex flex-col gap-2.5">
+              <svg class="w-6 h-6">
+                <use href="../assets/icons/target.svg#target" />
+              </svg>
+              <span class="text-white text-2xl font-semibold font-jakarta">Project Overview:</span>
+            </div>
+            <div>
+              <div
+                class="bg-[#080808] w-9 h-9 rounded-full text-white font-jakarta font-semibold flex items-center justify-center"
+                style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset;">1</div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-8.5 mt-4">
+            <p class="p-style">This project is a movie list app designed to help users organize their watch lists more easily, discover where movies are available to watch, as well as get personalized recommendations through short questions. With this feature, users don't have to spend a long time looking for a movie that suits their genre preference or mood. This app comes as a solution to the confusion of choosing and managing watchlists the many options from various streaming platforms.
+            </p>
+          </div>
+
+          <div class="flex flex-col lg:flex-row gap-7.5 mt-7.5 mb-5">
+            <div class="lg:w-1/2">
+              <div class="heading-style">🚨 Problem</div>
+              <p class="p-style ">1. Too many streaming platforms make users confused about finding movies.<br />
+                2. It's hard to keep track of movies you've watched or want to watch without a well organized system.<br />
+                3. Movie recommendations from platforms are often irrelevant or too general.<br />
+                4. Users often experience confusion in choosing what to watch because there are too many options without targeted help.</p>
+            </div>
+
+            <div class="lg:w-1/2">
+              <div class="flex justify-between items-center">
+                <div class="heading-style">
+                  💡 Solution
+                </div>
+                <div class="hidden lg:block">
+                  <div
+                    class="bg-[#080808] w-9 h-9 rounded-full text-white font-jakarta font-semibold flex items-center justify-center"
+                    style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset;">1</div>
+                </div>
+              </div>
+              <p class="p-style ">1. An app to organize watchlists and bookmark movies that have already been watched.<br />
+                2. Streaming location infromation for each movie.<br />
+                3. Personalized movie recommendations through questions about mood and preferences.<br />
+                4. Simple and intuitive design for a more focused and enjoyable viewing experience.</p>
+            </div>
+          </div>
+
+          <div class="border-b border-white/10 pb-5">
+            <img src="../assets/images/sanctify/omar-sanctify-app.png" alt="sanctify" class="w-full h-full object-cover rounded-2xl">
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="mt-7.5">
+          <div class="flex justify-between items-center">
+            <div class="flex flex-col gap-2.5">
+              <svg class="w-6 h-6">
+                <use href="../assets/icons/puzzle.svg#puzzle" />
+              </svg>
+              <span class="text-white text-2xl font-semibold font-jakarta">💻 My Role and Responsibility</span>
+            </div>
+            <div>
+              <div
+                class="bg-[#080808] w-9 h-9 rounded-full text-white font-jakarta font-semibold flex items-center justify-center"
+                style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset;">2</div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-8.5 mt-4">
+            <p class="p-style">For this project, I worked as a UX/UI Designer, focusing on creating a seamless experience for users to organize their movie watchlists and receive personalized film recommendations.</p>
+            <p class="p-style">I managed the full design process, starting with researching user challenges and analyzing competitors, then mapping user journeys and flows, developing wireframes, and finally prototyping using Adobe XD. My main focus was to design a clean and user friendly interface, which simplifies the process of selecting movies and managing watchlists, thereby increasing overall user satisfaction.</p>
+          </div>
+
+          <div class="mt-14">
+            <span class="heading-style">Process</span>
+            <div class="flex flex-col gap-4 mt-4 border-b border-white/10 pb-8.5">
+              <div>
+                <span class="subheading-style">Discovery</span>
+                <p class="p-style mt-5">The first step was to conduct a competitor analysis to understand the existing features and find gaps or opportunities for improvement. From here, I defined the user pain points and defined the target audience that the app would focus on.</p>
+              </div>
+
+              <div>
+                <span class="subheading-style">Ideation</span>
+                <p class="p-style mt-5"Based on the insights from discovery, I created a user flow and user journey to map out the user's steps in using the app and understand their overall experience. This helps to ensure that the features designed actually fit the user's needs.</p>
+              </div>
+
+              <div>
+                <span class="subheading-style">Design Process</span>
+                <p class="p-style mt-5">At this step, I built a design system that included typography, color guides, and UI components such as buttons. then I created wireframe and interactive prototypes in Figma with a focus on visual consistency and ease of use.</p>
+              </div>
+
+              <div>
+                <span class="subheading-style">Usability Testing</span>
+                <p class="p-style mt-5">I created scenarios and testing tasks to simulate how users would interact with the app. These scenarios aimed to test key flows such as adding movies to watchlist, searching for movies, and receiving recommendations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="mt-7.5">
+          <div class="flex justify-between items-center">
+            <div class="flex flex-col gap-2.5">
+              <svg class="w-6 h-6">
+                <use href="../assets/icons/trophy.svg#trophy" />
+              </svg>
+              <span class="text-white text-2xl font-semibold font-jakarta">Discovery</span>
+            </div>
+            <div>
+              <div
+                class="bg-[#080808] w-9 h-9 rounded-full text-white font-jakarta font-semibold flex items-center justify-center"
+                style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset;">3</div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-4 mt-4">
+            <div>
+              <span class="subheading-style">Discover and Understanding</span>
+              <p class="p-style mt-5">To build an app that solves users' challenges of managing movies and finding what to watch, I started by examining existing platforms to find gaps and problems. This research helped me determine who the target users were and what key features would make the app useful and unique in the crowded entertainment space.</p>
+            </div>
+
+            <div>
+              <span class="subheading-style">Competitor Analysis</span>
+              <p class="p-style mt-5">For the competitor analysis, I focused on identifying key apps and platforms that offer movie tracking, watchlist management, and personalized movie recommendations. I examined their main features, such as how they organize watchlists, provide streaming availability information, and deliver tailored suggestions to understand the current offerings in the market.</p>
+            </div>
+          </div>
+
+          <div class="border border-white/10 rounded-2xl p-6">
+            <img src="../assets/images/nuvie/nuvie-competitor-analysis.png" alt="nuvie competitor analysis table" class="w-full h-full object-cover rounded-2xl">
+          </div>
+
+          <div class="flex flex-col gap-4 mt-7.5">
+            <div>
+              <span class="subheading-style">Pain Points</span>
+              <p class="p-style mt-5 ">From analyzing from popular platform, several common pain points and user characteristics emerged:</p>
+                <p class="p-style mt-5 ">
+                    1. Platform not interactive, users are only passive viewers.<br />
+                    2. Recommendations are not mood based, so they feel less personal.<br />
+                    3. Only provides information on where to watch, not helping to choose what to watch.<br />
+                    4. Too many choices, making users feel overwhelmed.<br />
+                    5. Recommendations are not specific enough or too general.<br />
+                    6. The interface layout is confusing, especially for new users.</p>
+            </div>
+
+            <div>
+              <span class="subheading-style">User & Audience</span>
+              <p class="p-style mt-5 ">1. Looking for casual and quick shows to watch, without having to think too much.<br />
+                2. A platform that is easy to explore for new users.<br />
+                3. People who need fast and accurate recommendations because they don’t have much time to choose.<br />
+                4. Users who like to watch based on their mood.<br />
+                5. Users who prefer a simple and easy to understand UI.<br />
+                Users with decision fatigue, too many choices cause stress, they want curated options.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="mt-7.5">
+          <div class="flex justify-between items-center">
+            <div class="flex flex-col gap-2.5">
+              <span class="text-white text-2xl font-semibold font-jakarta">Ideation</span>
+            </div>
+            <div>
+              <div
+                class="bg-[#080808] w-9 h-9 rounded-full text-white font-jakarta font-semibold flex items-center justify-center"
+                style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset;">4</div>
+            </div>
+          </div>
+        
+          <div>
+            <span class="subheading-style">User Flow</span>
+            <p class="p-style mt-6">For the user flow, I outlined the typical journey users take to organize their watchlists, discover where to stream movies, and receive personalized recommendations through simple questions. The flow covers key actions such as logging in, searching or browsing movies, adding titles to their watchlist, answering preference questions for tailored suggestions, and checking streaming availability. This mapping helped ensure the app provides a smooth and straightforward experience, guiding users efficiently to find and manage movies they want to watch.</p>
+          </div>
+          <p class="p-style mt-6">
+            User story: As a user, I want to receive personalized movie recommendations because I want to quickly find movies that match my taste.
+          </p>
+
+          <div class="mt-7.5 border border-white/10 rounded-2xl p-6">
+            <img src="../assets/images/nuvie/nuvie-user-story-investor.png" alt="user story investor" class="w-full h-full object-cover rounded-2xl">
+          </div>
+
+          <div class="mt-7.5">
+            <span class="subheading-style">User Journey</span>
+            <p class="p-style mt-6">This section illustrates the typical experience of a content creator using the app, from finding potential collaborators to completing the journey and sharing content. Based on the pain points identified through competitor analysis, this journey highlights real user frustrations and expectations, helping to shape features that prioritize safety, trust, and seamless collaboration.
+            </p>
+          </div>
+
+          <div class="flex flex-col justify-center items-center border border-white/10 rounded-2xl p-6">
+            <p class="p-style"><b>Scenario:</b> Zach wants to receive personalized movie recommendations that match his tastes.</p>
+            <p class="p-style"><b>Expectation:</b> Get movie suggestions that fit his preferences, helping him find good movies without spending much time searching.</p>
+
+            <div>
+              <img src="../assets/images/nuvie/nuvie-user-journey.png" alt="user journey" class="w-full h-full object-cover rounded-2xl">
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="mt-7.5">
+          <div class="flex justify-between items-center">
+            <div class="flex flex-col gap-2.5">
+              <span class="text-white text-2xl font-semibold font-jakarta">Design Process</span>
+            </div>
+            <div>
+              <div
+                class="bg-[#080808] w-9 h-9 rounded-full text-white font-jakarta font-semibold flex items-center justify-center"
+                style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset;">5</div>
+            </div>
+          </div>
+          <p class="p-style mt-4 mb-8">
+            Having recognized the user’s frustrations and key pain points throughout their journey, I concentrated on developing core functionalities that address these concerns. The goal was to create an experience that is easy to use, personalized, and helps users discover movies that truly match their preferences.
+          </p>
+
+          <span class="subheading-style">Design System</span>
+          <p class="p-style mt-4 mb-8">
+            To keep the visuals consistent and enhance efficiency, I established guidelines for colors, fonts, and general styling throughout the project.          </p>
+          <div class="mt-7.5 border border-white/10 rounded-2xl p-6">
+            <img src="../assets/images/nuvie/nuvie-colors.png" alt="design system" class="w-full h-full object-cover rounded-2xl">
+          </div>
+
+          <div class="mt-7.5 border border-white/10 rounded-2xl p-6">
+            <img src="../assets/images/nuvie/nuvie-typography.png" alt="typography" class="w-full h-full object-cover rounded-2xl">
+          </div>
+
+          <div class="mt-7.5 border border-white/10 rounded-2xl p-6">
+            <img src="../assets/images/nuvie/nuvie-buttons.png" alt="buttons" class="w-full h-full object-cover rounded-2xl">
+          </div>
+
+          <div class="mt-7.5 border border-white/10 rounded-2xl p-6">
+            <img src="../assets/images/nuvie/nuvie-components.png" alt="grid" class="w-full h-full object-cover rounded-2xl">
+          </div>
+
+        
+          <div class="mt-7.5 flex flex-col">
+            <span class="subheading-style">Final Design</span>
+            <span class="subheading-style">Authentication & Onboarding Flow</span>
+
+            <div class="border border-white/10 rounded-2xl p-6">
+              <img src="../assets/images/nuvie/nuvie-auth-user-flow.png"
+                alt="hero section free trial cta" class="w-full h-full object-cover rounded-2xl">
+            </div>
+
+            <p class="p-style mt-6">
+                This flow demonstrates the login and create account process for NuVIE. For users who already have an account, the process is simple and straightforward. They can log in directly using their registered email and password. Once their credentials are authenticated, they are immediately redirected to the Home page, where they can begin exploring content or access personalized features.<br><br>
+
+                For new users, NuVIE provides a quick and flexible sign up experience. New users can choose to create an account by entering their email and setting a password, or alternatively, by signing up through popular social media platforms such as Google, Facebook, or Apple. This variety of options accommodates different user preferences and makes onboarding more accessible.<br><br>
+                
+                After successfully signing up, users are guided through a brief onboarding process designed to personalize their experience. This onboarding includes a few simple but meaningful steps, such as entering personal information like a full name and birth date, also selecting content preferences, including favorite genres, movie types, or preferred actors.<br><br>
+                
+                These inputs help the app tailor recommendations and interface content based on each user’s taste, making the discovery process more relevant and engaging right from the start.<br><br>
+                
+                Once onboarding is complete, users are granted full access to the Home page, where they can begin exploring streaming options, personalized suggestions, and other key features of NuVIE.<br><br>       
+                
+                This flow is designed to minimize friction for new users while enhancing the personalization experience from the very beginning, ensuring both ease of use and long term engagement.<br><br>
+
+            </p>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="subheading-style">NuVIE Recommendation Feature</span>
+
+            <div class="border border-white/10 rounded-2xl p-6">
+              <img src="../assets/images/nuvie/nuvie-recommendation.png"
+                alt="feature introduction" class="w-full h-full object-cover rounded-2xl">
+            </div>
+
+            <p class="p-style mt-6">
+                After successfully logging into the app, users are directed to the Home page, where they can explore a wide range of content categorized by platform, such as Netflix, Hulu, HBO Max, and more. This layout provides an easy browsing experience and allows users to quickly find trending or popular shows across different streaming services. <br><br>
+
+                For users seeking more personalized recommendations, they can tap on the NuVIE icon located in the center of the bottom navigation bar. This action leads them to a category selection screen, where they can choose from curated options like Movie Night, Binge Week, or other thematic experiences. Each category is designed to match common viewing moods or scenarios, making it easier for users to find content that suits their current vibe or situation.<br><br>
+                
+                Once a category is selected, users are taken through a brief and engaging questionnaire, which asks about their current mood, preferred genres, specific themes, or the type of experience they’re looking for (e.g., emotional, thrilling, light-hearted). The design of this flow ensures that the process feels interactive and fun, rather than like a rigid survey.<br><br>
+                
+                After answering the questions, the system intelligently processes the input and generates a set of content recommendations that are highly tailored to the user’s preferences. These recommendations can then be browsed, watched directly via linked streaming platforms, or saved to their Favorite List for later viewing.<br><br>
+                
+                This is end to end journey from mood based input to personalized results, not only enhances user engagement but also makes content discovery feel more intentional and emotionally connected.<br><br>
+            </p>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="subheading-style">View Movies Detail and Manage Favorite List</span>
+
+            <div class="border border-white/10 rounded-2xl p-6">
+              <img src="../assets/images/nuvie/nuvie-view-movies.png" alt="visual data preview" class="w-full h-full object-cover rounded-2xl">
+            </div>
+
+            <p class="p-style mt-6">
+                After receiving a list of recommended movies based on their interests, users can tap on a specific title to view its detailed information. On the detail page, users are presented with various key elements such as the title, subtitle, year of release, IMDB rating, brief description, available streaming platforms, and episode details if it's a series.<br><br>
+
+                If users find the movie interesting and decide to watch it, they can immediately start watching by tapping on the streaming platform logos displayed (e.g., Netflix, Hulu, Disney+, etc.). This provides a seamless and convenient experience, eliminating the need to search for the movie separately on another app.<br><br>
+                
+                Additionally, users can add the movie to their Favorite List by clicking the heart icon on the top right. The Favorite List feature allows users to manage and categorize their saved movies. To make it more organized, users can create custom folders (e.g., ” “Horror,” or “Weekend Watchlist”) and group their movies accordingly. Each movie card in the favorite list also displays viewing progress, helping users keep track of what they’ve already watched and how much is left.<br><br>
+                
+                This design enhances personalization and makes content discovery and management more efficient for users who enjoy watching movies across multiple genres and platforms.<br><br>
+            </p>
+          </div>
+
+        
+
+          <div class="flex flex-col">
+            <span class="subheading-style">Usability Testing</span>
+
+            <p class="p-style">
+                To evaluate the effectiveness and usability of NuVIE, I conducted a usability testing session by preparing a realistic scenario along with task-based activities. The goal was to understand how users interact with the app, identify pain points, and validate whether the designed features align with user needs and expectations.
+            </p>
+            <p class="p-style">
+                Below is the scenario and a series of tasks given to participants during the testing:            
+            </p>
+            <p class="p-style">
+                1. You heard about an app that offers personalized movie recommendations based on user preferences, so you downloaded it. As a new user, you need to answer a few preference questions. What would you do? <br><br>
+                2. After reaching the homepage, you see many types of movies and feel overwhelmed. You want to find a movie that matches your current preferences. What steps would you take to find it? <br><br>
+                3. After receiving your movie recommendations, you want to check the details of a specific movie. How would you do that? <br><br>
+                4. You are interested in one of the recommended movies and want to watch it immediately. What can you do? <br><br>
+                5. You’re also interested in several other movies and would like to save them for later. What would you do to make sure they’re stored? <br><br>
+                6. You've successfully saved a list of movies you want to watch later, but the list looks unorganized. You want to organize them based on genres. How would you do that? <br><br>
+            </p>
+            <p class="p-style">
+                These tasks were designed to simulate real user goals, ranging from onboarding, navigating content, discovering recommendations, and organizing favorite movies. The test sessions helped validate whether the app’s key features, such as personalized recommendations, direct streaming access, and organized favorite lists were easily discoverable and intuitive to use.
+            </p>
+            <p class="p-style">
+                Through this process, I was able to gain valuable feedback regarding both the user flow and the overall user experience. The insights collected were used to further refine the interface, improve usability, and ensure that the solution truly addresses the initial problem, helping users find movies they enjoy without feeling overwhelmed.           
+            </p>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="subheading-style">Reflection</span>
+
+            <p class="p-style">
+                If I had additional time to further develop this project, my main focus would be:<br />
+              1. Continue gathering user feedback with a focus on identifying less obvious challenges users face.<br />
+              2. Test the prototype in real use scenarios to confirm the ease of navigation and uncover any friction areas.
+              <br />
+              3. Update and polish the design based on testing outcomes to deliver a more intuitive and enjoyable experience. <br />
+            
+            </p>
+
+          </div>
+
+
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="max-w-[1380px] mx-auto pt-24 px-6 lg-px-0 text-white relative">
+    <div class="flex flex-col gap-7 pb-8 lg:pb-32">
+      <div class="text-2xl lg:mb-2">&copy; 2024</div>
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 lg:gap-0">
+        <div class="flex flex-col text-3xl lg:text-5xl uppercase leading-16">
+          <span>Let's Start</span>
+          <span class="bg-gradient-to-b from-[#F5F5F5] to-[#CFF0E1] text-transparent bg-clip-text">Work Together</span>
+        </div>
+        <div class="mb-4">
+          <div
+            class="relative flex items-center justify-center w-[178px] h-[57px] hover:opacity-80 transition-all duration-300">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
+            </div>
+            <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
+            </div>
+            <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl"
+              style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="../">
+              <div class="flex items-center gap-2 ">
+
+                <svg class="w-4 h-4">
+                  <use href="../assets/icons/thunderbolt.svg#thunderbolt" />
+                </svg>
+                <span
+                  class="bg-gradient-to-b from-[#1F2937] from-40% to-[#6B7280] to-60% bg-clip-text text-transparent font-bold">
+
+                  Contact Now
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6 lg:gap-0">
+        <div class="flex items-center">
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
+          San Francisco, USA
+        </div>
+        <div class="flex items-center">
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
+          HELLO@OMARHAMMOUDA.COM
+        </div>
+        <div class="flex items-center">
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
+          Dribbble
+        </div>
+        <div class="flex items-center">
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
+          LinkedIn
+        </div>
+        <div>
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
+          Behance
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="flex justify-center h-[280px]">
+    <img src="../assets/images/omar-footer.png" alt="omar-footer"
+      class="w-full lg:w-7/12 object-contain absolute lg:left-0">
+  </div>
+
+  <!-- Custom CSS for custom cursor -->
+  <style>
+    /* Custom cursor */
+    .custom-cursor {
+      position: fixed;
+      width: 12px;
+      height: 12px;
+      background-color: white;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.1s ease;
+      mix-blend-mode: difference;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5), 0px 0px 20px 0px rgba(255, 255, 255, 0.8);
+    }
+
+    .custom-cursor.hover {
+      transform: scale(2);
+      background-color: #F58427;
+    }
+  </style>
+
+  <script src="../js/main.js"></script>
+</body>
+
+</html>
