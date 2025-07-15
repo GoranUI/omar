@@ -5,11 +5,25 @@ document.addEventListener("DOMContentLoaded", function () {
   const nextBtn = document.getElementById("nextBtn");
   const dots = document.querySelectorAll(".dot-indicator");
 
+  if (!carousel) return;
+
   let currentSlide = 0;
-  const slideWidth = 709 + 32; // project width + gap
   const maxSlides = 3;
+  let isDragging = false;
+  let startPos = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+
+  // Get slide width based on screen size
+  function getSlideWidth() {
+    const isMobile = window.innerWidth < 768;
+    const slideWidth = isMobile ? 350 : 709;
+    const gap = isMobile ? 16 : 32;
+    return slideWidth + gap;
+  }
 
   function updateCarousel() {
+    const slideWidth = getSlideWidth();
     const translateX = -currentSlide * slideWidth;
     carousel.style.transform = `translateX(${translateX}px)`;
 
@@ -23,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     nextBtn.style.opacity = "1";
   }
 
+  // Arrow button functionality
   prevBtn.addEventListener("click", () => {
     if (currentSlide === 0) {
       // Jump to last slide with smooth transition
@@ -50,21 +65,121 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Touch/Swipe functionality
+  function touchStart(e) {
+    isDragging = true;
+    startPos = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+    carousel.style.cursor = 'grabbing';
+    carousel.style.transition = 'none';
+  }
+
+  function touchMove(e) {
+    if (!isDragging) return;
+    
+    e.preventDefault();
+    const currentPosition = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
+    const diff = currentPosition - startPos;
+    const slideWidth = getSlideWidth();
+    
+    currentTranslate = prevTranslate + diff;
+    const translateX = -currentSlide * slideWidth + diff;
+    
+    carousel.style.transform = `translateX(${translateX}px)`;
+  }
+
+  function touchEnd() {
+    isDragging = false;
+    carousel.style.cursor = 'grab';
+    carousel.style.transition = 'transform 0.5s ease-in-out';
+    
+    const slideWidth = getSlideWidth();
+    const diff = currentTranslate - prevTranslate;
+    
+    if (Math.abs(diff) > slideWidth * 0.3) {
+      if (diff > 0 && currentSlide > 0) {
+        currentSlide--;
+      } else if (diff < 0 && currentSlide < maxSlides - 1) {
+        currentSlide++;
+      }
+    }
+    
+    updateCarousel();
+    prevTranslate = currentTranslate;
+  }
+
+  // Mouse events
+  carousel.addEventListener('mousedown', touchStart);
+  carousel.addEventListener('mousemove', touchMove);
+  carousel.addEventListener('mouseup', touchEnd);
+  carousel.addEventListener('mouseleave', touchEnd);
+
+  // Touch events
+  carousel.addEventListener('touchstart', touchStart, { passive: false });
+  carousel.addEventListener('touchmove', touchMove, { passive: false });
+  carousel.addEventListener('touchend', touchEnd);
+
+  // Prevent context menu on long press
+  carousel.addEventListener('contextmenu', (e) => e.preventDefault());
+
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    updateCarousel();
+  });
+
   // Initialize
   updateCarousel();
 });
 
-// Custom Cursor functionality
+// Enhanced Custom Cursor functionality with smooth following
 document.addEventListener("DOMContentLoaded", function () {
   const cursor = document.getElementById("customCursor");
+  
+  if (!cursor) return;
 
-  // Update cursor position
+  // Cursor position variables
+  let mouseX = 0;
+  let mouseY = 0;
+  let cursorX = 0;
+  let cursorY = 0;
+  
+  // Smoothing factor (lower = smoother, higher = more responsive)
+  const smoothing = 0.12;
+  
+  // Distance offset for the trailing effect
+  const distanceOffset = 8;
+
+  // Update mouse position
   document.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.clientX - 6 + "px";
-    cursor.style.top = e.clientY - 6 + "px";
+    mouseX = e.clientX;
+    mouseY = e.clientY;
   });
 
-  // Add hover effect for interactive elements
+  // Smooth cursor animation with magnetic effect
+  function animateCursor() {
+    // Calculate distance between current cursor position and mouse position
+    const deltaX = mouseX - cursorX;
+    const deltaY = mouseY - cursorY;
+    
+    // Apply smoothing with easing
+    cursorX += deltaX * smoothing;
+    cursorY += deltaY * smoothing;
+    
+    // Apply distance offset for trailing effect
+    const offsetX = deltaX * 0.08; // Slight offset based on movement direction
+    const offsetY = deltaY * 0.08;
+    
+    // Update cursor position with offset
+    cursor.style.left = (cursorX - 6 + offsetX) + "px";
+    cursor.style.top = (cursorY - 6 + offsetY) + "px";
+    
+    // Continue animation
+    requestAnimationFrame(animateCursor);
+  }
+
+  // Start the animation
+  animateCursor();
+
+  // Add hover effect for interactive elements with magnetic effect
   const interactiveElements = document.querySelectorAll('a, button, [role="button"], input, textarea, select, .group');
 
   interactiveElements.forEach((element) => {
@@ -75,22 +190,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
     element.addEventListener("mouseenter", () => {
       cursor.classList.add("hover");
+      // Increase smoothing for hover state
+      cursor.style.transition = "transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.3s ease";
     });
 
     element.addEventListener("mouseleave", () => {
       cursor.classList.remove("hover");
+      cursor.style.transition = "transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.3s ease";
     });
   });
 
-  // Hide cursor when leaving window
+  // Hide cursor when leaving window with smooth fade
   document.addEventListener("mouseleave", () => {
     cursor.style.opacity = "0";
+    cursor.style.transform = "scale(0)";
   });
 
-  // Show cursor when entering window
+  // Show cursor when entering window with smooth fade
   document.addEventListener("mouseenter", () => {
     cursor.style.opacity = "1";
+    cursor.style.transform = "scale(1)";
   });
+
+  // Add click effect with ripple
+  document.addEventListener("click", () => {
+    cursor.classList.add("click");
+    setTimeout(() => {
+      cursor.classList.remove("click");
+    }, 150);
+  });
+
+  // Performance optimization: Throttle mousemove events
+  let ticking = false;
+  function updateCursorPosition(e) {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  // Replace the original mousemove listener with throttled version
+  document.removeEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+  document.addEventListener("mousemove", updateCursorPosition);
 });
 
 // Scroll Animation functionality
@@ -167,13 +315,14 @@ function toggleFAQ(faqNumber) {
     const isOpen = answer.style.maxHeight && answer.style.maxHeight !== "0px";
 
     // Close all other FAQ answers
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 10; i++) {
       const otherAnswer = document.getElementById(`faq-answer-${i}`);
       const otherIcon = document.getElementById(`faq-icon-${i}`);
 
       if (otherAnswer && otherIcon && i !== faqNumber) {
         otherAnswer.style.maxHeight = "0px";
         otherAnswer.style.opacity = "0";
+        otherAnswer.classList.remove("faq-open");
         otherIcon.classList.remove("rotate-180");
       }
     }
@@ -182,12 +331,14 @@ function toggleFAQ(faqNumber) {
     if (isOpen) {
       answer.style.maxHeight = "0px";
       answer.style.opacity = "0";
+      answer.classList.remove("faq-open");
       icon.classList.remove("rotate-180");
     } else {
       // Calculate the height of the content
       const scrollHeight = answer.scrollHeight;
       answer.style.maxHeight = scrollHeight + "px";
       answer.style.opacity = "1";
+      answer.classList.add("faq-open");
       icon.classList.add("rotate-180");
     }
   }
@@ -254,3 +405,73 @@ if (btn && options && selected) {
     }
   });
 }
+
+// Mobile Menu functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+  const mobileMenuOverlay = document.getElementById("mobileMenuOverlay");
+  const hamburgerLine1 = document.getElementById("hamburger-line-1");
+  const hamburgerLine2 = document.getElementById("hamburger-line-2");
+  const hamburgerLine3 = document.getElementById("hamburger-line-3");
+  const mobileMenuLinks = document.querySelectorAll(".mobile-menu-link");
+
+  if (mobileMenuBtn && mobileMenuOverlay) {
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+      isMenuOpen = !isMenuOpen;
+      
+      if (isMenuOpen) {
+        // Open menu
+        mobileMenuOverlay.classList.remove("translate-x-full");
+        mobileMenuOverlay.classList.add("translate-x-0");
+        
+        // Animate hamburger to X
+        hamburgerLine1.classList.add("rotate-45", "translate-y-2");
+        hamburgerLine2.classList.add("opacity-0");
+        hamburgerLine3.classList.add("-rotate-45", "-translate-y-2");
+        
+        // Prevent body scroll
+        document.body.style.overflow = "hidden";
+      } else {
+        // Close menu
+        mobileMenuOverlay.classList.remove("translate-x-0");
+        mobileMenuOverlay.classList.add("translate-x-full");
+        
+        // Animate X back to hamburger
+        hamburgerLine1.classList.remove("rotate-45", "translate-y-2");
+        hamburgerLine2.classList.remove("opacity-0");
+        hamburgerLine3.classList.remove("-rotate-45", "-translate-y-2");
+        
+        // Restore body scroll
+        document.body.style.overflow = "";
+      }
+    }
+
+    // Toggle menu on button click
+    mobileMenuBtn.addEventListener("click", toggleMenu);
+
+    // Close menu when clicking on a link
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        if (isMenuOpen) {
+          toggleMenu();
+        }
+      });
+    });
+
+    // Close menu when clicking outside
+    mobileMenuOverlay.addEventListener("click", (e) => {
+      if (e.target === mobileMenuOverlay && isMenuOpen) {
+        toggleMenu();
+      }
+    });
+
+    // Close menu on escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && isMenuOpen) {
+        toggleMenu();
+      }
+    });
+  }
+});
