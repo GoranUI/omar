@@ -11,3 +11,15 @@
   --color-grey-light: #787878;
   --color-accent-gold: #ffd700;
 }
+
+.p-style {
+  @apply text-[15px] font-normal leading-[1.8em] tracking-[-0.02em] text-white/70 text-left mb-5 font-sans;
+}
+
+.heading-style {
+  @apply text-[20px] font-semibold leading-[1.4em] tracking-normal text-white text-left mb-10 font-jakarta;
+}
+
+.subheading-style {
+  @apply text-[18px] font-medium leading-[1.4em] tracking-normal text-white text-left mb-5 font-jakarta;
+}
