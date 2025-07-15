@@ -14,7 +14,7 @@
     rel="stylesheet">
 </head>
 
-<body class="bg-black min-h-screen font-['DM_Sans']">
+<body class="bg-black min-h-screen font-['DM_Sans']" style="scroll-behavior: smooth;">
   <!-- Custom Cursor -->
   <div class="custom-cursor" id="customCursor"></div>
   <!-- Navigation -->
@@ -23,11 +23,12 @@
       <nav class="backdrop-blur-xl bg-[#111111]/70 border border-white/10 rounded-2xl px-6 py-3">
         <div class="flex items-center space-x-8">
           <div class="flex items-center space-x-6 text-white/60 font-medium mr-6">
-            <a href="./index.html" class="hover:text-white transition-colors duration-200">Home</a>
-            <a href="./projects" class="hover:text-white transition-colors duration-200">Projects</a>
-            <a href="#testimonials" class="hover:text-white transition-colors duration-200">About</a>
-            <a href="./contact" class="hover:text-white transition-colors duration-200">Process</a>
-            <a href="./contact" class="hover:text-white transition-colors duration-200">Why Me?</a>
+            <a href="./index.html#home" class="hover:text-white transition-colors duration-200">Home</a>
+            <a href="./index.html#projects" class="hover:text-white transition-colors duration-200">Projects</a>
+            <a href="./index.html#about" class="hover:text-white transition-colors duration-200">About</a>
+            <a href="./index.html#process" class="hover:text-white transition-colors duration-200">Process</a>
+            <a href="./index.html#why-me" class="hover:text-white transition-colors duration-200">Why Me?</a>
+            <a href="./index.html#faq" class="hover:text-white transition-colors duration-200">FAQ</a>
           </div>
           <div>
             <a href="./contact.html" rel="noopener"
@@ -46,30 +47,62 @@
 
   <!-- Mobile Navigation -->
   <div class="lg:hidden">
-    <div class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-md">
-      <nav class="bg-black border border-white/10 rounded-full px-4 py-3">
+    <div class="fixed top-4 left-4 right-4 z-50">
+      <nav class="bg-black/90 backdrop-blur-xl border border-white/10 rounded-full px-4 py-3">
         <div class="flex items-center justify-between">
-          <div class="flex items-center space-x-4 overflow-x-auto scrollbar-hide">
-            <a href="./index.html"
-              class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">Home</a>
-            <a href="./projects"
-              class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">Projects</a>
-            <a href="#testimonials"
-              class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">About</a>
-            <a href="./contact"
-              class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">Process</a>
-            <a href="./contact"
-              class="text-white hover:text-gray-300 transition-colors duration-200 font-medium whitespace-nowrap">Why
-              Me?</a>
+          <div class="text-white font-semibold text-lg">Omar</div>
+          
+          <!-- Hamburger Menu Button -->
+          <button id="mobileMenuBtn" class="flex flex-col justify-center items-center w-8 h-8 space-y-1.5">
+            <span class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="hamburger-line-1"></span>
+            <span class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="hamburger-line-2"></span>
+            <span class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="hamburger-line-3"></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" class="fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 ease-in-out">
+      <div class="flex flex-col h-full pt-24 px-8">
+        <!-- Navigation Links -->
+        <div class="flex flex-col space-y-6 text-white mb-12">
+          <a href="./index.html#home" class="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200 mobile-menu-link">Home</a>
+          <a href="./index.html#projects" class="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200 mobile-menu-link">Projects</a>
+          <a href="./index.html#about" class="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200 mobile-menu-link">About</a>
+          <a href="./index.html#process" class="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200 mobile-menu-link">Process</a>
+          <a href="./index.html#why-me" class="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200 mobile-menu-link">Why Me?</a>
+          <a href="./index.html#faq" class="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200 mobile-menu-link">FAQ</a>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="flex flex-col space-y-4">
+          <!-- Orange Projects Button -->
+          <div class="relative flex items-center justify-center w-full h-[57px] hover:opacity-80 transition-all duration-300">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#C85A00] to-[#F58427] rounded-2xl"></div>
+            <div class="absolute inset-0.5 bg-gradient-to-b from-[#FFA255] via-[#934200] to-[#FFA255] rounded-[15px]"></div>
+            <a class="relative bg-gradient-to-b from-[#F58427] to-[#C85A00] text-white font-semibold px-5 py-3 rounded-xl w-full text-center"
+              style="box-shadow: 0px -1px 0px 0px #FFFFFF3D inset;" href="./index.html#projects">
+              See All Projects
+            </a>
           </div>
-          <div class="ml-4 flex-shrink-0">
-            <a href="./contact.html" rel="noopener"
-              class="inline-flex items-center px-4 py-2 bg-gradient-to-b from-black/90 to-white/10 border border-white/10 rounded-full text-white text-sm font-medium hover:bg-gradient-to-b hover:from-black/95 hover:to-white/20 transition-all duration-200 shadow-lg hover:shadow-xl">
-              Contact
+
+          <!-- White Contact Button -->
+          <div class="relative flex items-center justify-center w-full h-[57px] hover:opacity-80 transition-all duration-300">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl"></div>
+            <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]"></div>
+            <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl w-full text-center flex items-center justify-center gap-2"
+              style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="./contact.html">
+              <svg class="w-4 h-4">
+                <use href="./assets/icons/thunderbolt.svg#thunderbolt" />
+              </svg>
+              <span class="bg-gradient-to-b from-[#1F2937] from-40% to-[#6B7280] to-60% bg-clip-text text-transparent font-bold">
+                Contact Now
+              </span>
             </a>
           </div>
         </div>
-      </nav>
+      </div>
     </div>
   </div>
 
@@ -308,12 +341,9 @@
           style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;" data-faq="1">
           <div class="flex justify-between items-start cursor-pointer" onclick="toggleFAQ(1)">
             <div class="flex-1">
-              <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px] mb-3">What
-                services do you offer?</h4>
-              <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer" id="faq-answer-1">
-                I specialize in UI/UX design, product design, branding, and web development. This includes user
-                interface design, user experience optimization, brand identity creation, and full-stack web
-                development using modern technologies.
+              <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px]">What services do you offer?</h4>
+              <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer transition-all duration-300 ease-in-out max-h-0 overflow-hidden" id="faq-answer-1">
+                I specialize in end-to-end product design — from UX research and wireframing to high-fidelity UI design and interactive prototyping. I also offer branding, design systems, and dev-ready handoff using Figma, Webflow, and Framer.
               </p>
             </div>
             <div class="ml-6 flex-shrink-0">
@@ -331,12 +361,9 @@
           style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;" data-faq="2">
           <div class="flex justify-between items-start cursor-pointer" onclick="toggleFAQ(2)">
             <div class="flex-1">
-              <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px] mb-3">How
-                long does a typical project take?</h4>
-              <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer hidden" id="faq-answer-2">
-                Project timelines vary based on complexity. A simple website might take 2-4 weeks, while complex
-                applications can take 8-12 weeks. I'll provide a detailed timeline during our initial consultation
-                and keep you updated throughout the process.
+              <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px]">What industries do you work with?</h4>
+              <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer transition-all duration-300 ease-in-out max-h-0 overflow-hidden" id="faq-answer-2">
+                I've worked across e-commerce, healthtech, content platforms, legal tech, and AI. I focus on companies looking to scale quickly and build intuitive digital products that drive user growth and engagement.
               </p>
             </div>
             <div class="ml-6 flex-shrink-0">
@@ -354,12 +381,9 @@
           style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;" data-faq="3">
           <div class="flex justify-between items-start cursor-pointer" onclick="toggleFAQ(3)">
             <div class="flex-1">
-              <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px] mb-3">What
-                is your pricing structure?</h4>
-              <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer hidden" id="faq-answer-3">
-                I offer both fixed-price projects and hourly rates. Pricing depends on project scope, complexity,
-                and timeline. I provide detailed quotes after understanding your requirements, with no hidden fees
-                or surprises.
+              <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px]">What's your design process like?</h4>
+              <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer transition-all duration-300 ease-in-out max-h-0 overflow-hidden" id="faq-answer-3">
+                I start by understanding your users and business goals. Then I move into wireframing, visual exploration, and rapid iteration using feedback loops. I deliver pixel-perfect interfaces with clear documentation and dev-ready assets.
               </p>
             </div>
             <div class="ml-6 flex-shrink-0">
@@ -377,11 +401,9 @@
           style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;" data-faq="4">
           <div class="flex justify-between items-start cursor-pointer" onclick="toggleFAQ(4)">
             <div class="flex-1">
-              <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px] mb-3">Do you
-                provide ongoing support?</h4>
-              <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer hidden" id="faq-answer-4">
-                Yes! I offer ongoing support and maintenance packages. This includes updates, bug fixes, performance
-                optimization, and feature additions. I believe in building long-term relationships with my clients.
+              <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px]">Do you work with developers or teams?</h4>
+              <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer transition-all duration-300 ease-in-out max-h-0 overflow-hidden" id="faq-answer-4">
+                Yes — I've worked closely with in-house and remote dev teams, product managers, founders, and marketing leads. I speak both design and product fluently and thrive in cross-functional environments.
               </p>
             </div>
             <div class="ml-6 flex-shrink-0">
@@ -399,16 +421,113 @@
           style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;" data-faq="5">
           <div class="flex justify-between items-start cursor-pointer" onclick="toggleFAQ(5)">
             <div class="flex-1">
-              <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px] mb-3">What
-                technologies do you work with?</h4>
-              <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer hidden" id="faq-answer-5">
-                I work with modern technologies including React, Next.js, Node.js, TypeScript, and various design
-                tools like Figma, Adobe Creative Suite, and Framer. I stay updated with the latest industry trends
-                and best practices.
+              <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px]">What tools do you use?</h4>
+              <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer transition-all duration-300 ease-in-out max-h-0 overflow-hidden" id="faq-answer-5">
+                Figma (main), Adobe CC, Webflow, Framer, FigJam, Notion, Slack, Maze, and more. I'm also familiar with motion tools and 3D modeling for immersive interfaces.
               </p>
             </div>
             <div class="ml-6 flex-shrink-0">
               <svg class="w-6 h-6 text-white transform transition-transform duration-200 faq-icon" id="faq-icon-5"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div
+          class="bg-[#0f0f0f] rounded-2xl p-8 transform translate-y-8 opacity-0 transition-all duration-1000 ease-out delay-1000"
+          style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;" data-faq="6">
+          <div class="flex justify-between items-start cursor-pointer" onclick="toggleFAQ(6)">
+            <div class="flex-1">
+              <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px]">What's your availability and rate?</h4>
+              <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer transition-all duration-300 ease-in-out max-h-0 overflow-hidden" id="faq-answer-6">
+                I offer flexible engagements — from fixed-scope projects to long-term retainers. My rate reflects 8+ years of UX/UI experience delivering launch-ready products. Let's chat about your scope and timeline.
+              </p>
+            </div>
+            <div class="ml-6 flex-shrink-0">
+              <svg class="w-6 h-6 text-white transform transition-transform duration-200 faq-icon" id="faq-icon-6"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 7 -->
+        <div
+          class="bg-[#0f0f0f] rounded-2xl p-8 transform translate-y-8 opacity-0 transition-all duration-1000 ease-out delay-1200"
+          style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;" data-faq="7">
+          <div class="flex justify-between items-start cursor-pointer" onclick="toggleFAQ(7)">
+            <div class="flex-1">
+              <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px]">Can you show me relevant past work?</h4>
+              <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer transition-all duration-300 ease-in-out max-h-0 overflow-hidden" id="faq-answer-7">
+                Yes — I have case studies available for select projects including Sanctify, Futuri, Karma, and Wnder. I'm happy to walk you through relevant examples based on your industry and needs.
+              </p>
+            </div>
+            <div class="ml-6 flex-shrink-0">
+              <svg class="w-6 h-6 text-white transform transition-transform duration-200 faq-icon" id="faq-icon-7"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 8 -->
+        <div
+          class="bg-[#0f0f0f] rounded-2xl p-8 transform translate-y-8 opacity-0 transition-all duration-1000 ease-out delay-1400"
+          style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;" data-faq="8">
+          <div class="flex justify-between items-start cursor-pointer" onclick="toggleFAQ(8)">
+            <div class="flex-1">
+              <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px]">Do you offer branding or strategy too?</h4>
+              <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer transition-all duration-300 ease-in-out max-h-0 overflow-hidden" id="faq-answer-8">
+                Absolutely. I believe UX/UI doesn't exist in a vacuum. I often partner with brands at an early stage to shape their product positioning, voice, and identity alongside interface design.
+              </p>
+            </div>
+            <div class="ml-6 flex-shrink-0">
+              <svg class="w-6 h-6 text-white transform transition-transform duration-200 faq-icon" id="faq-icon-8"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 9 -->
+        <div
+          class="bg-[#0f0f0f] rounded-2xl p-8 transform translate-y-8 opacity-0 transition-all duration-1000 ease-out delay-1600"
+          style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;" data-faq="9">
+          <div class="flex justify-between items-start cursor-pointer" onclick="toggleFAQ(9)">
+            <div class="flex-1">
+              <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px]">Why should I work with you instead of an agency?</h4>
+              <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer transition-all duration-300 ease-in-out max-h-0 overflow-hidden" id="faq-answer-9">
+                I move faster, collaborate more closely, and care deeply about your product's success. I bring both architectural thinking and modern design sensibility to every project — minus the agency overhead.
+              </p>
+            </div>
+            <div class="ml-6 flex-shrink-0">
+              <svg class="w-6 h-6 text-white transform transition-transform duration-200 faq-icon" id="faq-icon-9"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 10 -->
+        <div
+          class="bg-[#0f0f0f] rounded-2xl p-8 transform translate-y-8 opacity-0 transition-all duration-1000 ease-out delay-1800"
+          style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;" data-faq="10">
+          <div class="flex justify-between items-start cursor-pointer" onclick="toggleFAQ(10)">
+            <div class="flex-1">
+              <h4 class="text-[20px] font-semibold text-white font-['Plus_Jakarta_Sans'] leading-[28px]">How do we get started?</h4>
+              <p class="text-white/60 text-[15px] font-['Inter'] leading-[22px] faq-answer transition-all duration-300 ease-in-out max-h-0 overflow-hidden" id="faq-answer-10">
+                Message me with your project idea, and I'll schedule a 20-minute discovery call to explore fit, timeline, and outcomes. If we're aligned, I'll send over a proposal within 48 hours.
+              </p>
+            </div>
+            <div class="ml-6 flex-shrink-0">
+              <svg class="w-6 h-6 text-white transform transition-transform duration-200 faq-icon" id="faq-icon-10"
                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
@@ -437,7 +556,7 @@
             <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
             </div>
             <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl"
-              style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="./projects">
+              style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="./contact.html">
               <div class="flex items-center gap-2 ">
 
                 <svg class="w-4 h-4">
@@ -484,7 +603,7 @@
 
   <!-- Custom CSS for custom cursor -->
   <style>
-    /* Custom cursor */
+    /* Enhanced Custom cursor */
     .custom-cursor {
       position: fixed;
       width: 12px;
@@ -493,14 +612,60 @@
       border-radius: 50%;
       pointer-events: none;
       z-index: 9999;
-      transition: transform 0.1s ease;
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                  background-color 0.3s ease,
+                  opacity 0.3s ease;
       mix-blend-mode: difference;
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5), 0px 0px 20px 0px rgba(255, 255, 255, 0.8);
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5), 
+                  0px 0px 20px 0px rgba(255, 255, 255, 0.8);
+      will-change: transform, left, top;
     }
 
     .custom-cursor.hover {
-      transform: scale(2);
+      transform: scale(2.5);
       background-color: #F58427;
+      box-shadow: 0px 0px 15px 0px rgba(245, 132, 39, 0.6),
+                  0px 0px 30px 0px rgba(245, 132, 39, 0.4);
+    }
+
+    .custom-cursor.click {
+      transform: scale(0.8);
+      background-color: #C85A00;
+      box-shadow: 0px 0px 20px 0px rgba(200, 90, 0, 0.8),
+                  0px 0px 40px 0px rgba(200, 90, 0, 0.6);
+    }
+
+    /* Smooth cursor trail effect */
+    .custom-cursor::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      border-radius: inherit;
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0.3;
+      transition: all 0.3s ease;
+    }
+
+    .custom-cursor.hover::before {
+      transform: translate(-50%, -50%) scale(1.2);
+      opacity: 0.6;
+    }
+
+    /* FAQ Animation styles */
+    .faq-answer {
+      transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .faq-answer.faq-open {
+      padding-top: 12px;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease-in-out;
     }
   </style>
 
