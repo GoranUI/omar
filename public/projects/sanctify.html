@@ -473,9 +473,9 @@
               class="w-full h-full object-cover rounded-2xl">
           </div>
 
-          <div class="mt-7.5 border border-white/10 rounded-2xl p-6">
+          <div class="mt-7.5 border border-white/10 rounded-2xl p-6 flex justify-center items-center">
             <img src="../assets/images/sanctify/omar-design-system-button.png" alt="button"
-              class="w-full h-full object-cover">
+              class="md:max-w-[629px] h-full object-cover">
           </div>
 
           <div class="mt-7.5 border border-white/10 rounded-2xl p-6">
@@ -1011,7 +1011,7 @@
           </div>
 
           <div class="flex flex-col">
-            <span class="subheading-style">Usability Testing</span>
+            <span class="heading-style !mb-6">Usability Testing</span>
 
             <p class="p-style">
               For this usability testing, I crafted a series of task based scenarios that simulate real user
@@ -1036,7 +1036,7 @@
           </div>
 
           <div class="flex flex-col">
-            <span class="subheading-style">Reflection</span>
+            <span class="heading-style !mb-4">Reflection</span>
 
             <p class="p-style">
               If given more time, I would further refine Sanctify by taking the following steps:<br />
@@ -1143,12 +1143,12 @@
       border-radius: 50%;
       pointer-events: none;
       z-index: 9999;
-      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                  background-color 0.3s ease,
-                  opacity 0.3s ease;
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        background-color 0.3s ease,
+        opacity 0.3s ease;
       mix-blend-mode: difference;
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5), 
-                  0px 0px 20px 0px rgba(255, 255, 255, 0.8);
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5),
+        0px 0px 20px 0px rgba(255, 255, 255, 0.8);
       will-change: transform, left, top;
     }
 
@@ -1156,14 +1156,14 @@
       transform: scale(2.5);
       background-color: #F58427;
       box-shadow: 0px 0px 15px 0px rgba(245, 132, 39, 0.6),
-                  0px 0px 30px 0px rgba(245, 132, 39, 0.4);
+        0px 0px 30px 0px rgba(245, 132, 39, 0.4);
     }
 
     .custom-cursor.click {
       transform: scale(0.8);
       background-color: #C85A00;
       box-shadow: 0px 0px 20px 0px rgba(200, 90, 0, 0.8),
-                  0px 0px 40px 0px rgba(200, 90, 0, 0.6);
+        0px 0px 40px 0px rgba(200, 90, 0, 0.6);
     }
 
     /* Smooth cursor trail effect */
@@ -1222,7 +1222,7 @@
       width: 0%;
       height: 2px;
       background: linear-gradient(to right, #C85A00, #F58427);
-      transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       border-radius: 2px;
     }
 
@@ -1232,6 +1232,7 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+
     .footer-hover:hover .footer-text::after {
       width: 100%;
     }
