@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HM - Omar Hammouda - UI/UX Designer</title>
+  <link rel="stylesheet" href="../output.css">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="bg-black min-h-screen font-['DM_Sans']">
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="customCursor"></div>
+  <!-- Navigation -->
+  <!-- Desktop Navigation -->
+  <div class="hidden lg:block">
+    <div class="fixed top-6 bg-[#111111]/70 left-1/2 transform -translate-x-1/2 z-50 rounded-2xl">
+      <nav class="backdrop-blur-xl bg-[#111111]/70 border border-white/10 rounded-2xl px-6 py-3">
+        <div class="flex items-center space-x-8">
+          <div class="flex items-center space-x-6 text-white/60 font-medium mr-6">
+            <a href="#home" class="hover:text-white transition-colors duration-200 scroll-smooth">Home</a>
+            <a href="#projects" class="hover:text-white transition-colors duration-200 scroll-smooth">Projects</a>
+            <a href="#about" class="hover:text-white transition-colors duration-200 scroll-smooth">About</a>
+            <a href="#process" class="hover:text-white transition-colors duration-200 scroll-smooth">Process</a>
+            <a href="#why-me" class="hover:text-white transition-colors duration-200 scroll-smooth">Why Me?</a>
+            <a href="#faq" class="hover:text-white transition-colors duration-200 scroll-smooth">FAQ</a>
+          </div>
+          <div>
+            <a href="../contact.html" rel="noopener"
+              class="inline-flex items-center py-3 text-white/60 font-medium hover:text-white transition-all duration-200 group">
+              <svg class="w-6 h-6 mr-1 transition-all duration-200" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.6409 9.37499L19.0181 6.56249C18.67 5.95977 18.0969 5.51996 17.4246 5.33976C16.7523 5.15956 16.036 5.25373 15.4331 5.60155C15.0969 5.7958 14.8086 6.06298 14.5894 6.38343L12.9562 3.56249C12.7257 3.16382 12.3944 2.83281 11.9955 2.60268C11.5967 2.37255 11.1443 2.2514 10.6837 2.2514C10.2232 2.2514 9.77084 2.37255 9.37195 2.60268C8.97307 2.83281 8.64175 3.16382 8.41125 3.56249C7.93188 3.18503 7.33599 2.98635 6.72602 3.0006C6.11605 3.01485 5.53009 3.24113 5.06887 3.64056C4.60764 4.03998 4.29996 4.5876 4.19871 5.18927C4.09746 5.79095 4.20897 6.40911 4.51406 6.93749L4.66312 7.19624C4.27523 7.22632 3.89907 7.34327 3.5625 7.53843C2.95968 7.88666 2.51988 8.46009 2.33985 9.13258C2.15982 9.80507 2.25429 10.5215 2.6025 11.1244L6.3525 17.6231C6.89201 18.563 7.61248 19.3867 8.47226 20.0464C9.33204 20.7062 10.3141 21.189 11.3616 21.4669C12.0624 21.6541 12.7848 21.7486 13.5103 21.7481C14.9573 21.7456 16.3782 21.3626 17.6304 20.6375C18.8826 19.9125 19.922 18.8708 20.6445 17.617C21.3669 16.3633 21.7468 14.9416 21.7462 13.4946C21.7456 12.0476 21.3644 10.6262 20.6409 9.37312V9.37499ZM20.0166 15.2475C19.6708 16.5367 18.9506 17.6945 17.9469 18.5745C16.9432 19.4544 15.7012 20.0171 14.3778 20.1913C13.0544 20.3654 11.7091 20.1434 10.512 19.5531C9.31477 18.9628 8.31947 18.0308 7.65187 16.875L3.90187 10.3762C3.75912 10.1183 3.72333 9.81461 3.8022 9.53054C3.88107 9.24647 4.0683 9.00472 4.3236 8.85728C4.5789 8.70985 4.88188 8.66853 5.16734 8.7422C5.4528 8.81588 5.69793 8.99867 5.85 9.25124L7.65281 12.375C7.7006 12.463 7.76554 12.5406 7.84379 12.6031C7.92204 12.6656 8.01202 12.7118 8.10841 12.739C8.20481 12.7661 8.30567 12.7737 8.40505 12.7613C8.50443 12.7488 8.60031 12.7166 8.68704 12.6665C8.77376 12.6164 8.84958 12.5495 8.91 12.4696C8.97043 12.3897 9.01425 12.2986 9.03888 12.2015C9.06351 12.1044 9.06844 12.0034 9.05339 11.9044C9.03834 11.8054 9.00361 11.7104 8.95125 11.625L5.8125 6.18749C5.7354 6.05944 5.6846 5.91732 5.66305 5.76941C5.6415 5.62151 5.64964 5.4708 5.68699 5.32608C5.72435 5.18136 5.79016 5.04553 5.8806 4.92653C5.97103 4.80753 6.08427 4.70774 6.2137 4.633C6.34314 4.55825 6.48617 4.51005 6.63444 4.4912C6.78271 4.47235 6.93325 4.48324 7.07726 4.52323C7.22128 4.56321 7.35588 4.63149 7.47322 4.72408C7.59055 4.81667 7.68825 4.93172 7.76062 5.06249L10.6875 10.125C10.7353 10.213 10.8002 10.2906 10.8785 10.3531C10.9567 10.4156 11.0467 10.4618 11.1431 10.489C11.2395 10.5161 11.3404 10.5237 11.4397 10.5113C11.5391 10.4988 11.635 10.4666 11.7217 10.4165C11.8084 10.3664 11.8843 10.2995 11.9447 10.2196C12.0051 10.1397 12.0489 10.0486 12.0736 9.9515C12.0982 9.85442 12.1031 9.7534 12.0881 9.65438C12.073 9.55536 12.0383 9.46037 11.9859 9.37499L9.70968 5.43749C9.63259 5.30944 9.58179 5.16732 9.56024 5.01941C9.53869 4.87151 9.54683 4.7208 9.58418 4.57608C9.62153 4.43136 9.68735 4.29553 9.77778 4.17653C9.86822 4.05753 9.98146 3.95774 10.1109 3.883C10.2403 3.80825 10.3834 3.76005 10.5316 3.7412C10.6799 3.72235 10.8304 3.73324 10.9745 3.77323C11.1185 3.81321 11.2531 3.88149 11.3704 3.97408C11.4877 4.06667 11.5854 4.18172 11.6578 4.31249L14.7909 9.74061C14.0612 10.4817 13.6106 11.4527 13.5159 12.4884C13.4212 13.5242 13.6882 14.5608 14.2716 15.4219C14.3834 15.5865 14.5561 15.6999 14.7516 15.7371C14.9472 15.7744 15.1495 15.7325 15.3141 15.6206C15.4787 15.5087 15.5921 15.336 15.6293 15.1405C15.6666 14.945 15.6247 14.7427 15.5128 14.5781C15.0821 13.9402 14.913 13.1612 15.0406 12.4021C15.1681 11.643 15.5825 10.9621 16.1981 10.5C16.3449 10.39 16.4462 10.23 16.483 10.0504C16.5198 9.87073 16.4895 9.68382 16.3978 9.52499L15.7716 8.43749C15.6919 8.30942 15.6388 8.16665 15.6155 8.01766C15.5921 7.86867 15.5989 7.71651 15.6355 7.57021C15.6722 7.42391 15.7378 7.28647 15.8286 7.16605C15.9194 7.04563 16.0335 6.9447 16.1641 6.86926C16.2947 6.79381 16.4391 6.74539 16.5888 6.72688C16.7384 6.70836 16.8903 6.72013 17.0353 6.76148C17.1804 6.80282 17.3156 6.87291 17.433 6.96757C17.5504 7.06223 17.6476 7.17953 17.7187 7.31249L19.3416 10.125C19.7868 10.8916 20.0757 11.7388 20.1916 12.6177C20.3074 13.4967 20.248 14.3898 20.0166 15.2456V15.2475ZM17.2734 2.9728C17.3239 2.78075 17.4485 2.61654 17.6198 2.51619C17.7912 2.41584 17.9953 2.38754 18.1875 2.43749C18.9038 2.62627 19.5754 2.95555 20.1634 3.40619C20.7513 3.85683 21.2438 4.41984 21.6122 5.06249L21.6431 5.11593C21.6955 5.2013 21.7302 5.2963 21.7453 5.39532C21.7603 5.49433 21.7554 5.59536 21.7308 5.69244C21.7061 5.78952 21.6623 5.88068 21.6019 5.96055C21.5415 6.04042 21.4656 6.10738 21.3789 6.15747C21.2922 6.20757 21.1963 6.23978 21.0969 6.25222C20.9975 6.26466 20.8967 6.25707 20.8003 6.22989C20.7039 6.20272 20.6139 6.15652 20.5357 6.094C20.4574 6.03149 20.3925 5.95394 20.3447 5.86593L20.3137 5.81249C20.0434 5.34152 19.682 4.92904 19.2506 4.59909C18.8193 4.26914 18.3266 4.02831 17.8012 3.89062C17.6097 3.83858 17.4467 3.71277 17.3477 3.54075C17.2488 3.36872 17.2221 3.16449 17.2734 2.9728ZM7.58343 22.2187C7.4603 22.3748 7.28025 22.4756 7.08283 22.499C6.88542 22.5224 6.6868 22.4664 6.53062 22.3434C5.40886 21.4574 4.46693 20.3649 3.75562 19.125C3.70638 19.0397 3.67442 18.9455 3.66157 18.8478C3.64872 18.7502 3.65524 18.6509 3.68074 18.5558C3.70625 18.4606 3.75025 18.3714 3.81023 18.2933C3.87021 18.2151 3.94499 18.1495 4.03031 18.1003C4.11563 18.0511 4.20981 18.0191 4.30748 18.0063C4.40515 17.9934 4.50439 17.9999 4.59954 18.0254C4.69469 18.0509 4.78389 18.0949 4.86204 18.1549C4.94018 18.2149 5.00575 18.2897 5.055 18.375C5.67151 19.4483 6.48738 20.394 7.45875 21.1612C7.5367 21.2222 7.6018 21.2981 7.6503 21.3844C7.6988 21.4707 7.72973 21.5657 7.74133 21.664C7.75292 21.7623 7.74493 21.862 7.71783 21.9572C7.69073 22.0524 7.64506 22.1413 7.58343 22.2187Z" />
+              </svg>
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div class="lg:hidden">
+    <div class="fixed top-4 left-4 right-4 z-50">
+      <nav class="bg-black/90 backdrop-blur-xl border border-white/10 rounded-full px-4 py-3">
+        <div class="flex items-center justify-between">
+          <div class="text-white font-semibold text-lg">Omar</div>
+          <!-- Hamburger Menu Button -->
+          <button id="mobileMenuBtn" class="flex flex-col justify-center items-center w-8 h-8 space-y-1.5">
+            <span class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="hamburger-line-1"></span>
+            <span class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="hamburger-line-2"></span>
+            <span class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="hamburger-line-3"></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay"
+      class="fixed inset-0 bg-[#0f0f0f] rounded-2xl backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 ease-in-out"
+      style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
+      <div class="flex flex-col h-full pt-24 px-8">
+        <!-- Navigation Links -->
+        <div class="flex flex-col space-y-6 text-white mb-12">
+          <a href="#home"
+            class="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200 mobile-menu-link">Home</a>
+          <a href="#projects"
+            class="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200 mobile-menu-link">Projects</a>
+          <a href="#about"
+            class="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200 mobile-menu-link">About</a>
+          <a href="#process"
+            class="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200 mobile-menu-link">Process</a>
+          <a href="#why-me"
+            class="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200 mobile-menu-link">Why
+            Me?</a>
+          <a href="#faq"
+            class="text-2xl font-semibold hover:text-gray-300 transition-colors duration-200 mobile-menu-link">FAQ</a>
+        </div>
+        <!-- Action Buttons -->
+        <div class="flex flex-col space-y-4">
+          <!-- Orange Projects Button -->
+          <div
+            class="relative flex items-center justify-center w-full h-[57px] hover:opacity-80 transition-all duration-300">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#C85A00] to-[#F58427] rounded-2xl"></div>
+            <div class="absolute inset-0.5 bg-gradient-to-b from-[#FFA255] via-[#934200] to-[#FFA255] rounded-[15px]">
+            </div>
+            <a class="relative bg-gradient-to-b from-[#F58427] to-[#C85A00] text-white font-semibold px-5 py-3 rounded-xl w-full text-center"
+              style="box-shadow: 0px -1px 0px 0px #FFFFFF3D inset;" href="#projects">
+              See All Projects
+            </a>
+          </div>
+          <!-- White Contact Button -->
+          <div
+            class="relative flex items-center justify-center w-full h-[57px] hover:opacity-80 transition-all duration-300">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl"></div>
+            <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
+            </div>
+            <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl w-full text-center flex items-center justify-center gap-2"
+              style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="../contact.html">
+              <svg class="w-4 h-4">
+                <use href="../assets/icons/thunderbolt.svg#thunderbolt" />
+              </svg>
+              <span
+                class="bg-gradient-to-b from-[#1F2937] from-40% to-[#6B7280] to-60% bg-clip-text text-transparent font-bold">
+                Contact Now
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 xl:px-0">
+
+    <section class="mt-24 pb-10 lg:pb-24 pt-24">
+      <div class="w-full flex flex-col lg:flex-row gap-4">
+        <div class="lg:w-1/2 flex flex-col gap-4">
+          <div class="w-32 h-16">
+            <img src="../assets/images/hm/omar-hm-logo.png" class="w-full h-full object-contain rounded-2xl"
+              alt="hm logo" </div>
+          </div>
+          <h1 class="text-[54px] text-white leading-[60px] mb-2">HM</h1>
+          <h3 class="text-[28px] text-white font-inter">Manage Products More Easily, Monitor Quicker</h3>
+          <p class="p-style">As a platform focused on quality and efficiency, this system is specifically designed for
+            administrators to monitor product reviews from users, filter the product database based on specific
+            criteria, and easily copy purchase details links for documentation or information distribution purposes.</p>
+          <div class="flex flex-col md:flex-row gap-10">
+            <div class="flex flex-col">
+              <span class="heading-style">Year</span>
+              <div class="text-white/60 font-medium">2023</div>
+            </div>
+            <div class="flex flex-col">
+              <span class="heading-style">Tools</span>
+              <div class="text-white/60 font-medium">Figma</div>
+            </div>
+            <div class="flex flex-col">
+              <span class="heading-style">Industry</span>
+              <div class="text-white/60 font-medium">E-Commerce,Retail Technology, Customer Experience Management (CXM),
+                Admin Dashboard System
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:w-1/2 bg-[#0f0f0f] rounded-2xl p-6" style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset;">
+          <img src="../assets/images/hm/omar-hm-hm-laptop.png" alt="hm" class="w-full h-full object-cover rounded-2xl">
+        </div>
+    </section>
+
+    <section class="mt-24 pb-10">
+      <div class="bg-[#0f0f0f] rounded-2xl p-6" style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset;">
+
+        <!-- 1 -->
+        <div>
+          <div class="flex justify-between items-center">
+            <div class="flex flex-col gap-2.5">
+              <svg class="w-6 h-6">
+                <use href="../assets/icons/target.svg#target" />
+              </svg>
+              <span class="text-white text-2xl font-semibold font-jakarta">Project Overview:</span>
+            </div>
+            <div>
+              <div
+                class="bg-[#080808] w-9 h-9 rounded-full text-white font-jakarta font-semibold flex items-center justify-center"
+                style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset;">1</div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-8.5 mt-4">
+            <p class="p-style">In this project, the system was developed to simplify the management of product related
+              information and purchase details for administrators. The primary focus is to provide administrators with
+              full control to monitor user feedback, efficiently search for products using filter features, and share
+              purchase details in a practical manner. With these features, it is expected that administrators can
+              maintain product quality while accelerating monitoring processes and internal communication.
+            </p>
+          </div>
+
+          <div class="flex flex-col lg:flex-row gap-7.5 mt-7.5 mb-5">
+            <div class="lg:w-1/2">
+              <div class="heading-style">🚨 Problem</div>
+              <p class="p-style md:ml-7">1. Admins have difficulty monitoring product quality because they do not have
+                direct access to user reviews.<br />
+                2. The process of searching for products in the database is too time consuming and inefficient.<br />
+                3. Detailed purchase information is difficult to share or document because there is no link copy
+                feature..</p>
+            </div>
+
+            <div class="lg:w-1/2">
+              <div class="flex justify-between items-center">
+                <div class="heading-style">
+                  💡 Solution
+                </div>
+                <div class="hidden lg:block">
+                  <div
+                    class="bg-[#080808] w-9 h-9 rounded-full text-white font-jakarta font-semibold flex items-center justify-center"
+                    style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset;">1</div>
+                </div>
+              </div>
+              <p class="p-style md:ml-7">1. Provide a feature to display product reviews by users so that admins can
+                monitor feedback in real time.<br />
+                2. Add a filter feature to facilitate product searches based on specific criteria (product name, review,
+                customer, etc.).<br />
+                3. Provide an option to copy links to product purchase details for easy sharing or saving.</p>
+            </div>
+          </div>
+
+          <div class="border-b border-white/10 pb-5">
+            <img src="../assets/images/hm/omar-hm-hm-laptop.png" alt="hm"
+              class="w-full h-full object-cover rounded-2xl">
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="mt-7.5">
+          <div class="flex justify-between items-center">
+            <div class="flex flex-col gap-2.5">
+              <svg class="w-6 h-6">
+                <use href="../assets/icons/puzzle.svg#puzzle" />
+              </svg>
+              <span class="text-white text-2xl font-semibold font-jakarta">💻 My Role and Responsibility</span>
+            </div>
+            <div>
+              <div
+                class="bg-[#080808] w-9 h-9 rounded-full text-white font-jakarta font-semibold flex items-center justify-center"
+                style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset;">2</div>
+            </div>
+          </div>
+
+          <div class="flex flex-col mt-4">
+            <p class="p-style">In this project, I took on the role of a UX/UI Designer, responsible for designing an
+              intuitive and efficient admin interface that supports key functionalities such as viewing user product
+              reviews, filtering the product database, and accessing detailed purchase links.</p>
+            <p class="p-style">My responsibilities included conducting competitive analysis, creating user flows based
+              on admin needs, and translating user stories into user flow, wireframes, and high fidelity design in
+              Figma. Additionally, I ensured that the design maintained consistency, accessibility, and responsiveness
+              across devices to optimize the admin experience.</p>
+          </div>
+
+          <div class="mt-14">
+            <span class="heading-style">Process</span>
+            <div class="flex flex-col gap-4 mt-4 border-b border-white/10 pb-8.5">
+
+              <p class="p-style">The design process for this project was divided into four key phases to ensure a user
+                centered and results experience:</p>
+              <div>
+                <span class="subheading-style">Discovery</span>
+                <p class="p-style mt-5">During the discovery step, I did a competitor analysis to see how other
+                  platforms handle similar features, like review displays, product filters, and purchase details. From
+                  there, I found some common pain points, like reviews that aren't very informative or filters that are
+                  confusing. I also studied the main users and audience, who are admins who need quick, efficient, and
+                  informative access to product data and user feedback.
+                </p>
+              </div>
+
+              <div>
+                <span class="subheading-style">Ideation</span>
+                <p class="p-style mt-5">The ideation process began with designing user flows to illustrate the admin's
+                  interaction flow in completing specific tasks, such as filtering products, copying purchase links, and
+                  viewing details of products sold. Next, I created a user journey to understand the admin's experience
+                  from start to finish when using the system, to ensure that each step felt logical and comfortable.
+                </p>
+              </div>
+
+              <div>
+                <span class="subheading-style">Design Process</span>
+                <p class="p-style mt-5">To keep the appearance consistent and easy to develop, I compiled a design
+                  system that included professional and easy to read main colors, clean and responsive typography, and
+                  reusable UI components such as buttons, product cards, and input fields. This design system became the
+                  visual and interactive basis for the entire admin interface.</p>
+              </div>
+
+              <div>
+                <span class="subheading-style">Usability Testing</span>
+                <p class="p-style mt-5">During the usability testing phase, I created several scenarios and tasks that
+                  represent the admin's primary tasks, such as filtering products, copying purchase links, and viewing
+                  details of sold products. This testing helped identify obstacles in the usage flow and ensured that
+                  the designed solutions are truly easy to understand and use by the target users.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="mt-7.5">
+          <div class="flex justify-between items-center">
+            <div class="flex flex-col gap-2.5">
+              <svg class="w-6 h-6">
+                <use href="../assets/icons/trophy.svg#trophy" />
+              </svg>
+              <span class="text-white text-2xl font-semibold font-jakarta">Discovery</span>
+            </div>
+            <div>
+              <div
+                class="bg-[#080808] w-9 h-9 rounded-full text-white font-jakarta font-semibold flex items-center justify-center"
+                style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset;">3</div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-4 mt-4">
+            <div>
+              <span class="subheading-style">Discover and Understanding</span>
+              <p class="p-style mt-5">n the first step, I started by analyzing competitors with similar platforms that
+                have admin features for product management and product reviews. The focus was on how other platforms
+                display reviews, provide filter features, and manage access to purchase details.</p>
+            </div>
+
+            <div>
+              <span class="subheading-style">Competitor Analysis</span>
+              <p class="p-style mt-5">To understand how popular platforms design admin systems for product management
+                and user reviews, I conducted a competitor analysis of several tools commonly used in the e-Commerce
+                industry. The main focus of this analysis was how each platform displays user reviews, provides product
+                filter features, and allows admins to copy purchase-related information. The results of the analysis
+                revealed various approaches that can be used as references and comparisons, both in terms of feature
+                strengths and potential pain points in the user experience.
+              </p>
+            </div>
+          </div>
+
+          <div class="border border-white/10 rounded-2xl p-6">
+            <img src="../assets/images/hm/omar-hm-competitor-analysis.png" alt="competitor analysis"
+              class="w-full h-full object-cover rounded-2xl">
+          </div>
+
+          <div class="flex flex-col gap-4 mt-7.5">
+            <div>
+              <span class="subheading-style">Pain Points</span>
+              <p class="p-style mt-5 md:ml-7">From analyzing several e-Commerce admin platforms, we identified recurring
+                pain points that affect the overall user experience for admins when managing product data and customer
+                reviews.<br />
+                1. Too many features and data metrics presented at once can confuse new or non-technical users.<br />
+                2. Filtering tools are too basic or general, making it difficult for admins to locate specific products
+                quickly.<br />
+                3. Admins cannot easily copy or share purchase detail links, which slows down documentation or
+                communication tasks.<br />
+                4. Key admin features like review visibility and filtering are often dependent on external plugins or
+                themes, leading to inconsistency in functionality.<br />
+                5. Important features such as reviews or purchase links are not centralized or easy to find, requiring
+                extra navigation steps.</p>
+            </div>
+
+            <div>
+              <span class="subheading-style">User & Audience</span>
+              <p class="p-style mt-5 md:ml-7">1. Admin users are typically responsible for monitoring product
+                performance, customer reviews, and inventory updates.<br />
+                2. Most users need efficient tools to help them quickly access, filter, and manage product data without
+                unnecessary complexity.<br />
+                3. Users appreciate intuitive, clean, and actionable dashboards, so they can focus on the decisions
+                rather than thinking about how to use the platform.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="mt-7.5">
+          <div class="flex justify-between items-center">
+            <div class="flex flex-col gap-2.5">
+              <span class="text-white text-2xl font-semibold font-jakarta">Ideation</span>
+            </div>
+            <div>
+              <div
+                class="bg-[#080808] w-9 h-9 rounded-full text-white font-jakarta font-semibold flex items-center justify-center"
+                style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset;">4</div>
+            </div>
+          </div>
+
+          <p class="p-style mt-4">After understanding the issues and user needs, I moved on to the ideation phase by
+            creating user flows to map out how admins complete each task in the system, such as accessing product
+            reviews, applying filters, and copying purchase links. This user flow helped ensure that every interaction
+            was efficient and logical. I then developed a user journey to describe the overall experience from the
+            admin's perspective when interacting with these features, including how they navigate between pages,
+            understand the information displayed, and complete their goals without confusion. This stage was important
+            to ensure that the designed solution was not only functional but also enjoyable to use.</p>
+
+          <span class="subheading-style">User Journey</span>
+
+          <div class="flex flex-col justify-center items-center gap-4 border border-white/10 rounded-2xl p-6 mt-7.5">
+            <div>
+              <div class="mt-7.5">
+                <p class="p-style !mb-1">User Story: As an admin, I want to be able to see product reviews from users,
+                  so
+                  that I
+                  can monitor feedback and improve product quality.</p>
+                <img src="../assets/images/hm/omar-hm-user-flow-one.png" alt="user flow one"
+                  class="md:max-w-[750px] h-full object-cover rounded-2xl">
+              </div>
+              <div class="mt-7.5">
+                <p class="p-style !mb-1">User Story: As an admin, I can filter the product database by specific
+                  criteria,
+                  so
+                  that I can find products efficiently.</p>
+                <img src="../assets/images/hm/omar-hm-user-flow-two.png" alt="user flow two"
+                  class="md:max-w-[914px] h-full object-cover rounded-2xl">
+              </div>
+              <div class="mt-7.5">
+                <p class="p-style !mb-1">User Story: As an admin, I want to be able to copy the link to a product's
+                  purchase
+                  details, so that I can easily share or document specific purchase information.</p>
+                <img src="../assets/images/hm/omar-hm-user-flow-three.png" alt="user flow three"
+                  class="md:max-w-[900px] h-full object-cover rounded-2xl">
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-7.5">
+            <span class="subheading-style">User Journey</span>
+            <p class="p-style mt-6">The user journey illustrates the typical steps an admin takes when managing product
+              reviews and product data within the dashboard. It highlights the admin’s key goals, pain points, and
+              expectations at each stage from accessing user reviews, filtering the product database, to sharing
+              purchase details. Understanding this flow helps pinpoint opportunities to simplify tasks, reduce friction,
+              and improve overall efficiency for admins managing product quality and user feedback.
+            </p>
+          </div>
+
+          <div class="flex flex-col justify-center items-center border border-white/10 rounded-2xl p-6">
+            <div class="max-w-[750px] flex flex-col">
+              <p class="p-style !mb-1"><b>Scenario:</b> Admin wants to filter products by category</p>
+              <p class="p-style"><b>Expectation:</b> Easily apply filters to narrow down product list</p>
+            </div>
+
+            <div>
+              <img src="../assets/images/hm/omar-hm-user-journey.png" alt="user journey"
+                class="w-full h-full object-cover rounded-2xl">
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="mt-7.5">
+          <div class="flex justify-between items-center">
+            <div class="flex flex-col gap-2.5">
+              <span class="text-white text-2xl font-semibold font-jakarta">Design Process</span>
+            </div>
+            <div>
+              <div
+                class="bg-[#080808] w-9 h-9 rounded-full text-white font-jakarta font-semibold flex items-center justify-center"
+                style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset;">5</div>
+            </div>
+          </div>
+          <p class="p-style mt-4 mb-8">
+            To maintain visual consistency and ease of future development, I created a design system that serves as a
+            reference for designing the entire interface. I chose professional colors that are not too bold, to support
+            information visibility without distracting the user's focus. Typography was designed for readability,
+            especially for large amounts of text such as reviews or product data. I also created several main components
+            such as buttons, input fields, product cards, and tables, which were designed to be reusable and responsive
+            so they can be easily adapted to various screen sizes. With this design system, every visual element feels
+            consistent, functional, and supports a stable user experience.
+          </p>
+
+          <span class="subheading-style">Design System</span>
+
+          <div>
+            <img src="../assets/images/hm/omar-hm-design-system-color.png" alt="design system"
+              class="w-full h-full object-cover rounded-2xl">
+          </div>
+
+          <div class="mt-7.5">
+            <img src="../assets/images/hm/omar-hm-design-system-typography.png" alt="typography"
+              class="w-full h-full object-cover rounded-2xl">
+          </div>
+
+          <div class="mt-7.5 border border-white/10 rounded-2xl p-6">
+            <img src="../assets/images/hm/omar-hm-design-system-button.png" alt="button"
+              class="w-full h-full object-cover">
+          </div>
+
+          <div class="mt-7.5 flex justify-center items-center border border-white/10 rounded-2xl p-6">
+            <img src="../assets/images/hm/omar-hm-design-system-progress-tab.png" alt="progress tab"
+              class="md:max-w-[850px] h-full object-cover">
+          </div>
+
+          <div class="mt-7.5">
+            <span class="subheading-style">Final Design</span>
+          </div>
+
+          <div class="mt-7.5 flex flex-col">
+            <span class="subheading-style">Product Review Catalog</span>
+
+            <div class="border border-white/10 rounded-2xl p-6 flex justify-center items-center">
+              <img src="../assets/images/hm/omar-hm-product-review-catalog.png" alt="product review catalog"
+                class="md:max-w-[700px] h-full object-cover rounded-2xl">
+            </div>
+
+            <p class="p-style mt-6">
+              This page is part of the Catalog > Others > Product Reviews menu, which can be seen from the breadcrumb
+              navigation at the top of the page. The main title of the page is Product Review, which is displayed in a
+              prominent font size below the breadcrumb. The page design has a clean and professional look with a
+              navigation sidebar on the left that includes several main menus such as Sales, Catalog (which is currently
+              active), Customers, Marketing, Content, System, and Shipping. In the top-right corner of the page, there
+              is the active user profile with the name “Claire Oxner,” along with notification icons and account
+              settings. The name of the current active client is also displayed in the top right corner of the page,
+              which is Andi Grace.
+            </p>
+            <p class="p-style">
+              Below the page title is a search filter bar that allows users to search by product name, customer name,
+              and review status (with a dropdown menu to select “Any” or a specific status). There are two important
+              buttons on the right side of the filter: a dark green Search button and a light gray Reset button, which
+              allow users to start a search or return the filter to its default settings.
+            </p>
+            <p class="p-style">
+              The main content of the page consists of a table with several columns: SKU, Product Name, Review Title,
+              Content, Review (in the form of stars and numerical scores), Customer, Image (with a “Yes” or “No”
+              indicator), Status (marked with a colored badge), Verified, Timestamp/date, and Actions. Columns such as
+              “Product Name,” “Review Title,” and ‘Content’ display truncated text with ellipses to keep the table neat.
+              All data in the SKU column are blue links with the text “pezosoc.”
+            </p>
+            <p class="p-style">
+              The “Status” column displays an orange badge for Pending status and a green badge for Approved status,
+              while the “Verified” column shows the “Yes” or ‘No’ status of customer verification. The “Actions” column
+              on the far right has a blue eye icon that allows users to view the full review details.
+            </p>
+            <p class="p-style">
+              At the bottom of the table, there is information on the total number of entries (“400 total”), a dropdown
+              menu to set the number of rows displayed per page (default 20 rows), and page navigation controls. There
+              is pagination that allows users to navigate between pages using number buttons and arrow icons, as well as
+              an input field to directly go to a specific page via the Go To Page feature.
+            </p>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="subheading-style">Product Review Detail (Approval)</span>
+
+            <div class="border border-white/10 rounded-2xl p-6 flex justify-center items-center">
+              <img src="../assets/images/hm/omar-hm-product-review-detail-approval.png" alt="product review detail"
+                class="md:max-w-[700px] h-full object-cover rounded-2xl">
+            </div>
+
+            <p class="p-style mt-6">
+              This Product Review Detail page is part of the admin dashboard system that functions to review product
+              reviews from customers. At the top, there is a breadcrumb navigation Catalog > Others > Product Reviews >
+              Product review detail that makes it easy for users to understand the position of the page being opened. At
+              the top right, there are “Back” and “Reject” buttons that function as quick navigation to return or reject
+              reviews.
+            </p>
+            <p class="p-style">
+              The main section of the page begins with the review approval status options, consisting of three radio
+              buttons: Approve, Pending, and Reject. These options allow the admin to determine the action to take
+              regarding the review. The default status is set to “Approve.”
+            </p>
+            <p class="p-style">
+              Below that, review-related information is displayed in two columns. The left column displays customer data
+              labeled “Customer,” which includes the reviewer's name, “Mason Monu,” and a link to another page
+              containing their reviews. Below that is the review title, written as “Test Review Title,” and several
+              product images uploaded by the customer. These images are arranged in a horizontal thumbnail row to
+              provide a visual overview of the reviewed product.
+            </p>
+            <p class="p-style">
+              On the right column, product details are displayed. This information includes the product SKU in the form
+              of a link (“pezosoc”), a five-star rating, and the product name “Tera - Blue Potato Chips,” which is also
+              a hyperlink. Below that is the customer review content, but it currently uses placeholder text.
+            </p>
+            <p class="p-style">
+              Administrators are also provided with the ability to publicly respond to customer reviews via a text field
+              labeled “Reply.” A small note below explains that this response will be published publicly. At the bottom
+              of the page, there are two action buttons: ‘Cancel’ to cancel changes and “Save” to save the status or
+              response provided.
+            </p>
+            <p class="p-style">
+              Overall, this page is designed with a clean and informative layout, making it easy for admins to process
+              reviews quickly, complete with visual features and direct interaction with customer reviews.
+            </p>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="subheading-style">Product Review Detail (Other Reviews)</span>
+
+            <div class="border border-white/10 rounded-2xl p-6 flex justify-center items-center">
+              <img src="../assets/images/hm/omar-hm-product-review-detail-other-reviews.png" alt="product review detail"
+                class="md:max-w-[700px] h-full object-cover rounded-2xl">
+            </div>
+
+            <p class="p-style mt-6">
+              This page is a continuation of the Product Review Detail section, but now moves to the “Other reviews of
+              Mason Monu” tab. Overall, the page structure remains consistent with the previous page, including the
+              breadcrumb navigation display at the top, the ‘Back’ and “Reject” buttons at the top right of the content,
+              and user and client information that remains in the upper right corner of the page. The main change is in
+              the content, where the main section of the page now displays a table listing reviews written by the
+              customer named Mason Monu and other customers.
+            </p>
+            <p class="p-style">
+              This table includes several columns of review related information, such as the SKU (e.g., “pezosoc”),
+              product name, review title, review summary, star rating from 3.0 to 5. 0, the name of the customer who
+              wrote the review, whether the review includes an image or not, the review status (pending or approved),
+              purchase verification status, the time and date the review was created, and an eye icon in the last column
+              that likely functions to view the review details. Some data, such as the product name, review title, and
+              review content, are displayed in a truncated format with ellipses to keep the layout concise. Review
+              statuses like “Pending” and “Approved” are displayed with a prominent color badge for easy recognition.
+              The bottom of the table shows the total number of data points, the number of rows per page setting, and
+              page navigation that allows users to easily move between data pages.
+            </p>
+            <p class="p-style">
+              With the “Other reviews of Mason Monu” tab, admins can view the review history of a specific customer in
+              more detail, helping them assess the consistency or credibility of that customer before taking further
+              actions such as approving or rejecting the review under review.
+            </p>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="subheading-style">Filter Feature</span>
+
+            <div class="border border-white/10 rounded-2xl p-6 flex justify-center items-center">
+              <img src="../assets/images/hm/omar-hm-filter-feature.png" alt="filter feature"
+                class="md:max-w-[700px] h-full object-cover rounded-2xl">
+            </div>
+
+            <p class="p-style mt-4">
+              This page is the default view of the “Product Review” feature, which allows users to view and manage a
+              list of product reviews in an interactive table format. At the top of the page is the large title “Product
+              Review” along with several search filters that help users find reviews based on product name, customer
+              name, and review status such as pending or approved. The table view is highly flexible, as it includes a
+              feature to adjust column visibility. This feature is accessed via the settings icon in the top right
+              corner of the table. Clicking it displays a list of checkboxes for each column, such as SKU, Product Name,
+              Review Title, Content, Review, Customer, Image, Status, Verified, and Timestamp. All columns are initially
+              active, indicated by checked checkboxes, but users can freely choose which columns to hide or display
+              according to their needs. This is particularly helpful for users who want to focus on specific data and
+              avoid irrelevant information for their purposes. Overall, the page design maintains a professional and
+              organized appearance without confusing elements.
+            </p>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="subheading-style">Filter Selected</span>
+
+            <div class="border border-white/10 rounded-2xl p-6 flex justify-center items-center">
+              <img src="../assets/images/hm/omar-hm-filter-selected.png" alt="filter selected"
+                class="md:max-w-[700px] h-full object-cover rounded-2xl">
+            </div>
+
+            <p class="p-style mt-6">
+              This page displays a list of product reviews in a clean and minimalist table view. At the top is a large
+              title “Product Review” and a filter area to facilitate searching by product name, customer name, and
+              review status. One of the main features that stands out on this page is the ability to show or hide
+              columns according to user needs. This feature is located in the top-right corner of the table, marked with
+              a settings icon, and when clicked, it displays a list of columns such as SKU, Product Name, Content,
+              Customer, Timestamp, and others that can be checked or unchecked. This allows users to customize the table
+              view to display only the information relevant to them. The table displays review data concisely, including
+              product name, review content, customer name, and the date and time of submission. Each row also includes
+              an eye icon on the right side to view review details. At the bottom, there are pagination controls and
+              options for the number of rows displayed, giving users flexibility to manage large amounts of data more
+              comfortably.
+            </p>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="subheading-style">Digital Purchase Management</span>
+
+            <div class="border border-white/10 rounded-2xl p-6 flex justify-center items-center">
+              <img src="../assets/images/hm/omar-hm-digital-purchase-management.png" alt="digital purchase management"
+                class="md:max-w-[700px] h-full object-cover rounded-2xl">
+            </div>
+
+            <p class="p-style mt-6">
+              At the top of the page, there is breadcrumb navigation that shows the user's current navigation path:
+              Sales > Digital Purchase Management. This breadcrumb structure helps users understand the context of their
+              location in the system.
+            </p>
+            <p class="p-style">
+              Meanwhile, on the left sidebar, the Sales button is displayed as an active menu, marked with an icon and
+              green text, indicating that the user is currently in that module. The sidebar also contains other
+              navigation menus such as Catalog, Customers, Marketing, Content, System, and Shipping, showing that this
+              is an integrated management platform with various e-commerce aspects. Clear navigation is important for
+              workflow efficiency, and a consistent display helps users understand the system's functionality more
+              quickly.
+            </p>
+            <p class="p-style">
+              “Digital Purchase Management” is part of the digital product sales management system within the platform,
+              which appears to be used by internal teams such as sales or support. This page displays data related to
+              digital product purchases by the selected client, Andi Grace. There are search and filter features based
+              on specific fields and statuses to help users filter the information displayed.
+            </p>
+            <p class="p-style">
+              The main table on this page displays details of digital products such as SKU, product name, downloaded
+              file name, file size, number of files downloaded, and the last time the product was purchased. Each data
+              row is accompanied by an eye icon in the “Actions” column, indicating the possibility of features to view
+              details or a preview of the product. The data displayed is dynamic, with options to select the number of
+              rows per page and page navigation at the bottom. Visually, the design is clean and minimalist, with a
+              clear hierarchical structure of information, enabling users to focus on digital transaction data
+              efficiently.
+            </p>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="subheading-style">View Digital Purchase</span>
+
+            <div class="border border-white/10 rounded-2xl p-6 flex justify-center items-center">
+              <img src="../assets/images/hm/omar-hm-view-digital-purchase.png" alt="view digital purchase"
+                class="md:max-w-[700px] h-full object-cover rounded-2xl">
+            </div>
+
+            <p class="p-style mt-6">
+              The “Digital Purchase” page is a detailed view of one of the digital products, namely boddydigital-5,
+              which was previously selected from the digital purchase management page. At the top of the page, the
+              breadcrumb navigation shows the user's path: Sales > Digital Purchase Management > Digital Purchase,
+              providing clear context for the user's position in the system. The page display is divided into two main
+              sections: digital product information at the top and a transaction history table at the bottom.
+            </p>
+            <p class="p-style">
+              At the top, users are presented with a visual representation of the product, including an image of a
+              basketball player, the product name, SKU, a Download button, and file information such as size and file
+              name. There is also an “Edit Product” option to modify product details, along with information on the
+              number of product purchases (20 times) and total downloads (2 times). The “Back” button in the top-right
+              corner allows users to return to the previous page.
+            </p>
+            <p class="p-style">
+              The table below contains a list of transactions for the digital product, complete with columns for Order,
+              Upload Date, Customer, Downloads, Status, and Expires. All entries in this example are from a customer
+              named Tram Nguyen, with file statuses ranging from Active, Any, Limit Reached, Revoked, to Expired. Each
+              status has a different color for easy visual identification. Additionally, there is a search and filter
+              feature at the top of the table, as well as an eye icon in the “Actions” column that indicates the option
+              to view details of a specific transaction. The design of this page remains consistent with the navigation
+              sidebar structure on the left and the header at the top, which lists the active user name (Claire Oxner)
+              and the client being served (Andi Grace), keeping the work context clear and efficient.
+            </p>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="subheading-style">View Digital Purchase - Activity Log</span>
+
+            <div class="border border-white/10 rounded-2xl p-6 flex justify-center items-center">
+              <img src="../assets/images/hm/omar-hm-view-digital-purchase-activity-log.png"
+                alt="view digital purchase activity log" class="md:max-w-[700px] h-full object-cover rounded-2xl">
+            </div>
+
+            <p class="p-style mt-6">
+              This view shows the modal details for one of the boddydigital-5 digital product orders, which appears
+              after the user clicks the action icon from one of the entries in the transaction table on the previous
+              page. This pop-up is designed to provide in depth information about a specific order with a clean and
+              focused interface. At the top, users are presented with the product image, product name, and order details
+              such as the order number (ZM-134321) and purchase date (17/08/2020, 23:20:34). File size information and
+              the “Change File” option are also available, allowing the admin to replace the digital file associated
+              with this order.
+            </p>
+            <p class="p-style">
+              Users are provided with several direct actions: View Order, Download, and Copy link buttons, with the
+              download URL available in a field that can be copied. On the right side, there is the order status, which
+              is currently Active, with information on the number of downloads (0) and validity period (Expires: Never),
+              as well as an option to change the status if needed.
+            </p>
+            <p class="p-style">
+              Further down, there is an Activity Log that records the history of activities related to this order. The
+              log table presents data in the columns Activity, Date, IP, User, and Activity Detail. Although the content
+              is still a placeholder with the text “Lorem ipsum,” this element illustrates a structured user activity
+              tracking system that allows auditing of every action performed on the file. The pagination below the table
+              shows that the system records hundreds of log entries, reinforcing the impression that this system is
+              designed for large-scale use with complete and neatly documented activity traces.
+            </p>
+          </div>
+
+          <div class="flex flex-col mt-7.5">
+            <span class="subheading-style">Usability Testing</span>
+
+            <p class="p-style">
+              To evaluate the overall effectiveness, ease of use, and user satisfaction levels of the admin platform, I
+              conducted a series of moderated usability testing sessions involving participants who represented the role
+              of user admins. Each session was designed to reflect real-world usage scenarios, in which participants
+              completed a series of goal-based tasks that reflected the workflow of an admin when managing digital
+              content and transactions on the platform.
+            </p>
+            <p class="p-style">
+              The primary goal of this usability testing was to observe how admins interact with key features, how
+              easily they navigate the interface, and whether design elements such as content structure, button
+              placement, and terminology effectively guide users in completing their tasks. I also want to identify
+              potential usability issues or friction points that could hinder the overall user experience and ensure
+              that the platform supports the needs and expectations of administrators in their work processes.
+            </p>
+            <p class="p-style">
+              During the testing session, participants were given a series of scenarios such as: searching for buyer
+              reviews, finding products with the highest ratings in a specific category, using filters to select
+              products with specific requirements, sharing information using product links, and checking sales data for
+              several products. These scenarios were designed to explore various aspects of the interface and system
+              interactions from the perspective of both new and experienced admins.
+            </p>
+            <p class="p-style">
+              By analyzing user behavior, feedback, and performance in completing each task, I gained valuable insights
+              to refine the existing design. The findings from this session helped ensure that the product development
+              direction fully supports admin needs, while enhancing efficiency and clarity at every stage of system use.
+            </p>
+            <p class="p-style">
+              Participants were given the following scenario to complete:<br />
+              1. You want to see reviews from buyers, how do you do that?<br />
+              2. You want to find out which products have the highest ratings in a particular category, what should you
+              do?<br />
+              3. You want to check products based on only a few criteria, so you need a filter for this. How do you do
+              that?<br />
+              4. You want to share information using product detail links. What can you do?<br />
+              5. You want to check sales for several products. How do you check them?
+            </p>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="subheading-style">Reflection</span>
+
+            <p class="p-style">
+              If I had additional time, I would:<br />
+              1. Continue the design iteration process through further usability testing using more structured scenarios
+              and task based activities typical of administrators. This approach aims to further validate the
+              information structure, visual clarity, and effectiveness of key interactions such as transaction data
+              access, download status, and digital product navigation.<br />
+              2. Conduct a comprehensive usability review of the design, focusing on UI element consistency,
+              readability, and workflow simplification to ensure the admin experience remains intuitive and supports
+              their daily workflow efficiency.
+            </p>
+          </div>
+
+
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="max-w-[1380px] mx-auto pt-24 px-6 lg-px-0 text-white relative">
+    <div class="flex flex-col gap-7 pb-8 lg:pb-32">
+      <div class="text-2xl lg:mb-2">&copy; 2024</div>
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 lg:gap-0">
+        <div class="flex flex-col text-3xl lg:text-5xl uppercase leading-16">
+          <span>Let's Start</span>
+          <span class="bg-gradient-to-b from-[#F5F5F5] to-[#CFF0E1] text-transparent bg-clip-text">Work Together</span>
+        </div>
+        <div class="mb-4">
+          <div
+            class="relative flex items-center justify-center w-[178px] h-[57px] hover:opacity-80 transition-all duration-300">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
+            </div>
+            <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
+            </div>
+            <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl"
+              style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="../">
+              <div class="flex items-center gap-2 ">
+
+                <svg class="w-4 h-4">
+                  <use href="../assets/icons/thunderbolt.svg#thunderbolt" />
+                </svg>
+                <span
+                  class="bg-gradient-to-b from-[#1F2937] from-40% to-[#6B7280] to-60% bg-clip-text text-transparent font-bold">
+
+                  Contact Now
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6 lg:gap-0">
+        <div class="flex items-center">
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
+          San Francisco, USA
+        </div>
+        <div class="flex items-center">
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
+          HELLO@OMARHAMMOUDA.COM
+        </div>
+        <div class="flex items-center">
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
+          Dribbble
+        </div>
+        <div class="flex items-center">
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
+          LinkedIn
+        </div>
+        <div>
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
+          Behance
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="flex justify-center h-[280px]">
+    <img src="../assets/images/omar-footer.png" alt="omar-footer"
+      class="w-full lg:w-7/12 object-contain absolute lg:left-0">
+  </div>
+
+  <!-- Custom CSS for custom cursor -->
+  <style>
+    /* Custom cursor */
+    .custom-cursor {
+      position: fixed;
+      width: 12px;
+      height: 12px;
+      background-color: white;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.1s ease;
+      mix-blend-mode: difference;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5), 0px 0px 20px 0px rgba(255, 255, 255, 0.8);
+    }
+
+    .custom-cursor.hover {
+      transform: scale(2);
+      background-color: #F58427;
+    }
+  </style>
+
+  <script src="../js/main.js"></script>
+</body>
+
+</html>
