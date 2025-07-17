@@ -1915,16 +1915,6 @@
       }
     }
   }
-  .md\:group-hover\:grayscale {
-    @media (width >= 48rem) {
-      &:is(:where(.group):hover *) {
-        @media (hover: hover) {
-          --tw-grayscale: grayscale(100%);
-          filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-        }
-      }
-    }
-  }
   .lg\:-bottom-80 {
     @media (width >= 64rem) {
       bottom: calc(var(--spacing) * -80);

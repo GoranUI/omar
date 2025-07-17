@@ -1,29 +1,31 @@
 // Carousel functionality
 document.addEventListener("DOMContentLoaded", function () {
   const carousel = document.getElementById("projectCarousel");
+  const slides = carousel.children;
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
   const dots = document.querySelectorAll(".dot-indicator");
-
-  if (!carousel) return;
+  const slideCount = slides.length;
 
   let currentSlide = 0;
-  const maxSlides = 3;
-  let isDragging = false;
-  let startPos = 0;
-  let currentTranslate = 0;
-  let prevTranslate = 0;
 
-  // Get slide width based on screen size
+  function getSlidesToShow() {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
+  }
+
   function getSlideWidth() {
-    const isMobile = window.innerWidth < 768;
-    const slideWidth = isMobile ? 350 : 709;
-    const gap = isMobile ? 16 : 32;
-    return slideWidth + gap;
+    return slides[0].offsetWidth + parseInt(getComputedStyle(slides[0]).marginRight);
   }
 
   function updateCarousel() {
+    const slidesToShow = getSlidesToShow();
     const slideWidth = getSlideWidth();
+    // Allow going to the last slide, but cap at slideCount - 1
+    const maxIndex = slideCount - 1;
+    if (currentSlide > maxIndex) currentSlide = maxIndex;
+    if (currentSlide < 0) currentSlide = 0;
     const translateX = -currentSlide * slideWidth;
     carousel.style.transform = `translateX(${translateX}px)`;
 
@@ -31,30 +33,15 @@ document.addEventListener("DOMContentLoaded", function () {
     dots.forEach((dot, index) => {
       dot.classList.toggle("active", index === currentSlide);
     });
-
-    // Remove opacity restrictions for infinite loop
-    prevBtn.style.opacity = "1";
-    nextBtn.style.opacity = "1";
   }
 
-  // Arrow button functionality
   prevBtn.addEventListener("click", () => {
-    if (currentSlide === 0) {
-      // Jump to last slide with smooth transition
-      currentSlide = maxSlides - 1;
-    } else {
-      currentSlide--;
-    }
+    currentSlide--;
     updateCarousel();
   });
 
   nextBtn.addEventListener("click", () => {
-    if (currentSlide === maxSlides - 1) {
-      // Jump to first slide with smooth transition
-      currentSlide = 0;
-    } else {
-      currentSlide++;
-    }
+    currentSlide++;
     updateCarousel();
   });
 
@@ -65,68 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Touch/Swipe functionality
-  function touchStart(e) {
-    isDragging = true;
-    startPos = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
-    carousel.style.cursor = 'grabbing';
-    carousel.style.transition = 'none';
-  }
+  window.addEventListener('resize', updateCarousel);
 
-  function touchMove(e) {
-    if (!isDragging) return;
-    
-    e.preventDefault();
-    const currentPosition = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
-    const diff = currentPosition - startPos;
-    const slideWidth = getSlideWidth();
-    
-    currentTranslate = prevTranslate + diff;
-    const translateX = -currentSlide * slideWidth + diff;
-    
-    carousel.style.transform = `translateX(${translateX}px)`;
-  }
-
-  function touchEnd() {
-    isDragging = false;
-    carousel.style.cursor = 'grab';
-    carousel.style.transition = 'transform 0.5s ease-in-out';
-    
-    const slideWidth = getSlideWidth();
-    const diff = currentTranslate - prevTranslate;
-    
-    if (Math.abs(diff) > slideWidth * 0.3) {
-      if (diff > 0 && currentSlide > 0) {
-        currentSlide--;
-      } else if (diff < 0 && currentSlide < maxSlides - 1) {
-        currentSlide++;
-      }
-    }
-    
-    updateCarousel();
-    prevTranslate = currentTranslate;
-  }
-
-  // Mouse events
-  carousel.addEventListener('mousedown', touchStart);
-  carousel.addEventListener('mousemove', touchMove);
-  carousel.addEventListener('mouseup', touchEnd);
-  carousel.addEventListener('mouseleave', touchEnd);
-
-  // Touch events
-  carousel.addEventListener('touchstart', touchStart, { passive: false });
-  carousel.addEventListener('touchmove', touchMove, { passive: false });
-  carousel.addEventListener('touchend', touchEnd);
-
-  // Prevent context menu on long press
-  carousel.addEventListener('contextmenu', (e) => e.preventDefault());
-
-  // Handle window resize
-  window.addEventListener('resize', () => {
-    updateCarousel();
-  });
-
-  // Initialize
   updateCarousel();
 });
 
