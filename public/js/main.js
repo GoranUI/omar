@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!carousel) return;
 
   let currentSlide = 0;
-  const maxSlides = 11;
+  const maxSlides = 3;
   let isDragging = false;
   let startPos = 0;
   let currentTranslate = 0;
@@ -68,33 +68,33 @@ document.addEventListener("DOMContentLoaded", function () {
   // Touch/Swipe functionality
   function touchStart(e) {
     isDragging = true;
-    startPos = e.type === "mousedown" ? e.clientX : e.touches[0].clientX;
-    carousel.style.cursor = "grabbing";
-    carousel.style.transition = "none";
+    startPos = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+    carousel.style.cursor = 'grabbing';
+    carousel.style.transition = 'none';
   }
 
   function touchMove(e) {
     if (!isDragging) return;
-
+    
     e.preventDefault();
-    const currentPosition = e.type === "mousemove" ? e.clientX : e.touches[0].clientX;
+    const currentPosition = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
     const diff = currentPosition - startPos;
     const slideWidth = getSlideWidth();
-
+    
     currentTranslate = prevTranslate + diff;
     const translateX = -currentSlide * slideWidth + diff;
-
+    
     carousel.style.transform = `translateX(${translateX}px)`;
   }
 
   function touchEnd() {
     isDragging = false;
-    carousel.style.cursor = "grab";
-    carousel.style.transition = "transform 0.5s ease-in-out";
-
+    carousel.style.cursor = 'grab';
+    carousel.style.transition = 'transform 0.5s ease-in-out';
+    
     const slideWidth = getSlideWidth();
     const diff = currentTranslate - prevTranslate;
-
+    
     if (Math.abs(diff) > slideWidth * 0.3) {
       if (diff > 0 && currentSlide > 0) {
         currentSlide--;
@@ -102,27 +102,27 @@ document.addEventListener("DOMContentLoaded", function () {
         currentSlide++;
       }
     }
-
+    
     updateCarousel();
     prevTranslate = currentTranslate;
   }
 
   // Mouse events
-  carousel.addEventListener("mousedown", touchStart);
-  carousel.addEventListener("mousemove", touchMove);
-  carousel.addEventListener("mouseup", touchEnd);
-  carousel.addEventListener("mouseleave", touchEnd);
+  carousel.addEventListener('mousedown', touchStart);
+  carousel.addEventListener('mousemove', touchMove);
+  carousel.addEventListener('mouseup', touchEnd);
+  carousel.addEventListener('mouseleave', touchEnd);
 
   // Touch events
-  carousel.addEventListener("touchstart", touchStart, { passive: false });
-  carousel.addEventListener("touchmove", touchMove, { passive: false });
-  carousel.addEventListener("touchend", touchEnd);
+  carousel.addEventListener('touchstart', touchStart, { passive: false });
+  carousel.addEventListener('touchmove', touchMove, { passive: false });
+  carousel.addEventListener('touchend', touchEnd);
 
   // Prevent context menu on long press
-  carousel.addEventListener("contextmenu", (e) => e.preventDefault());
+  carousel.addEventListener('contextmenu', (e) => e.preventDefault());
 
   // Handle window resize
-  window.addEventListener("resize", () => {
+  window.addEventListener('resize', () => {
     updateCarousel();
   });
 
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Enhanced Custom Cursor functionality with smooth following
 document.addEventListener("DOMContentLoaded", function () {
   const cursor = document.getElementById("customCursor");
-
+  
   if (!cursor) return;
 
   // Cursor position variables
@@ -141,10 +141,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let mouseY = 0;
   let cursorX = 0;
   let cursorY = 0;
-
+  
   // Smoothing factor (lower = smoother, higher = more responsive)
   const smoothing = 0.12;
-
+  
   // Distance offset for the trailing effect
   const distanceOffset = 8;
 
@@ -159,19 +159,19 @@ document.addEventListener("DOMContentLoaded", function () {
     // Calculate distance between current cursor position and mouse position
     const deltaX = mouseX - cursorX;
     const deltaY = mouseY - cursorY;
-
+    
     // Apply smoothing with easing
     cursorX += deltaX * smoothing;
     cursorY += deltaY * smoothing;
-
+    
     // Apply distance offset for trailing effect
     const offsetX = deltaX * 0.08; // Slight offset based on movement direction
     const offsetY = deltaY * 0.08;
-
+    
     // Update cursor position with offset
-    cursor.style.left = cursorX - 6 + offsetX + "px";
-    cursor.style.top = cursorY - 6 + offsetY + "px";
-
+    cursor.style.left = (cursorX - 6 + offsetX) + "px";
+    cursor.style.top = (cursorY - 6 + offsetY) + "px";
+    
     // Continue animation
     requestAnimationFrame(animateCursor);
   }
@@ -420,29 +420,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function toggleMenu() {
       isMenuOpen = !isMenuOpen;
-
+      
       if (isMenuOpen) {
         // Open menu
         mobileMenuOverlay.classList.remove("translate-x-full");
         mobileMenuOverlay.classList.add("translate-x-0");
-
+        
         // Animate hamburger to X
         hamburgerLine1.classList.add("rotate-45", "translate-y-2");
         hamburgerLine2.classList.add("opacity-0");
         hamburgerLine3.classList.add("-rotate-45", "-translate-y-2");
-
+        
         // Prevent body scroll
         document.body.style.overflow = "hidden";
       } else {
         // Close menu
         mobileMenuOverlay.classList.remove("translate-x-0");
         mobileMenuOverlay.classList.add("translate-x-full");
-
+        
         // Animate X back to hamburger
         hamburgerLine1.classList.remove("rotate-45", "translate-y-2");
         hamburgerLine2.classList.remove("opacity-0");
         hamburgerLine3.classList.remove("-rotate-45", "-translate-y-2");
-
+        
         // Restore body scroll
         document.body.style.overflow = "";
       }
@@ -452,7 +452,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileMenuBtn.addEventListener("click", toggleMenu);
 
     // Close menu when clicking on a link
-    mobileMenuLinks.forEach((link) => {
+    mobileMenuLinks.forEach(link => {
       link.addEventListener("click", () => {
         if (isMenuOpen) {
           toggleMenu();
