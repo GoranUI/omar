@@ -1236,6 +1236,20 @@
     .footer-hover:hover .footer-text::after {
       width: 100%;
     }
+
+    /* FAQ Animation styles */
+    .faq-answer {
+      transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .faq-answer.faq-open {
+      padding-top: 12px;
+      max-height: 9999px !important;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease-in-out;
+    }
   </style>
 
   <script src="../js/main.js"></script>
