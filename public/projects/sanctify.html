@@ -1222,7 +1222,11 @@
       width: 0%;
       height: 2px;
       background: linear-gradient(to right, #C85A00, #F58427);
+<<<<<<< HEAD
       transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+=======
+      transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+>>>>>>> 9ad8e8db47a7d820077a6edff7525a36fada6620
       border-radius: 2px;
     }
 
@@ -1232,10 +1236,30 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+<<<<<<< HEAD
 
     .footer-hover:hover .footer-text::after {
       width: 100%;
     }
+=======
+    .footer-hover:hover .footer-text::after {
+      width: 100%;
+    }
+
+    /* FAQ Animation styles */
+    .faq-answer {
+      transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .faq-answer.faq-open {
+      padding-top: 12px;
+      max-height: 9999px !important;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease-in-out;
+    }
+>>>>>>> 9ad8e8db47a7d820077a6edff7525a36fada6620
   </style>
 
   <script src="../js/main.js"></script>
