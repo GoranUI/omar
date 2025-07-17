@@ -666,35 +666,6 @@
     <footer class="max-w-[1380px] mx-auto pt-24 px-6 lg-px-0 text-white relative">
         <div class="flex flex-col gap-7 pb-8 lg:pb-32">
             <div class="text-2xl lg:mb-2">&copy; 2024</div>
-            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 lg:gap-0">
-                <div class="flex flex-col text-3xl lg:text-5xl uppercase leading-16">
-                    <span>Let's Start</span>
-                    <span class="bg-gradient-to-b from-[#F5F5F5] to-[#CFF0E1] text-transparent bg-clip-text">Work Together</span>
-                </div>
-                <div class="mb-4">
-                    <div
-                        class="relative flex items-center justify-center w-[178px] h-[57px] hover:opacity-80 transition-all duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
-                        </div>
-                        <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
-                        </div>
-                        <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl"
-                            style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="../">
-                            <div class="flex items-center gap-2 ">
-
-                                <svg class="w-4 h-4">
-                                    <use href="../assets/icons/thunderbolt.svg#thunderbolt" />
-                                </svg>
-                                <span
-                                    class="bg-gradient-to-b from-[#1F2937] from-40% to-[#6B7280] to-60% bg-clip-text text-transparent font-bold">
-
-                                    Contact Now
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
             <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6 lg:gap-0">
                 <div class="flex items-center cursor-pointer footer-hover">
                     <span class="w-2.5 h-2.5 bg-white inline-block mr-2 footer-dot"></span>
@@ -826,6 +797,20 @@
         }
         .footer-hover:hover .footer-text::after {
             width: 100%;
+        }
+
+        /* FAQ Animation styles */
+        .faq-answer {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        .faq-answer.faq-open {
+            padding-top: 12px;
+            max-height: 9999px !important;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease-in-out;
         }
     </style>
 
