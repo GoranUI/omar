@@ -793,55 +793,26 @@
   <footer class="max-w-[1380px] mx-auto pt-24 px-6 lg-px-0 text-white relative">
     <div class="flex flex-col gap-7 pb-8 lg:pb-32">
       <div class="text-2xl lg:mb-2">&copy; 2024</div>
-      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 lg:gap-0">
-        <div class="flex flex-col text-3xl lg:text-5xl uppercase leading-16">
-          <span>Let's Start</span>
-          <span class="bg-gradient-to-b from-[#F5F5F5] to-[#CFF0E1] text-transparent bg-clip-text">Work Together</span>
-        </div>
-        <div class="mb-4">
-          <div
-            class="relative flex items-center justify-center w-[178px] h-[57px] hover:opacity-80 transition-all duration-300">
-            <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
-            </div>
-            <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
-            </div>
-            <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl"
-              style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="../">
-              <div class="flex items-center gap-2 ">
-
-                <svg class="w-4 h-4">
-                  <use href="../assets/icons/thunderbolt.svg#thunderbolt" />
-                </svg>
-                <span
-                  class="bg-gradient-to-b from-[#1F2937] from-40% to-[#6B7280] to-60% bg-clip-text text-transparent font-bold">
-
-                  Contact Now
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
       <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6 lg:gap-0">
-        <div class="flex items-center">
-          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
-          San Francisco, USA
+        <div class="flex items-center cursor-pointer footer-hover">
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2 footer-dot"></span>
+          <span class="footer-text">San Francisco, USA</span>
         </div>
-        <div class="flex items-center">
-          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
-          HELLO@OMARHAMMOUDA.COM
+        <div class="flex items-center cursor-pointer footer-hover">
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2 footer-dot"></span>
+          <span class="footer-text">HELLO@OMARHAMMOUDA.COM</span>
         </div>
-        <div class="flex items-center">
-          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
-          Dribbble
+        <div class="flex items-center cursor-pointer footer-hover">
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2 footer-dot"></span>
+          <span class="footer-text">Dribbble</span>
         </div>
-        <div class="flex items-center">
-          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
-          LinkedIn
+        <div class="flex items-center cursor-pointer footer-hover">
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2 footer-dot"></span>
+          <span class="footer-text">LinkedIn</span>
         </div>
-        <div>
-          <span class="w-2.5 h-2.5 bg-white inline-block mr-2"></span>
-          Behance
+        <div class="flex items-center cursor-pointer footer-hover">
+          <span class="w-2.5 h-2.5 bg-white inline-block mr-2 footer-dot"></span>
+          <span class="footer-text">Behance</span>
         </div>
       </div>
     </div>
@@ -853,7 +824,7 @@
 
   <!-- Custom CSS for custom cursor -->
   <style>
-    /* Custom cursor */
+    /* Enhanced Custom cursor */
     .custom-cursor {
       position: fixed;
       width: 12px;
@@ -862,14 +833,112 @@
       border-radius: 50%;
       pointer-events: none;
       z-index: 9999;
-      transition: transform 0.1s ease;
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        background-color 0.3s ease,
+        opacity 0.3s ease;
       mix-blend-mode: difference;
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5), 0px 0px 20px 0px rgba(255, 255, 255, 0.8);
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5),
+        0px 0px 20px 0px rgba(255, 255, 255, 0.8);
+      will-change: transform, left, top;
     }
 
     .custom-cursor.hover {
-      transform: scale(2);
+      transform: scale(2.5);
       background-color: #F58427;
+      box-shadow: 0px 0px 15px 0px rgba(245, 132, 39, 0.6),
+        0px 0px 30px 0px rgba(245, 132, 39, 0.4);
+    }
+
+    .custom-cursor.click {
+      transform: scale(0.8);
+      background-color: #C85A00;
+      box-shadow: 0px 0px 20px 0px rgba(200, 90, 0, 0.8),
+        0px 0px 40px 0px rgba(200, 90, 0, 0.6);
+    }
+
+    /* Smooth cursor trail effect */
+    .custom-cursor::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      border-radius: inherit;
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0.3;
+      transition: all 0.3s ease;
+    }
+
+    .custom-cursor.hover::before {
+      transform: translate(-50%, -50%) scale(1.2);
+      opacity: 0.6;
+    }
+
+    /* Footer hover gradient */
+    .footer-hover {
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 10;
+    }
+
+    .footer-hover .footer-dot {
+      transition: background 0.3s, border-radius 0.3s, width 0.3s, height 0.3s;
+      width: 16px;
+      height: 16px;
+      border-radius: 0;
+      display: inline-block;
+    }
+
+    .footer-hover:hover .footer-dot {
+      background: linear-gradient(to bottom, #C85A00, #F58427) !important;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+    }
+
+    .footer-hover .footer-text {
+      position: relative;
+      display: inline-block;
+      transition: color 0.3s;
+    }
+
+    .footer-hover .footer-text::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(to right, #C85A00, #F58427);
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 2px;
+    }
+
+    .footer-hover:hover .footer-text {
+      background: linear-gradient(to bottom, #C85A00, #F58427);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-hover:hover .footer-text::after {
+      width: 100%;
+    }
+
+    /* FAQ Animation styles */
+    .faq-answer {
+      transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .faq-answer.faq-open {
+      padding-top: 12px;
+      max-height: 9999px !important;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease-in-out;
     }
   </style>
 
