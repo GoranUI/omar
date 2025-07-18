@@ -417,3 +417,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// Pause/play video on hover for Recent Designs cards
+const recentDesignVideos = document.querySelectorAll('.recent-design-video');
+recentDesignVideos.forEach((video) => {
+  const parentContainer = video.closest('.group');
+  if (parentContainer) {
+    parentContainer.addEventListener('mouseenter', () => {
+      video.pause();
+    });
+    parentContainer.addEventListener('mouseleave', () => {
+      video.play();
+    });
+  }
+});
