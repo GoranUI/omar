@@ -35,6 +35,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Video pause on hover functionality
+  const videos = carousel.querySelectorAll('video');
+  videos.forEach((video) => {
+    const parentContainer = video.closest('.group');
+    if (parentContainer) {
+      parentContainer.addEventListener('mouseenter', () => {
+        video.pause();
+      });
+      
+      parentContainer.addEventListener('mouseleave', () => {
+        video.play();
+      });
+    }
+  });
+
   prevBtn.addEventListener("click", () => {
     currentSlide--;
     updateCarousel();
