@@ -1,31 +1,29 @@
-// Carousel functionality
+// Hero Carousel functionality with smooth horizontal scroll behavior
 document.addEventListener("DOMContentLoaded", function () {
   const carousel = document.getElementById("projectCarousel");
   const slides = carousel.children;
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
   const dots = document.querySelectorAll(".dot-indicator");
-  const slideCount = slides.length;
+  const slideCount = 5; // 4 project cards + 1 CTA card
 
   let currentSlide = 0;
 
-  function getSlidesToShow() {
-    if (window.innerWidth >= 1024) return 3;
-    if (window.innerWidth >= 768) return 2;
-    return 1;
-  }
+  // Touch/swipe variables
+  let touchStartX = 0;
+  let touchEndX = 0;
 
   function getSlideWidth() {
     return slides[0].offsetWidth + parseInt(getComputedStyle(slides[0]).marginRight);
   }
 
   function updateCarousel() {
-    const slidesToShow = getSlidesToShow();
     const slideWidth = getSlideWidth();
-    // Allow going to the last slide, but cap at slideCount - 1
     const maxIndex = slideCount - 1;
+    
     if (currentSlide > maxIndex) currentSlide = maxIndex;
     if (currentSlide < 0) currentSlide = 0;
+    
     const translateX = -currentSlide * slideWidth;
     carousel.style.transform = `translateX(${translateX}px)`;
 
@@ -50,16 +48,93 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Horizontal scroll behavior for touchpad gestures
+  function handleHorizontalScroll(e) {
+    // Only handle horizontal scroll events (touchpad left/right)
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+      e.preventDefault();
+      
+      const heroSection = document.querySelector('#home');
+      if (heroSection) {
+        const heroRect = heroSection.getBoundingClientRect();
+        
+        // Only activate when carousel is visible
+        if (heroRect.top < window.innerHeight && heroRect.bottom > 0) {
+          const scrollSensitivity = 0.5; // Adjust for sensitivity
+          const scrollThreshold = 50; // Minimum scroll distance
+          
+          if (Math.abs(e.deltaX) > scrollThreshold) {
+            if (e.deltaX > 0) {
+              // Scroll right - previous slide
+              if (currentSlide > 0) {
+                currentSlide--;
+                updateCarousel();
+              }
+            } else {
+              // Scroll left - next slide
+              if (currentSlide < slideCount - 1) {
+                currentSlide++;
+                updateCarousel();
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Touch/swipe functionality
+  function handleTouchStart(e) {
+    touchStartX = e.touches[0].clientX;
+  }
+
+  function handleTouchMove(e) {
+    if (!touchStartX) return;
+    
+    touchEndX = e.touches[0].clientX;
+    const diffX = touchStartX - touchEndX;
+    const threshold = 50; // Minimum swipe distance
+    
+    if (Math.abs(diffX) > threshold) {
+      if (diffX > 0) {
+        // Swipe left - next slide
+        if (currentSlide < slideCount - 1) {
+          currentSlide++;
+          updateCarousel();
+        }
+      } else {
+        // Swipe right - previous slide
+        if (currentSlide > 0) {
+          currentSlide--;
+          updateCarousel();
+        }
+      }
+      touchStartX = 0;
+      touchEndX = 0;
+    }
+  }
+
+  function handleTouchEnd() {
+    touchStartX = 0;
+    touchEndX = 0;
+  }
+
+  // Button controls
   prevBtn.addEventListener("click", () => {
-    currentSlide--;
-    updateCarousel();
+    if (currentSlide > 0) {
+      currentSlide--;
+      updateCarousel();
+    }
   });
 
   nextBtn.addEventListener("click", () => {
-    currentSlide++;
-    updateCarousel();
+    if (currentSlide < slideCount - 1) {
+      currentSlide++;
+      updateCarousel();
+    }
   });
 
+  // Dot controls
   dots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
       currentSlide = index;
@@ -67,8 +142,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Touch events for mobile
+  carousel.addEventListener('touchstart', handleTouchStart, { passive: true });
+  carousel.addEventListener('touchmove', handleTouchMove, { passive: true });
+  carousel.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+  // Wheel event for horizontal scroll behavior (touchpad left/right)
+  window.addEventListener('wheel', handleHorizontalScroll, { passive: false });
   window.addEventListener('resize', updateCarousel);
 
+  // Initialize carousel
   updateCarousel();
 });
 
@@ -444,6 +527,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Show all hidden projects
       hiddenProjects.forEach(project => {
         project.classList.remove('hidden', 'md:hidden');
+        project.classList.add('block');
       });
       
       // Hide the show more button and show the show less button
@@ -464,9 +548,10 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // Show Less button functionality
     showLessBtn.addEventListener('click', function() {
-      // Hide all projects beyond the first 4
+      // Hide all hidden projects
       hiddenProjects.forEach(project => {
         project.classList.add('hidden', 'md:hidden');
+        project.classList.remove('block');
       });
       
       // Show the show more button and hide the show less button
