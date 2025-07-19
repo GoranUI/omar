@@ -13,7 +13,7 @@
 }
 
 .p-style {
-  @apply text-[15px] font-normal leading-[1.8em] tracking-[-0.02em] text-white/70 text-left mb-5 font-sans;
+  @apply text-[15px] font-normal leading-[1.8em] tracking-[-0.02em] text-white/70  mb-5 font-sans;
 }
 
 .heading-style {
