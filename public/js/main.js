@@ -431,3 +431,58 @@ recentDesignVideos.forEach((video) => {
     });
   }
 });
+
+// Show More/Show Less Projects functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const showMoreBtn = document.getElementById('show-more-projects');
+  const showLessBtn = document.getElementById('show-less-projects');
+  const hiddenProjects = document.querySelectorAll('[data-project="hidden"]');
+  
+  if (showMoreBtn && showLessBtn && hiddenProjects.length > 0) {
+    // Show More button functionality
+    showMoreBtn.addEventListener('click', function() {
+      // Show all hidden projects
+      hiddenProjects.forEach(project => {
+        project.classList.remove('hidden', 'md:hidden');
+      });
+      
+      // Hide the show more button and show the show less button
+      showMoreBtn.classList.add('hidden');
+      showLessBtn.classList.remove('hidden');
+      
+      // Smooth scroll to show the newly revealed projects
+      setTimeout(() => {
+        const firstHiddenProject = hiddenProjects[0];
+        if (firstHiddenProject) {
+          firstHiddenProject.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'nearest' 
+          });
+        }
+      }, 100);
+    });
+    
+    // Show Less button functionality
+    showLessBtn.addEventListener('click', function() {
+      // Hide all projects beyond the first 4
+      hiddenProjects.forEach(project => {
+        project.classList.add('hidden', 'md:hidden');
+      });
+      
+      // Show the show more button and hide the show less button
+      showMoreBtn.classList.remove('hidden');
+      showLessBtn.classList.add('hidden');
+      
+      // Smooth scroll back to the projects section
+      setTimeout(() => {
+        const projectsSection = document.getElementById('projects');
+        if (projectsSection) {
+          projectsSection.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+          });
+        }
+      }, 100);
+    });
+  }
+});
