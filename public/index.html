@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   
   <!-- Primary Meta Tags -->
   <title>Omar M Hammouda - Senior UX/UI Designer | Product Design Expert</title>
@@ -204,11 +204,11 @@
         <div class="flex flex-col space-y-4">
           <!-- Orange Projects Button -->
           <div
-            class="relative flex items-center justify-center w-full h-[57px] hover:opacity-80 transition-all duration-300">
+            class="relative flex items-center justify-center p-1 h-[57px] w-full sm:w-fit hover:opacity-80 transition-all duration-300">
             <div class="absolute inset-0 bg-gradient-to-b from-[#C85A00] to-[#F58427] rounded-2xl"></div>
             <div class="absolute inset-0.5 bg-gradient-to-b from-[#FFA255] via-[#934200] to-[#FFA255] rounded-[15px]">
             </div>
-            <a class="relative bg-gradient-to-b from-[#F58427] to-[#C85A00] text-white font-semibold px-5 py-3 rounded-xl w-full text-center"
+            <a class="relative bg-gradient-to-b from-[#F58427] to-[#C85A00] text-white font-semibold px-5 py-3 rounded-xl w-full sm:w-fit text-center"
               style="box-shadow: 0px -1px 0px 0px #FFFFFF3D inset;" href="#projects">
               See All Projects
             </a>
@@ -216,11 +216,10 @@
 
           <!-- White Contact Button -->
           <div
-            class="relative flex items-center justify-center w-full h-[57px] hover:opacity-80 transition-all duration-300">
+            class="relative flex items-center justify-center p-1 h-[57px] w-full sm:w-fit hover:opacity-80 transition-all duration-300">
             <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl"></div>
-            <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
-            </div>
-            <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl w-full text-center flex items-center justify-center gap-2"
+            <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]"></div>
+            <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl w-full sm:w-fit text-center flex items-center gap-2 justify-center sm:justify-start"
               style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="./contact.html">
               <svg class="w-4 h-4">
                 <use href="./assets/icons/thunderbolt.svg#thunderbolt" />
@@ -248,29 +247,78 @@
 
     <div class="max-w-7xl mx-auto pt-32 lg:pt-48 pb-8 px-6 xl:px-0">
       <!-- Header Section -->
-      <div class="relative mb-8">
-        <!-- Role Badge -->
-        <div class="inline-flex items-center bg-[#0f0f0f] rounded-xl px-4 py-2 mb-4"
-          style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
-          <div class="w-3 h-3 bg-transparent border-2 border-white rounded-full mr-3 flex items-center justify-center">
-            <div class="w-1 h-1 bg-white rounded-full"></div>
+      <div class="relative mb-8 flex flex-col lg:flex-row lg:items-start lg:justify-between">
+        <!-- Left Side - Main Content -->
+        <div class="lg:flex-1 lg:max-w-2xl">
+          <!-- Role Badge -->
+          <div class="inline-flex items-center bg-[#0f0f0f] rounded-xl px-4 py-2 mb-4"
+            style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
+            <div class="w-3 h-3 bg-transparent border-2 border-white rounded-full mr-3 flex items-center justify-center">
+              <div class="w-1 h-1 bg-white rounded-full"></div>
+            </div>
+            <span class="text-white text-sm font-['Inter']">Senior UX/UI & Product Designer</span>
           </div>
-          <span class="text-white text-sm font-['Inter']">Senior UX/UI & Product Designer</span>
+
+          <!-- Main Heading -->
+          <div class="mb-4 relative">
+            <h1 class="text-4xl md:text-6xl lg:text-[80px] font-semibold text-gray-100 leading-tight">
+              <span class="text-gray-100">Omar M</span>
+              <span class="text-white font-['Inter']"> </span>
+              <span class="text-white/60">Hammouda</span>
+            </h1>
+          </div>
+
+          <!-- Description -->
+          <div class="mb-12">
+            <p class="text-white/60 text-lg md:text-xl font-medium leading-relaxed">
+              I'm a Senior UX/UI designer with 8+ years of experience turning complex problems into clean, intuitive digital
+              experiences. Let's build something great!
+            </p>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col gap-4 mb-16">
+            <!-- Primary Button -->
+            <div
+              class="relative flex items-center justify-center p-1 h-[57px] w-full sm:w-fit hover:opacity-80 transition-all duration-300">
+              <div class="absolute inset-0 bg-gradient-to-b from-[#C85A00] to-[#F58427] rounded-2xl">
+              </div>
+              <div class="absolute inset-0.5 bg-gradient-to-b from-[#FFA255] via-[#934200] to-[#FFA255] rounded-[15px]">
+              </div>
+              <a class="relative bg-gradient-to-b from-[#F58427] to-[#C85A00] text-white font-semibold px-5 py-3 rounded-xl w-full sm:w-fit text-center"
+                style="box-shadow: 0px -1px 0px 0px #FFFFFF3D inset;" href="#projects">
+                See All Projects
+              </a>
+            </div>
+
+            <!-- Secondary Button -->
+            <div
+              class="relative flex items-center justify-center p-1 h-[57px] w-full sm:w-fit hover:opacity-80 transition-all duration-300">
+              <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
+              </div>
+              <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
+              </div>
+              <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl w-full sm:w-fit text-center flex items-center gap-2 justify-center sm:justify-start"
+                style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="./contact.html">
+                <svg class="w-4 h-4">
+                  <use href="./assets/icons/thunderbolt.svg#thunderbolt" />
+                </svg>
+                <span
+                  class="bg-gradient-to-b from-[#1F2937] from-40% to-[#6B7280] to-60% bg-clip-text text-transparent font-bold">
+                  Contact Now
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- Main Heading -->
-        <div class="mb-4 relative">
-          <h1 class="text-4xl md:text-6xl lg:text-[80px] font-semibold text-gray-100 leading-tight">
-            <span class="text-gray-100">Omar M</span>
-            <span class="text-white font-['Inter']"> </span>
-            <span class="text-white/60">Hammouda</span>
-          </h1>
-
+        <!-- Right Side - Desktop Only -->
+        <div class="hidden lg:flex lg:flex-col lg:items-end lg:space-y-6 lg:ml-8">
           <!-- Testimonial 1 -->
           <div
-            class="absolute xl:-top-20 xl:right-[15%] top-105 md:top-85 md:right-60 xl:transform -rotate-12 z-10 transform animate-soft-bounce hidden md:block"
+            class="transform -rotate-12 z-10 animate-soft-bounce"
             style="animation-delay: 0s;">
-            <div class="bg-[#0F0F0F] rounded-xl p-6 shadow-2xl w-[65%] max-w-[360px]"
+            <div class="bg-[#0F0F0F] rounded-xl p-6 shadow-2xl w-[360px]"
               style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
               <p class="text-white text-[15px] font-['Inter'] mb-4">"Omar's design intuition is unmatched.<br>Our product is now both beautiful and a joy to use."</p>
               <p class="text-white/50 text-[15px] font-['Inter'] text-right">-Sarah M., Product Lead</p>
@@ -282,9 +330,9 @@
 
           <!-- Testimonial 2 -->
           <div
-            class="absolute xl:-bottom-40 xl:-right-5 lg:-bottom-80 md:-bottom-130 md:right-20 -bottom-180 -right-0 xl:transform rotate-6 z-10 animate-soft-bounce hidden md:block"
+            class="transform rotate-6 z-10 animate-soft-bounce"
             style="animation-delay: 1.5s;">
-            <div class="bg-[#0F0F0F] rounded-xl p-6 shadow-2xl w-[65%] max-w-[360px]"
+            <div class="bg-[#0F0F0F] rounded-xl p-6 shadow-2xl w-[360px]"
               style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
               <p class="text-white text-sm font-['Inter'] mb-4">"From concept to launch, Omar elevated our brand and user experience beyond expectations."</p>
               <p class="text-white/50 text-sm font-['Inter'] text-right">-James R., Startup Founder</p>
@@ -292,53 +340,6 @@
             <svg class="w-6 h-6 absolute -top-4 -left-4">
               <use href="./assets/icons/cursor-left.svg#cursor-left" />
             </svg>
-          </div>
-        </div>
-
-        <!-- Description -->
-        <div class="max-w-2xl mb-12">
-          <p class="text-white/60 text-lg md:text-xl font-medium leading-relaxed">
-            I'm a Senior UX/UI designer with 8+ years of experience turning complex problems into clean, intuitive digital
-            experiences. Let's build something great!
-          </p>
-        </div>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 mb-16">
-          <!-- Primary Button -->
-          <div
-            class="relative flex items-center justify-center w-[168px] h-[57px] hover:opacity-80 transition-all duration-300">
-            <div class="absolute inset-0 bg-gradient-to-b from-[#C85A00] to-[#F58427] rounded-2xl">
-            </div>
-            <div class="absolute inset-0.5 bg-gradient-to-b from-[#FFA255] via-[#934200] to-[#FFA255] rounded-[15px]">
-            </div>
-            <a class="relative bg-gradient-to-b from-[#F58427] to-[#C85A00] text-white font-semibold px-5 py-3 rounded-xl"
-              style="box-shadow: 0px -1px 0px 0px #FFFFFF3D inset;" href="#projects">
-              See All Projects
-            </a>
-          </div>
-
-          <!-- Secondary Button -->
-          <div
-            class="relative flex items-center justify-center p-1 h-[57px] hover:opacity-80 transition-all duration-300">
-            <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
-            </div>
-            <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
-            </div>
-            <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl"
-              style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="./contact.html">
-              <div class="flex items-center gap-2 ">
-
-                <svg class="w-4 h-4">
-                  <use href="./assets/icons/thunderbolt.svg#thunderbolt" />
-                </svg>
-                <span
-                  class="bg-gradient-to-b from-[#1F2937] from-40% to-[#6B7280] to-60% bg-clip-text text-transparent font-bold">
-
-                  Contact Now
-                </span>
-              </div>
-            </a>
           </div>
         </div>
       </div>
@@ -392,7 +393,7 @@
               <div
                 class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
                 <picture>
-  <source srcset="./assets/images/hiyero/hiyero-hero.webp" type="image/webp">
+  <source srcset="./assets/images/hiyero/hiyero-hero.avif" type="image/webp">
   <img src="./assets/images/hiyero/hiyero-hero.avif" alt="Hiyero"
                   class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" loading="lazy" />
 </picture>
@@ -632,12 +633,12 @@
             </div>
             <!-- Secondary button -->
             <div
-              class="relative flex w-fit items-center justify-center p-1 h-[57px] mt-8 hover:opacity-80 transition-all duration-300">
+              class="relative flex w-fit items-center justify-center p-1 h-[57px] mt-8 w-full sm:w-fit text-centar hover:opacity-80 transition-all duration-300">
               <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
               </div>
               <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
               </div>
-              <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl"
+              <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl w-full sm:w-fit text-center flex items-center gap-2 justify-center justify-start"
                 style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="./contact.html">
                 <div class="flex items-center gap-2 ">
 
@@ -771,7 +772,7 @@
             </div>
             <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
             </div>
-            <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl"
+            <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl w-full sm:w-auto text-center sm:w-fit flex items-center gap-2 justify-center sm:justify-start sm:w-fit"
               style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="./contact.html">
               <div class="flex items-center gap-2 ">
 
@@ -830,7 +831,7 @@
            <div
              class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
              <picture>
-  <source srcset="./assets/images/hiyero/hiyero-hero.webp" type="image/webp">
+  <source srcset="./assets/images/hiyero/hiyero-hero.avif" type="image/webp">
   <img src="./assets/images/hiyero/hiyero-hero.avif" alt="Hiyero"
                class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" loading="lazy" />
 </picture>
@@ -990,7 +991,7 @@
            <div
              class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
              <picture>
-  <source srcset="./assets/images/hiyero/hiyero-hero.webp" type="image/webp">
+  <source srcset="./assets/images/hiyero/hiyero-hero.avif" type="image/webp">
   <img src="./assets/images/hiyero/hiyero-hero.avif" alt="Hiyero"
                class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" loading="lazy" />
 </picture>
@@ -1487,12 +1488,12 @@
           <div class="flex flex-col sm:flex-row gap-4">
             <!-- Primary Button -->
             <div
-              class="relative flex items-center justify-center w-[168px] h-[57px] hover:opacity-80 transition-all duration-300">
+              class="relative flex items-center justify-center p-1 h-[57px] w-full sm:w-fit hover:opacity-80 transition-all duration-300">
               <div class="absolute inset-0 bg-gradient-to-b from-[#C85A00] to-[#F58427] rounded-2xl">
               </div>
               <div class="absolute inset-0.5 bg-gradient-to-b from-[#FFA255] via-[#934200] to-[#FFA255] rounded-[15px]">
               </div>
-              <a class="relative bg-gradient-to-b from-[#F58427] to-[#C85A00] text-white font-semibold px-5 py-3 rounded-xl"
+              <a class="relative bg-gradient-to-b from-[#F58427] to-[#C85A00] text-white font-semibold px-5 py-3 rounded-xl w-full sm:w-fit text-center"
                 style="box-shadow: 0px -1px 0px 0px #FFFFFF3D inset;" href="#projects">
                 See All Projects
               </a>
@@ -1500,14 +1501,14 @@
 
             <!-- Secondary Button -->
             <div
-              class="relative flex items-center justify-center p-1 h-[57px] hover:opacity-80 transition-all duration-300">
+              class="relative flex items-center justify-center p-1 h-[57px]  w-full sm:w-fit hover:opacity-80 transition-all duration-300">
               <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
               </div>
               <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
               </div>
-              <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl"
+              <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl  w-full sm:w-fit text-center"
                 style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="./contact.html">
-                <div class="flex items-center gap-2 ">
+                <div class="flex items-center gap-2 justify-center sm:justify-start">
 
                   <svg class="w-4 h-4">
                     <use href="./assets/icons/thunderbolt.svg#thunderbolt" />
@@ -1901,12 +1902,12 @@
           <div class="flex flex-col md:flex-row gap-4 mt-6">
             <!-- Primary Button -->
             <div
-              class="relative flex items-center justify-center w-[168px] h-[57px] hover:opacity-80 transition-all duration-300">
+              class="relative flex items-center justify-center p-1 h-[57px] w-full sm:w-fit hover:opacity-80 transition-all duration-300">
               <div class="absolute inset-0 bg-gradient-to-b from-[#C85A00] to-[#F58427] rounded-2xl">
               </div>
               <div class="absolute inset-0.5 bg-gradient-to-b from-[#FFA255] via-[#934200] to-[#FFA255] rounded-[15px]">
               </div>
-              <a class="relative bg-gradient-to-b from-[#F58427] to-[#C85A00] text-white font-semibold px-5 py-3 rounded-xl"
+              <a class="relative bg-gradient-to-b from-[#F58427] to-[#C85A00] text-white font-semibold px-5 py-3 rounded-xl w-full sm:w-fit text-center"
                 style="box-shadow: 0px -1px 0px 0px #FFFFFF3D inset;" href="#projects">
                 See All Projects
               </a>
@@ -1914,14 +1915,14 @@
 
             <!-- Secondary Button -->
             <div
-              class="relative flex items-center justify-center p-1 h-[57px] hover:opacity-80 transition-all duration-300">
+              class="relative flex items-center justify-center p-1 h-[57px]  w-full sm:w-fit hover:opacity-80 transition-all duration-300">
               <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
               </div>
               <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
               </div>
-              <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl"
+              <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl  w-full sm:w-fit text-center"
                 style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="./contact.html">
-                <div class="flex items-center gap-2 ">
+                <div class="flex items-center gap-2 justify-center sm:justify-start">
                   <svg class="w-4 h-4">
                     <use href="./assets/icons/thunderbolt.svg#thunderbolt" />
                   </svg>
@@ -2191,7 +2192,7 @@
             </div>
             <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
             </div>
-            <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl"
+            <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl w-full sm:w-auto text-center sm:w-fit flex items-center gap-2 justify-center sm:justify-start sm:w-fit"
               style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="./contact.html">
               <div class="flex items-center gap-2 ">
 
