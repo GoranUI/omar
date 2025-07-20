@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/omarmham/public_html/
-    - /bin/cp -R public/* $DEPLOYPATH
+    - /bin/cp -R public/index.html public/contact.html public/contact-success.html public/output.css public/sitemap.xml public/robots.txt public/assets public/projects public/js 
