@@ -948,6 +948,57 @@
       outline: 2px solid #F58427;
       outline-offset: 2px;
     }
+
+    /* Footer hover gradient */
+    .footer-hover {
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 10;
+    }
+
+    .footer-hover .footer-dot {
+      transition: background 0.3s, border-radius 0.3s, width 0.3s, height 0.3s;
+      width: 16px;
+      height: 16px;
+      border-radius: 0;
+      display: inline-block;
+    }
+
+    .footer-hover:hover .footer-dot {
+      background: linear-gradient(to bottom, #C85A00, #F58427) !important;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+    }
+
+    .footer-hover .footer-text {
+      position: relative;
+      display: inline-block;
+      transition: color 0.3s;
+    }
+
+    .footer-hover .footer-text::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(to right, #C85A00, #F58427);
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 2px;
+    }
+
+    .footer-hover:hover .footer-text {
+      background: linear-gradient(to bottom, #C85A00, #F58427);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-hover:hover .footer-text::after {
+      width: 100%;
+    }
   </style>
 
   <script src="../js/main.js"></script>
