@@ -225,9 +225,6 @@
   .fixed {
     position: fixed;
   }
-  .fixed\! {
-    position: fixed !important;
-  }
   .relative {
     position: relative;
   }
@@ -252,12 +249,6 @@
   .top-6 {
     top: calc(var(--spacing) * 6);
   }
-  .top-105 {
-    top: calc(var(--spacing) * 105);
-  }
-  .-right-0 {
-    right: calc(var(--spacing) * -0);
-  }
   .right-4 {
     right: calc(var(--spacing) * 4);
   }
@@ -266,9 +257,6 @@
   }
   .-bottom-5 {
     bottom: calc(var(--spacing) * -5);
-  }
-  .-bottom-180 {
-    bottom: calc(var(--spacing) * -180);
   }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
@@ -574,14 +562,8 @@
   .w-\[29px\] {
     width: 29px;
   }
-  .w-\[65\%\] {
-    width: 65%;
-  }
   .w-\[80px\] {
     width: 80px;
-  }
-  .w-\[168px\] {
-    width: 168px;
   }
   .w-\[206px\] {
     width: 206px;
@@ -609,9 +591,6 @@
   }
   .max-w-\[350px\] {
     max-width: 350px;
-  }
-  .max-w-\[360px\] {
-    max-width: 360px;
   }
   .max-w-\[600px\] {
     max-width: 600px;
@@ -1578,29 +1557,9 @@
       justify-content: flex-start;
     }
   }
-  .md\:top-85 {
-    @media (width >= 48rem) {
-      top: calc(var(--spacing) * 85);
-    }
-  }
-  .md\:right-10 {
-    @media (width >= 48rem) {
-      right: calc(var(--spacing) * 10);
-    }
-  }
-  .md\:right-30 {
-    @media (width >= 48rem) {
-      right: calc(var(--spacing) * 30);
-    }
-  }
   .md\:right-auto {
     @media (width >= 48rem) {
       right: auto;
-    }
-  }
-  .md\:-bottom-130 {
-    @media (width >= 48rem) {
-      bottom: calc(var(--spacing) * -130);
     }
   }
   .md\:left-4 {
@@ -1834,11 +1793,6 @@
       }
     }
   }
-  .lg\:-bottom-80 {
-    @media (width >= 64rem) {
-      bottom: calc(var(--spacing) * -80);
-    }
-  }
   .lg\:left-0 {
     @media (width >= 64rem) {
       left: calc(var(--spacing) * 0);
@@ -2019,26 +1973,6 @@
       font-size: 80px;
     }
   }
-  .xl\:-top-5 {
-    @media (width >= 80rem) {
-      top: calc(var(--spacing) * -5);
-    }
-  }
-  .xl\:-right-2 {
-    @media (width >= 80rem) {
-      right: calc(var(--spacing) * -2);
-    }
-  }
-  .xl\:right-\[2\%\] {
-    @media (width >= 80rem) {
-      right: 2%;
-    }
-  }
-  .xl\:-bottom-25 {
-    @media (width >= 80rem) {
-      bottom: calc(var(--spacing) * -25);
-    }
-  }
   .xl\:bottom-10 {
     @media (width >= 80rem) {
       bottom: calc(var(--spacing) * 10);
@@ -2057,11 +1991,6 @@
   .xl\:w-2\/3 {
     @media (width >= 80rem) {
       width: calc(2/3 * 100%);
-    }
-  }
-  .xl\:transform {
-    @media (width >= 80rem) {
-      transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
     }
   }
   .xl\:flex-row {
