@@ -65,7 +65,7 @@
   
   <!-- Preload Critical Resources -->
   <link rel="preload" href="output.css" as="style">
-  <link rel="preload" href="./assets/images/omar-portrait.png" as="image">
+  <link rel="preload" href="./assets/images/omar-portrait.webp" as="image">
   
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -116,16 +116,21 @@
   }
   </script>
   
+  <!-- Font Preloading for Performance -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"></noscript>
+  
   <!-- Stylesheets -->
   <link rel="stylesheet" href="output.css">
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
 </head>
 
 <body class="bg-black min-h-screen font-['DM_Sans']" style="scroll-behavior: smooth; overflow-x: hidden;">
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link sr-only">Skip to main content</a>
+  
   <!-- Custom Cursor -->
   <div class="custom-cursor" id="customCursor"></div>
   <!-- Navigation -->
@@ -164,7 +169,7 @@
           <div class="text-white font-semibold text-lg">Omar</div>
 
           <!-- Hamburger Menu Button -->
-          <button id="mobileMenuBtn" class="flex flex-col justify-center items-center w-8 h-8 space-y-1.5">
+          <button id="mobileMenuBtn" class="flex flex-col justify-center items-center w-8 h-8 space-y-1.5" aria-label="Toggle mobile menu" aria-expanded="false">
             <span class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="hamburger-line-1"></span>
             <span class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="hamburger-line-2"></span>
             <span class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="hamburger-line-3"></span>
@@ -232,7 +237,7 @@
   </div>
 
   <!-- Hero Section -->
-  <div id="home" class="relative min-h-screen">
+  <main id="main-content" class="relative min-h-screen">
 
     <!-- Video background -->
     <video src="https://videos.pexels.com/video-files/9694443/9694443-hd_1920_1080_25fps.mp4"
@@ -338,6 +343,7 @@
 
       <!-- Project Carousel -->
       <div class="relative">
+        <h2 class="text-white text-2xl font-semibold mb-6">Featured Projects</h2>
         <!-- Carousel Container -->
         <div class="flex gap-4 md:gap-8 transition-transform duration-500 ease-in-out" id="projectCarousel">
             <!-- CheckFree Next -->
@@ -345,8 +351,12 @@
               <a href="./projects/check-free-next.html">
               <div
                 class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
-                <img src="./assets/images/check-free-next/omar-check-free-next-hero.png" alt="CheckFree Next"
-                  class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" loading="lazy" />
+                <picture>
+  <source srcset="./assets/images/check-free-next/omar-check-free-next-hero.webp" type="image/webp">
+  <img src="./assets/images/check-free-next/omar-check-free-next-hero.png" alt="CheckFree Next"
+                     class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" 
+                     fetchpriority="high" />
+</picture>
                 <div
                   class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
                   <h3 class="text-white text-xl md:text-[36px] font-['Inter'] mb-2">CheckFree Next</h3>
@@ -379,7 +389,7 @@
                 <picture>
   <source srcset="./assets/images/hiyero/hiyero-hero.webp" type="image/webp">
   <img src="./assets/images/hiyero/hiyero-hero.avif" alt="Hiyero"
-                  class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" / loading="lazy">
+                  class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" loading="lazy" />
 </picture>
                 <div
                   class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
@@ -413,7 +423,7 @@
                 <picture>
   <source srcset="./assets/images/common/common-hero.webp" type="image/webp">
   <img src="./assets/images/common/common-hero.avif" alt="Common"
-                  class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" / loading="lazy">
+                  class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" loading="lazy" />
 </picture>
                 <div
                   class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
@@ -447,7 +457,7 @@
                 <picture>
   <source srcset="./assets/images/cirrus-led/omar-cirrus-led-hero.webp" type="image/webp">
   <img src="./assets/images/cirrus-led/omar-cirrus-led-hero.png" alt="CirrusLED"
-                  class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" / loading="lazy">
+                  class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" loading="lazy" />
 </picture>
                 <div
                   class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
@@ -510,14 +520,14 @@
           <!-- Navigation Buttons -->
           <div class="flex items-center gap-4 mb-4">
             <button id="prevBtn"
-              class="bg-black/50 hover:bg-black/70 text-white p-2 md:p-3 rounded-full transition-all duration-200 z-20">
+              class="bg-black/50 hover:bg-black/70 text-white p-2 md:p-3 rounded-full transition-all duration-200 z-20" aria-label="Previous slide">
               <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
               </svg>
             </button>
 
             <button id="nextBtn"
-              class="bg-black/50 hover:bg-black/70 text-white p-2 md:p-3 rounded-full transition-all duration-200 z-20">
+              class="bg-black/50 hover:bg-black/70 text-white p-2 md:p-3 rounded-full transition-all duration-200 z-20" aria-label="Next slide">
               <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
@@ -528,15 +538,15 @@
           <div class="flex justify-center space-x-3">
             <button
               class="w-4 h-4 md:w-3 md:h-3 bg-white/30 rounded-full transition-all duration-200 dot-indicator active"
-              data-slide="0"></button>
+              data-slide="0" aria-label="Go to slide 1"></button>
             <button class="w-4 h-4 md:w-3 md:h-3 bg-white/30 rounded-full transition-all duration-200 dot-indicator"
-              data-slide="1"></button>
+              data-slide="1" aria-label="Go to slide 2"></button>
             <button class="w-4 h-4 md:w-3 md:h-3 bg-white/30 rounded-full transition-all duration-200 dot-indicator"
-              data-slide="2"></button>
+              data-slide="2" aria-label="Go to slide 3"></button>
             <button class="w-4 h-4 md:w-3 md:h-3 bg-white/30 rounded-full transition-all duration-200 dot-indicator"
-              data-slide="3"></button>
+              data-slide="3" aria-label="Go to slide 4"></button>
             <button class="w-4 h-4 md:w-3 md:h-3 bg-white/30 rounded-full transition-all duration-200 dot-indicator"
-              data-slide="4"></button>
+              data-slide="4" aria-label="Go to slide 5"></button>
           </div>
         </div>
       </div>
@@ -584,7 +594,7 @@
             <div class="relative">
               <picture>
   <source srcset="./assets/images/omar-portrait.webp" type="image/webp">
-  <img src="./assets/images/omar-portrait.png" alt="Omar M Hammouda" class="rounded-2xl" / loading="lazy">
+  <img src="./assets/images/omar-portrait.png" alt="Omar M Hammouda" class="rounded-2xl" loading="lazy" />
 </picture>
 
               <div
@@ -718,61 +728,64 @@
     </div>
   </section>
 
-   <!-- Recent Designs -->
-   <section id="projects" class="w-full bg-gradient-to-b from-[#000000] to-[#000000]/16 mt-24 rounded-[32px]"
-   style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066; background: linear-gradient(180deg, #0a0a0a, #000000);">
-   <div class="max-w-7xl mx-auto pt-24 flex flex-col px-6 xl:px-0">
-     <!-- Role Badge -->
-     <div class="flex items-center w-fit bg-[#0f0f0f] rounded-xl px-4 py-2 mb-4"
-       style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
-       <div class="w-3 h-3 bg-transparent border-2 border-white rounded-full mr-3 flex items-center justify-center">
-         <div class="w-1 h-1 bg-white rounded-full"></div>
-       </div>
-       <span class="text-white text-sm font-['Inter']">Recent Projects</span>
-     </div>
+  <!-- Recent Designs -->
+  <section id="projects" class="w-full bg-gradient-to-b from-[#000000] to-[#000000]/16 mt-24 rounded-[32px]"
+    style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066; background: linear-gradient(180deg, #0a0a0a, #000000);">
+    <div class="max-w-7xl mx-auto pt-24 flex flex-col px-6 xl:px-0">
+      <!-- Role Badge -->
+      <div class="flex items-center w-fit bg-[#0f0f0f] rounded-xl px-4 py-2 mb-4"
+        style="box-shadow: 0px 2px 0px 0px #B8B4B414 inset, 16px 24px 20px 8px #00000066;">
+        <div class="w-3 h-3 bg-transparent border-2 border-white rounded-full mr-3 flex items-center justify-center">
+          <div class="w-1 h-1 bg-white rounded-full"></div>
+        </div>
+        <span class="text-white text-sm font-['Inter']">Recent Projects</span>
+      </div>
 
-     <div class="flex items-center gap-2 text-5xl mt-6">
-       <span class="text-white font-['Inter']">Recent</span>
-       <span class="text-white/50 font-['Inter']">Designs</span>
-     </div>
-     <div class="flex flex-col lg:flex-row lg:justify-between items-start lg:items-center mt-1 gap-6 lg:gap-0">
-       <div class="text-[16px] text-white/60 font-medium font-['Plus Jakarta Sans']">Showcase of some of my recent projects.</div>
+      <h2 class="flex items-center gap-2 text-5xl mt-6">
+        <span class="text-white font-['Inter']">Recent</span>
+        <span class="text-white/50 font-['Inter']">Designs</span>
+      </h2>
+      <div class="flex flex-col lg:flex-row lg:justify-between items-start lg:items-center mt-1 gap-6 lg:gap-0">
+        <div class="text-[16px] text-white/60 font-medium font-['Plus Jakarta Sans']">Showcase of some of my recent projects.</div>
 
-       <!-- CTA Buttons -->
-       <div class="flex flex-col md:flex-row gap-4">
-         <!-- Secondary Button -->
-         <div
-           class="relative flex items-center justify-center p-1 h-[57px] hover:opacity-80 transition-all duration-300">
-           <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
-           </div>
-           <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
-           </div>
-           <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl"
-             style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="./contact.html">
-             <div class="flex items-center gap-2 ">
+        <!-- CTA Buttons -->
+        <div class="flex flex-col md:flex-row gap-4">
+          <!-- Secondary Button -->
+          <div
+            class="relative flex items-center justify-center p-1 h-[57px] hover:opacity-80 transition-all duration-300">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
+            </div>
+            <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
+            </div>
+            <a class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl"
+              style="box-shadow: 0px -1px 0px 0px #1118271F inset;" href="./contact.html">
+              <div class="flex items-center gap-2 ">
 
-               <svg class="w-4 h-4">
-                 <use href="./assets/icons/thunderbolt.svg#thunderbolt" />
-               </svg>
-               <span
-                 class="bg-gradient-to-b from-[#1F2937] from-40% to-[#6B7280] to-60% bg-clip-text text-transparent font-bold">
+                <svg class="w-4 h-4">
+                  <use href="./assets/icons/thunderbolt.svg#thunderbolt" />
+                </svg>
+                <span
+                  class="bg-gradient-to-b from-[#1F2937] from-40% to-[#6B7280] to-60% bg-clip-text text-transparent font-bold">
 
-                 Contact Now
-               </span>
-             </div>
-           </a>
-         </div>
-       </div>
-     </div>
+                  Contact Now
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
 
-     <div class="rounded-2xl pt-0.5 mt-11">
+      <div class="rounded-2xl pt-0.5 mt-11">
        <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 " id="projects-grid">
          <!-- CheckFree Next -->
          <a href="./projects/check-free-next.html" class="block group">
            <div
              class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
-             <img src="./assets/images/check-free-next/omar-check-free-next-hero.png" alt="CheckFree Next"
-               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" loading="lazy" />
+             <picture>
+  <source srcset="./assets/images/check-free-next/omar-check-free-next-hero.webp" type="image/webp">
+  <img src="./assets/images/check-free-next/omar-check-free-next-hero.png" alt="CheckFree Next"
+                  class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" loading="lazy" />
+</picture>
              <div
                class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
                <h3 class="text-white text-xl md:text-[36px] font-['Inter'] mb-2">CheckFree Next</h3>
@@ -802,7 +815,7 @@
              <picture>
   <source srcset="./assets/images/hiyero/hiyero-hero.webp" type="image/webp">
   <img src="./assets/images/hiyero/hiyero-hero.avif" alt="Hiyero"
-               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" / loading="lazy">
+               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" loading="lazy" />
 </picture>
              <div
                class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
@@ -833,7 +846,7 @@
              <picture>
   <source srcset="./assets/images/common/common-hero.webp" type="image/webp">
   <img src="./assets/images/common/common-hero.avif" alt="Common"
-               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" / loading="lazy">
+               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" loading="lazy" />
 </picture>
              <div
                class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
@@ -864,7 +877,7 @@
              <picture>
   <source srcset="./assets/images/cirrus-led/omar-cirrus-led-hero.webp" type="image/webp">
   <img src="./assets/images/cirrus-led/omar-cirrus-led-hero.png" alt="CirrusLED"
-               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" / loading="lazy">
+               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" loading="lazy" />
 </picture>
              <div
                class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
@@ -956,7 +969,7 @@
              <picture>
   <source srcset="./assets/images/hiyero/hiyero-hero.webp" type="image/webp">
   <img src="./assets/images/hiyero/hiyero-hero.avif" alt="Hiyero"
-               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" / loading="lazy">
+               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" loading="lazy" />
 </picture>
              <div
                class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
@@ -981,324 +994,324 @@
            </div>
          </a>
 
-         <!-- Duradry -->
+          <!-- Duradry -->
          <a href="./projects/duradry.html" class="group hidden md:hidden" data-project="hidden">
-           <div
-             class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
-             <video src="./assets/images/duradry/Durady.mp4" autoplay loop muted playsinline
-               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l recent-design-video"
-               poster="./assets/images/duradry/omar-duradry-logo.png"></video>
-             <div
-               class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
-               <h3 class="text-white text-xl md:text-[36px] font-['Inter'] mb-2">Duradry</h3>
+            <div
+              class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
+              <video src="./assets/images/duradry/Durady.mp4" autoplay loop muted playsinline
+                class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l recent-design-video"
+                poster="./assets/images/duradry/omar-duradry-logo.png"></video>
+              <div
+                class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
+                <h3 class="text-white text-xl md:text-[36px] font-['Inter'] mb-2">Duradry</h3>
                <p class="text-white/70 text-sm md:text-[20px] font-['Inter']">Powerful Solution for Excessive Sweating</p>
-               <span class="block text-white/60 text-base mt-2">2023</span>
-             </div>
+                <span class="block text-white/60 text-base mt-2">2023</span>
+              </div>
              <!-- Arrow Center (on hover - desktop only) -->
-             <div
+              <div
                class="absolute top-1/2 left-1/2 w-[80px] h-[80px] md:w-[140px] md:h-[140px] bg-[#080808] rounded-full items-center justify-center opacity-0 md:group-hover:opacity-100 transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
-               <svg class="w-8 h-6 md:w-16 md:h-12 transform translate-x-1" style="color: white;">
-                 <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
-               </svg>
-             </div>
+                <svg class="w-8 h-6 md:w-16 md:h-12 transform translate-x-1" style="color: white;">
+                  <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+                </svg>
+              </div>
              <!-- Arrow Small (bottom right on mobile, bottom left on desktop) -->
-             <div
+              <div
                class="absolute bottom-4 right-4 md:left-4 md:right-auto w-8 h-8 md:w-9 md:h-9 bg-[#080808] rounded-full flex items-center justify-center transition-all duration-500 opacity-100 md:group-hover:opacity-0">
-               <svg class="w-8 h-8 md:w-10 md:h-10" style="color: white;">
-                 <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
-               </svg>
-             </div>
-           </div>
-         </a>
+                <svg class="w-8 h-8 md:w-10 md:h-10" style="color: white;">
+                  <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
+                </svg>
+              </div>
+            </div>
+          </a>
 
-         <!-- Sanctify -->
+          <!-- Sanctify -->
          <a href="./projects/sanctify.html" class="group hidden md:hidden" data-project="hidden">
-           <div
-             class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
+            <div
+              class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
              <picture>
   <source srcset="./assets/images/sanctify/omar-sanctify-app.webp" type="image/webp">
-  <img src="./assets/images/sanctify/omar-sanctify-app.png" alt="Sanctify"
-               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" / loading="lazy">
+              <img src="./assets/images/sanctify/omar-sanctify-app.png" alt="Sanctify"
+               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" loading="lazy" />
 </picture>
-             <div
-               class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
-               <h3 class="text-white text-xl md:text-[36px] font-['Inter'] mb-2">Sanctify</h3>
-               <p class="text-white/70 text-sm md:text-[20px] font-['Inter']">Leading Catholic values investing</p>
-               <span class="block text-white/60 text-base mt-2">2021</span>
-             </div>
-             <!-- Arrow Center (on hover - desktop only) -->
-             <div
-               class="absolute top-1/2 left-1/2 w-[80px] h-[80px] md:w-[140px] md:h-[140px] bg-[#080808] rounded-full items-center justify-center opacity-0 md:group-hover:opacity-100 transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
-               <svg class="w-8 h-6 md:w-16 md:h-12 transform translate-x-1" style="color: white;">
-                 <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
-               </svg>
-             </div>
-             <!-- Arrow Small (bottom right on mobile, bottom left on desktop) -->
-             <div
-               class="absolute bottom-4 right-4 md:left-4 md:right-auto w-8 h-8 md:w-9 md:h-9 bg-[#080808] rounded-full flex items-center justify-center transition-all duration-500 opacity-100 md:group-hover:opacity-0">
-               <svg class="w-8 h-8 md:w-10 md:h-10" style="color: white;">
-                 <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
-               </svg>
-             </div>
-           </div>
-         </a>
+              <div
+                class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
+                <h3 class="text-white text-xl md:text-[36px] font-['Inter'] mb-2">Sanctify</h3>
+                <p class="text-white/70 text-sm md:text-[20px] font-['Inter']">Leading Catholic values investing</p>
+                <span class="block text-white/60 text-base mt-2">2021</span>
+              </div>
+              <!-- Arrow Center (on hover - desktop only) -->
+              <div
+                class="absolute top-1/2 left-1/2 w-[80px] h-[80px] md:w-[140px] md:h-[140px] bg-[#080808] rounded-full items-center justify-center opacity-0 md:group-hover:opacity-100 transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
+                <svg class="w-8 h-6 md:w-16 md:h-12 transform translate-x-1" style="color: white;">
+                  <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+                </svg>
+              </div>
+              <!-- Arrow Small (bottom right on mobile, bottom left on desktop) -->
+              <div
+                class="absolute bottom-4 right-4 md:left-4 md:right-auto w-8 h-8 md:w-9 md:h-9 bg-[#080808] rounded-full flex items-center justify-center transition-all duration-500 opacity-100 md:group-hover:opacity-0">
+                <svg class="w-8 h-8 md:w-10 md:h-10" style="color: white;">
+                  <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
+                </svg>
+              </div>
+            </div>
+          </a>
 
-         <!-- NuVie -->
+          <!-- NuVie -->
          <a href="./projects/nuvie.html" class="group hidden md:hidden" data-project="hidden">
-           <div
-             class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
+            <div
+              class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
              <picture>
   <source srcset="./assets/images/nuvie/omar-nuvie-app.webp" type="image/webp">
-  <img src="./assets/images/nuvie/omar-nuvie-app.png" alt="NuVie"
-               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" / loading="lazy">
+              <img src="./assets/images/nuvie/omar-nuvie-app.png" alt="NuVie"
+               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" loading="lazy" />
 </picture>
-             <div
-               class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
-               <h3 class="text-white text-xl md:text-[36px] font-['Inter'] mb-2">NuVie</h3>
-               <p class="text-white/70 text-sm md:text-[20px] font-['Inter']">Watch. Track. Repeat.</p>
-               <span class="block text-white/60 text-base mt-2">2022</span>
-             </div>
-             <!-- Arrow Center (on hover - desktop only) -->
-             <div
-               class="absolute top-1/2 left-1/2 w-[80px] h-[80px] md:w-[140px] md:h-[140px] bg-[#080808] rounded-full items-center justify-center opacity-0 md:group-hover:opacity-100 transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
-               <svg class="w-8 h-6 md:w-16 md:h-12 transform translate-x-1" style="color: white;">
-                 <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
-               </svg>
-             </div>
-             <!-- Arrow Small (bottom right on mobile, bottom left on desktop) -->
-             <div
-               class="absolute bottom-4 right-4 md:left-4 md:right-auto w-8 h-8 md:w-9 md:h-9 bg-[#080808] rounded-full flex items-center justify-center transition-all duration-500 opacity-100 md:group-hover:opacity-0">
-               <svg class="w-8 h-8 md:w-10 md:h-10" style="color: white;">
-                 <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
-               </svg>
-             </div>
-           </div>
-         </a>
+              <div
+                class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
+                <h3 class="text-white text-xl md:text-[36px] font-['Inter'] mb-2">NuVie</h3>
+                <p class="text-white/70 text-sm md:text-[20px] font-['Inter']">Watch. Track. Repeat.</p>
+                <span class="block text-white/60 text-base mt-2">2022</span>
+              </div>
+              <!-- Arrow Center (on hover - desktop only) -->
+              <div
+                class="absolute top-1/2 left-1/2 w-[80px] h-[80px] md:w-[140px] md:h-[140px] bg-[#080808] rounded-full items-center justify-center opacity-0 md:group-hover:opacity-100 transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
+                <svg class="w-8 h-6 md:w-16 md:h-12 transform translate-x-1" style="color: white;">
+                  <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+                </svg>
+              </div>
+              <!-- Arrow Small (bottom right on mobile, bottom left on desktop) -->
+              <div
+                class="absolute bottom-4 right-4 md:left-4 md:right-auto w-8 h-8 md:w-9 md:h-9 bg-[#080808] rounded-full flex items-center justify-center transition-all duration-500 opacity-100 md:group-hover:opacity-0">
+                <svg class="w-8 h-8 md:w-10 md:h-10" style="color: white;">
+                  <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
+                </svg>
+              </div>
+            </div>
+          </a>
 
-         <!-- Karma -->
+          <!-- Karma -->
          <a href="./projects/karma.html" class="group hidden md:hidden" data-project="hidden">
-           <div
-             class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
-             <video src="./assets/images/karma/karma-hero-video.mp4" autoplay loop muted playsinline
-               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l recent-design-video"
-               poster="./assets/images/karma/karma-logo.png"></video>
-             <div
-               class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
-               <h3 class="text-white text-xl md:text-[36px] font-['Inter'] mb-2">Karma</h3>
-               <p class="text-white/70 text-sm md:text-[20px] font-['Inter']">Build and Maintain Better Communities</p>
-               <span class="block text-white/60 text-base mt-2">2022</span>
-             </div>
-             <!-- Arrow Center (on hover - desktop only) -->
-             <div
-               class="absolute top-1/2 left-1/2 w-[80px] h-[80px] md:w-[140px] md:h-[140px] bg-[#080808] rounded-full items-center justify-center opacity-0 md:group-hover:opacity-100 transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
-               <svg class="w-8 h-6 md:w-16 md:h-12 transform translate-x-1" style="color: white;">
-                 <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
-               </svg>
-             </div>
-             <!-- Arrow Small (bottom right on mobile, bottom left on desktop) -->
-             <div
-               class="absolute bottom-4 right-4 md:left-4 md:right-auto w-8 h-8 md:w-9 md:h-9 bg-[#080808] rounded-full flex items-center justify-center transition-all duration-500 opacity-100 md:group-hover:opacity-0">
-               <svg class="w-8 h-8 md:w-10 md:h-10" style="color: white;">
-                 <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
-               </svg>
-             </div>
-           </div>
-         </a>
+            <div
+              class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
+              <video src="./assets/images/karma/karma-hero-video.mp4" autoplay loop muted playsinline
+                class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l recent-design-video"
+                poster="./assets/images/karma/karma-logo.png"></video>
+              <div
+                class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
+                <h3 class="text-white text-xl md:text-[36px] font-['Inter'] mb-2">Karma</h3>
+                <p class="text-white/70 text-sm md:text-[20px] font-['Inter']">Build and Maintain Better Communities</p>
+                <span class="block text-white/60 text-base mt-2">2022</span>
+              </div>
+              <!-- Arrow Center (on hover - desktop only) -->
+              <div
+                class="absolute top-1/2 left-1/2 w-[80px] h-[80px] md:w-[140px] md:h-[140px] bg-[#080808] rounded-full items-center justify-center opacity-0 md:group-hover:opacity-100 transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
+                <svg class="w-8 h-6 md:w-16 md:h-12 transform translate-x-1" style="color: white;">
+                  <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+                </svg>
+              </div>
+              <!-- Arrow Small (bottom right on mobile, bottom left on desktop) -->
+              <div
+                class="absolute bottom-4 right-4 md:left-4 md:right-auto w-8 h-8 md:w-9 md:h-9 bg-[#080808] rounded-full flex items-center justify-center transition-all duration-500 opacity-100 md:group-hover:opacity-0">
+                <svg class="w-8 h-8 md:w-10 md:h-10" style="color: white;">
+                  <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
+                </svg>
+              </div>
+            </div>
+          </a>
 
-         <!-- Wnder -->
+          <!-- Wnder -->
          <a href="./projects/wnder.html" class="group hidden md:hidden" data-project="hidden">
-           <div
-             class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
+            <div
+              class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
              <picture>
   <source srcset="./assets/images/wnder/omar-wndr-laptop.webp" type="image/webp">
-  <img src="./assets/images/wnder/omar-wndr-laptop.png" alt="W*nder"
-               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" / loading="lazy">
+              <img src="./assets/images/wnder/omar-wndr-laptop.png" alt="W*nder"
+               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" loading="lazy" />
 </picture>
-             <div
-               class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
-               <h3 class="text-white text-xl md:text-[36px] font-['Inter'] mb-2">W*nder</h3>
-               <p class="text-white/70 text-sm md:text-[20px] font-['Inter']">Works like a W*nder</p>
-               <span class="block text-white/60 text-base mt-2">2020</span>
-             </div>
-             <!-- Arrow Center (on hover - desktop only) -->
-             <div
-               class="absolute top-1/2 left-1/2 w-[80px] h-[80px] md:w-[140px] md:h-[140px] bg-[#080808] rounded-full items-center justify-center opacity-0 md:group-hover:opacity-100 transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
-               <svg class="w-8 h-6 md:w-16 md:h-12 transform translate-x-1" style="color: white;">
-                 <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
-               </svg>
-             </div>
-             <!-- Arrow Small (bottom right on mobile, bottom left on desktop) -->
-             <div
-               class="absolute bottom-4 right-4 md:left-4 md:right-auto w-8 h-8 md:w-9 md:h-9 bg-[#080808] rounded-full flex items-center justify-center transition-all duration-500 opacity-100 md:group-hover:opacity-0">
-               <svg class="w-8 h-8 md:w-10 md:h-10" style="color: white;">
-                 <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
-               </svg>
-             </div>
-           </div>
-         </a>
+              <div
+                class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
+                <h3 class="text-white text-xl md:text-[36px] font-['Inter'] mb-2">W*nder</h3>
+                <p class="text-white/70 text-sm md:text-[20px] font-['Inter']">Works like a W*nder</p>
+                <span class="block text-white/60 text-base mt-2">2020</span>
+              </div>
+              <!-- Arrow Center (on hover - desktop only) -->
+              <div
+                class="absolute top-1/2 left-1/2 w-[80px] h-[80px] md:w-[140px] md:h-[140px] bg-[#080808] rounded-full items-center justify-center opacity-0 md:group-hover:opacity-100 transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
+                <svg class="w-8 h-6 md:w-16 md:h-12 transform translate-x-1" style="color: white;">
+                  <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+                </svg>
+              </div>
+              <!-- Arrow Small (bottom right on mobile, bottom left on desktop) -->
+              <div
+                class="absolute bottom-4 right-4 md:left-4 md:right-auto w-8 h-8 md:w-9 md:h-9 bg-[#080808] rounded-full flex items-center justify-center transition-all duration-500 opacity-100 md:group-hover:opacity-0">
+                <svg class="w-8 h-8 md:w-10 md:h-10" style="color: white;">
+                  <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
+                </svg>
+              </div>
+            </div>
+          </a>
 
-         <!-- Imperfect Food -->
+          <!-- Imperfect Food -->
          <a href="./projects/imperfect-food.html" class="group hidden md:hidden" data-project="hidden">
-           <div
-             class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
+            <div
+              class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
              <picture>
   <source srcset="./assets/images/imperfect-food/omar-imperfect-food-laptop.webp" type="image/webp">
-  <img src="./assets/images/imperfect-food/omar-imperfect-food-laptop.png" alt="Imperfect Food"
-               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" / loading="lazy">
+              <img src="./assets/images/imperfect-food/omar-imperfect-food-laptop.png" alt="Imperfect Food"
+               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" loading="lazy" />
 </picture>
-             <div
-               class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
-               <h3 class="text-white text-xl md:text-[36px] font-['Inter'] mb-2">Imperfect Food</h3>
+              <div
+                class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
+                <h3 class="text-white text-xl md:text-[36px] font-['Inter'] mb-2">Imperfect Food</h3>
                <p class="text-white/70 text-sm md:text-[20px] font-['Inter']">Buy Smart, Save the Planet from Food Waste</p>
-               <span class="block text-white/60 text-base mt-2">2022</span>
-             </div>
-             <!-- Arrow Center (on hover - desktop only) -->
-             <div
-               class="absolute top-1/2 left-1/2 w-[80px] h-[80px] md:w-[140px] md:h-[140px] bg-[#080808] rounded-full items-center justify-center opacity-0 md:group-hover:opacity-100 transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
-               <svg class="w-8 h-6 md:w-16 md:h-12 transform translate-x-1" style="color: white;">
-                 <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
-               </svg>
-             </div>
-             <!-- Arrow Small (bottom right on mobile, bottom left on desktop) -->
-             <div
-               class="absolute bottom-4 right-4 md:left-4 md:right-auto w-8 h-8 md:w-9 md:h-9 bg-[#080808] rounded-full flex items-center justify-center transition-all duration-500 opacity-100 md:group-hover:opacity-0">
-               <svg class="w-8 h-8 md:w-10 md:h-10" style="color: white;">
-                 <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
-               </svg>
-             </div>
-           </div>
-         </a>
+                <span class="block text-white/60 text-base mt-2">2022</span>
+              </div>
+              <!-- Arrow Center (on hover - desktop only) -->
+              <div
+                class="absolute top-1/2 left-1/2 w-[80px] h-[80px] md:w-[140px] md:h-[140px] bg-[#080808] rounded-full items-center justify-center opacity-0 md:group-hover:opacity-100 transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
+                <svg class="w-8 h-6 md:w-16 md:h-12 transform translate-x-1" style="color: white;">
+                  <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+                </svg>
+              </div>
+              <!-- Arrow Small (bottom right on mobile, bottom left on desktop) -->
+              <div
+                class="absolute bottom-4 right-4 md:left-4 md:right-auto w-8 h-8 md:w-9 md:h-9 bg-[#080808] rounded-full flex items-center justify-center transition-all duration-500 opacity-100 md:group-hover:opacity-0">
+                <svg class="w-8 h-8 md:w-10 md:h-10" style="color: white;">
+                  <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
+                </svg>
+              </div>
+            </div>
+          </a>
 
-         <!-- MockQuestions -->
+          <!-- MockQuestions -->
          <a href="./projects/mockquestions.html" class="group hidden md:hidden" data-project="hidden">
-           <div
-             class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
+            <div
+              class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
              <picture>
   <source srcset="./assets/images/mockquestions/omar-mock-questions-laptop.webp" type="image/webp">
-  <img src="./assets/images/mockquestions/omar-mock-questions-laptop.png" alt="MockQuestions"
+              <img src="./assets/images/mockquestions/omar-mock-questions-laptop.png" alt="MockQuestions"
                class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" / loading="lazy">
 </picture>
-             <div
-               class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
-               <h3 class="text-white text-xl md:text-[36px] font-['Inter'] mb-2">MockQuestions</h3>
+              <div
+                class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
+                <h3 class="text-white text-xl md:text-[36px] font-['Inter'] mb-2">MockQuestions</h3>
                <p class="text-white/70 text-sm md:text-[20px] font-['Inter']">Your shortcut to success in interviews</p>
-               <span class="block text-white/60 text-base mt-2">2023</span>
-             </div>
-             <!-- Arrow Center (on hover - desktop only) -->
-             <div
-               class="absolute top-1/2 left-1/2 w-[80px] h-[80px] md:w-[140px] md:h-[140px] bg-[#080808] rounded-full items-center justify-center opacity-0 md:group-hover:opacity-100 transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
-               <svg class="w-8 h-6 md:w-16 md:h-12 transform translate-x-1" style="color: white;">
-                 <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
-               </svg>
-             </div>
-             <!-- Arrow Small (bottom right on mobile, bottom left on desktop) -->
-             <div
-               class="absolute bottom-4 right-4 md:left-4 md:right-auto w-8 h-8 md:w-9 md:h-9 bg-[#080808] rounded-full flex items-center justify-center transition-all duration-500 opacity-100 md:group-hover:opacity-0">
-               <svg class="w-8 h-8 md:w-10 md:h-10" style="color: white;">
-                 <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
-               </svg>
-             </div>
-           </div>
-         </a>
+                <span class="block text-white/60 text-base mt-2">2023</span>
+              </div>
+              <!-- Arrow Center (on hover - desktop only) -->
+              <div
+                class="absolute top-1/2 left-1/2 w-[80px] h-[80px] md:w-[140px] md:h-[140px] bg-[#080808] rounded-full items-center justify-center opacity-0 md:group-hover:opacity-100 transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
+                <svg class="w-8 h-6 md:w-16 md:h-12 transform translate-x-1" style="color: white;">
+                  <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+                </svg>
+              </div>
+              <!-- Arrow Small (bottom right on mobile, bottom left on desktop) -->
+              <div
+                class="absolute bottom-4 right-4 md:left-4 md:right-auto w-8 h-8 md:w-9 md:h-9 bg-[#080808] rounded-full flex items-center justify-center transition-all duration-500 opacity-100 md:group-hover:opacity-0">
+                <svg class="w-8 h-8 md:w-10 md:h-10" style="color: white;">
+                  <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
+                </svg>
+              </div>
+            </div>
+          </a>
 
          <!-- Oh Snap -->
          <a href="./projects/oh-snap.html" class="group hidden md:hidden" data-project="hidden">
-           <div
-             class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
+            <div
+              class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
              <video src="./assets/images/oh-snap/oh-snap.mp4" autoplay loop muted playsinline
-               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l recent-design-video"
+                class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l recent-design-video"
                poster="./assets/images/oh-snap/omar-oh-snap.png"></video>
-             <div
-               class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
+              <div
+                class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
                <h3 class="text-white text-xl md:text-[36px] font-['Inter'] mb-2">Oh Snap</h3>
                <p class="text-white/70 text-sm md:text-[20px] font-['Inter']">Social Media Platform</p>
                <span class="block text-white/60 text-base mt-2">2023</span>
-             </div>
-             <!-- Arrow Center (on hover - desktop only) -->
-             <div
-               class="absolute top-1/2 left-1/2 w-[80px] h-[80px] md:w-[140px] md:h-[140px] bg-[#080808] rounded-full items-center justify-center opacity-0 md:group-hover:opacity-100 transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
-               <svg class="w-8 h-6 md:w-16 md:h-12 transform translate-x-1" style="color: white;">
-                 <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
-               </svg>
-             </div>
-             <!-- Arrow Small (bottom right on mobile, bottom left on desktop) -->
-             <div
-               class="absolute bottom-4 right-4 md:left-4 md:right-auto w-8 h-8 md:w-9 md:h-9 bg-[#080808] rounded-full flex items-center justify-center transition-all duration-500 opacity-100 md:group-hover:opacity-0">
-               <svg class="w-8 h-8 md:w-10 md:h-10" style="color: white;">
-                 <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
-               </svg>
-             </div>
-           </div>
-         </a>
+              </div>
+              <!-- Arrow Center (on hover - desktop only) -->
+              <div
+                class="absolute top-1/2 left-1/2 w-[80px] h-[80px] md:w-[140px] md:h-[140px] bg-[#080808] rounded-full items-center justify-center opacity-0 md:group-hover:opacity-100 transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
+                <svg class="w-8 h-6 md:w-16 md:h-12 transform translate-x-1" style="color: white;">
+                  <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+                </svg>
+              </div>
+              <!-- Arrow Small (bottom right on mobile, bottom left on desktop) -->
+              <div
+                class="absolute bottom-4 right-4 md:left-4 md:right-auto w-8 h-8 md:w-9 md:h-9 bg-[#080808] rounded-full flex items-center justify-center transition-all duration-500 opacity-100 md:group-hover:opacity-0">
+                <svg class="w-8 h-8 md:w-10 md:h-10" style="color: white;">
+                  <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
+                </svg>
+              </div>
+            </div>
+          </a>
 
          <!-- HM -->
          <a href="./projects/hm.html" class="group hidden md:hidden" data-project="hidden">
-           <div
-             class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
+            <div
+              class="relative w-full aspect-[16/11] bg-[#111] rounded-2xl shadow-2xl border-10 border-[#0F0F0F] overflow-hidden transition-all duration-300 group">
              <picture>
   <source srcset="./assets/images/hm/omar-hm-hm-laptop.webp" type="image/webp">
   <img src="./assets/images/hm/omar-hm-hm-laptop.png" alt="HM"
-               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" / loading="lazy">
+               class="w-full h-full object-cover transition-all duration-500 group-hover:grayscale rounded-l" loading="lazy" />
 </picture>
-             <div
-               class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
+              <div
+                class="absolute bottom-0 left-0 w-full p-4 md:p-6 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/95 via-black/70 to-transparent from-20% via-60% to-100%">
                <h3 class="text-white text-xl md:text-[36px] font-['Inter'] mb-2">HM</h3>
                <p class="text-white/70 text-sm md:text-[20px] font-['Inter']">Digital Purchase Management</p>
-               <span class="block text-white/60 text-base mt-2">2023</span>
-             </div>
-             <!-- Arrow Center (on hover - desktop only) -->
-             <div
-               class="absolute top-1/2 left-1/2 w-[80px] h-[80px] md:w-[140px] md:h-[140px] bg-[#080808] rounded-full items-center justify-center opacity-0 md:group-hover:opacity-100 transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
-               <svg class="w-8 h-6 md:w-16 md:h-12 transform translate-x-1" style="color: white;">
-                 <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
-               </svg>
-             </div>
-             <!-- Arrow Small (bottom right on mobile, bottom left on desktop) -->
-             <div
-               class="absolute bottom-4 right-4 md:left-4 md:right-auto w-8 h-8 md:w-9 md:h-9 bg-[#080808] rounded-full flex items-center justify-center transition-all duration-500 opacity-100 md:group-hover:opacity-0">
-               <svg class="w-8 h-8 md:w-10 md:h-10" style="color: white;">
-                 <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
-               </svg>
-             </div>
-           </div>
-         </a>
-       </div>
-       
-       <!-- Show More/Show Less Buttons -->
-       <div class="flex justify-center mt-8">
-         <!-- Show More Button -->
-         <button id="show-more-projects" class="relative flex items-center justify-center p-1 h-[57px] hover:opacity-80 transition-all duration-300">
-           <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
-           </div>
-           <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
-           </div>
-           <span class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl flex items-center gap-2"
-             style="box-shadow: 0px -1px 0px 0px #1118271F inset;">
-             <span
-               class="bg-gradient-to-b from-[#1F2937] from-40% to-[#6B7280] to-60% bg-clip-text text-transparent font-bold">
-               Show All Projects
-             </span>
-           </span>
-         </button>
-         
-         <!-- Show Less Button (initially hidden) -->
-         <button id="show-less-projects" class="relative  items-center justify-center p-1 h-[57px] hover:opacity-80 transition-all duration-300 hidden">
-           <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
-           </div>
-           <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
-           </div>
-           <span class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl flex items-center gap-2"
-             style="box-shadow: 0px -1px 0px 0px #1118271F inset;">
-             <span
-               class="bg-gradient-to-b from-[#1F2937] from-40% to-[#6B7280] to-60% bg-clip-text text-transparent font-bold">
-               Show Less
-             </span>
-           </span>
-         </button>
-       </div>
-     </div>
-   </div>
- </section>
+                <span class="block text-white/60 text-base mt-2">2023</span>
+              </div>
+              <!-- Arrow Center (on hover - desktop only) -->
+              <div
+                class="absolute top-1/2 left-1/2 w-[80px] h-[80px] md:w-[140px] md:h-[140px] bg-[#080808] rounded-full items-center justify-center opacity-0 md:group-hover:opacity-100 transition-all duration-500 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
+                <svg class="w-8 h-6 md:w-16 md:h-12 transform translate-x-1" style="color: white;">
+                  <use href="./assets/icons/arrow-right.svg#arrow-right"></use>
+                </svg>
+              </div>
+              <!-- Arrow Small (bottom right on mobile, bottom left on desktop) -->
+              <div
+                class="absolute bottom-4 right-4 md:left-4 md:right-auto w-8 h-8 md:w-9 md:h-9 bg-[#080808] rounded-full flex items-center justify-center transition-all duration-500 opacity-100 md:group-hover:opacity-0">
+                <svg class="w-8 h-8 md:w-10 md:h-10" style="color: white;">
+                  <use href="./assets/icons/arrow-right-small.svg#arrow-right-small"></use>
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Show More/Show Less Buttons -->
+        <div class="flex justify-center mt-8">
+          <!-- Show More Button -->
+          <button id="show-more-projects" class="relative flex items-center justify-center p-1 h-[57px] hover:opacity-80 transition-all duration-300" aria-label="Show more projects">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
+            </div>
+            <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
+            </div>
+            <span class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl flex items-center gap-2"
+              style="box-shadow: 0px -1px 0px 0px #1118271F inset;">
+              <span
+                class="bg-gradient-to-b from-[#1F2937] from-40% to-[#6B7280] to-60% bg-clip-text text-transparent font-bold">
+                Show All Projects
+              </span>
+            </span>
+          </button>
+          
+          <!-- Show Less Button (initially hidden) -->
+         <button id="show-less-projects" class="relative  items-center justify-center p-1 h-[57px] hover:opacity-80 transition-all duration-300 hidden" aria-label="Show fewer projects">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#D1D5DB] to-[#9CA3AF] rounded-2xl">
+            </div>
+            <div class="absolute inset-0.5 bg-gradient-to-b from-[#EEEFF2] via-[#9CA3AF] to-[#FFFFFF] rounded-[15px]">
+            </div>
+            <span class="relative bg-white text-black font-semibold px-5 py-3 rounded-xl flex items-center gap-2"
+              style="box-shadow: 0px -1px 0px 0px #1118271F inset;">
+              <span
+                class="bg-gradient-to-b from-[#1F2937] from-40% to-[#6B7280] to-60% bg-clip-text text-transparent font-bold">
+                Show Less
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
@@ -2139,7 +2152,7 @@
     </div>
   </section>
 
-    <!-- Footer Section -->
+  <!-- Footer Section -->
   <footer class="max-w-[1380px] mx-auto pt-24 px-6 lg-px-0 text-white relative">
     <div class="flex flex-col gap-7 pb-8 lg:pb-32">
       <div class="text-2xl lg:mb-2">&copy; 2025</div>
@@ -2192,7 +2205,7 @@
   <div class="flex justify-center h-[280px]">
     <picture>
   <source srcset="./assets/images/omar-footer.webp" type="image/webp">
-  <img src="./assets/images/omar-footer.png" alt="omar-footer"
+    <img src="./assets/images/omar-footer.png" alt="omar-footer"
       class="w-full lg:w-7/12 object-contain absolute lg:left-0" loading="lazy">
 </picture>
   </div>
@@ -2375,6 +2388,45 @@
       /* No transform on hover, keep position static */
     }
 
+    /* Accessibility Focus Styles */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: #000;
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 10000;
+    }
+    
+    .skip-link:focus {
+      top: 6px;
+    }
+    
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    
+    /* Focus indicators */
+    *:focus-visible {
+      outline: 2px solid #F58427;
+      outline-offset: 2px;
+    }
+    
+    /* Skip link styles */
+    .skip-link:focus {
+      outline: 2px solid #F58427;
+      outline-offset: 2px;
+    }
 
   </style>
 

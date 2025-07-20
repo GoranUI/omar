@@ -1,11 +1,15 @@
 // Hero Carousel functionality with smooth horizontal scroll behavior
 document.addEventListener("DOMContentLoaded", function () {
+  // Cache DOM elements to prevent reflows
   const carousel = document.getElementById("projectCarousel");
-  const slides = carousel.children;
+  const slides = carousel?.children;
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
   const dots = document.querySelectorAll(".dot-indicator");
   const slideCount = 5; // 4 project cards + 1 CTA card
+
+  // Early return if carousel doesn't exist
+  if (!carousel || !slides) return;
 
   let currentSlide = 0;
 
@@ -13,8 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
   let touchStartX = 0;
   let touchEndX = 0;
 
+  // Cache slide width to prevent reflows
+  let cachedSlideWidth = null;
+  
   function getSlideWidth() {
-    return slides[0].offsetWidth + parseInt(getComputedStyle(slides[0]).marginRight);
+    if (cachedSlideWidth === null) {
+      cachedSlideWidth = slides[0].offsetWidth + parseInt(getComputedStyle(slides[0]).marginRight);
+    }
+    return cachedSlideWidth;
   }
 
   function updateCarousel() {
@@ -142,14 +152,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Touch events for mobile
+  // Touch events for mobile with passive listeners
   carousel.addEventListener('touchstart', handleTouchStart, { passive: true });
   carousel.addEventListener('touchmove', handleTouchMove, { passive: true });
   carousel.addEventListener('touchend', handleTouchEnd, { passive: true });
 
   // Wheel event for horizontal scroll behavior (touchpad left/right)
   window.addEventListener('wheel', handleHorizontalScroll, { passive: false });
-  window.addEventListener('resize', updateCarousel);
+  
+  // Debounced resize handler to prevent excessive reflows
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      cachedSlideWidth = null; // Reset cache on resize
+      updateCarousel();
+    }, 100);
+  });
 
   // Initialize carousel
   updateCarousel();
@@ -446,6 +465,9 @@ document.addEventListener("DOMContentLoaded", function () {
     function toggleMenu() {
       isMenuOpen = !isMenuOpen;
       
+      // Update ARIA attributes for accessibility
+      mobileMenuBtn.setAttribute('aria-expanded', isMenuOpen.toString());
+      
       if (isMenuOpen) {
         // Open menu
         mobileMenuOverlay.classList.remove("translate-x-full");
@@ -458,6 +480,12 @@ document.addEventListener("DOMContentLoaded", function () {
         
         // Prevent body scroll
         document.body.style.overflow = "hidden";
+        
+        // Focus management for accessibility
+        const firstLink = mobileMenuOverlay.querySelector('a');
+        if (firstLink) {
+          setTimeout(() => firstLink.focus(), 100);
+        }
       } else {
         // Close menu
         mobileMenuOverlay.classList.remove("translate-x-0");
@@ -470,6 +498,9 @@ document.addEventListener("DOMContentLoaded", function () {
         
         // Restore body scroll
         document.body.style.overflow = "";
+        
+        // Return focus to menu button
+        mobileMenuBtn.focus();
       }
     }
 

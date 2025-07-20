@@ -60,7 +60,9 @@
     rel="stylesheet">
 </head>
 
-<body class="bg-black min-h-screen font-['DM_Sans']">
+<body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link sr-only">Skip to main content</a> class="bg-black min-h-screen font-['DM_Sans']">
   <!-- Custom Cursor -->
   <div class="custom-cursor" id="customCursor"></div>
   
@@ -98,7 +100,7 @@
         <div class="flex items-center justify-between">
           <div class="text-white font-semibold text-lg">Omar</div>
           <!-- Hamburger Menu Button -->
-          <button id="mobileMenuBtn" class="flex flex-col justify-center items-center w-8 h-8 space-y-1.5">
+          <button id="mobileMenuBtn"id="mobileMenuBtn" class="flex flex-col justify-center items-center w-8 h-8 space-y-1.5" aria-label="Toggle mobile menu" aria-expanded="false">
             <span class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="hamburger-line-1"></span>
             <span class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="hamburger-line-2"></span>
             <span class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="hamburger-line-3"></span>
@@ -164,7 +166,7 @@
 
   <div class="max-w-7xl mx-auto px-6 xl:px-0">
 
-    <section class="mt-24 pb-10 lg:pb-24 pt-24">
+    <section class="mt-24 pb-10 lg:pb-24 pt-24" id="main-content">
       <div class="w-full flex flex-col lg:flex-row gap-4">
         <div class="lg:w-1/2 flex flex-col gap-4">
           <!-- Back to all projects button -->
@@ -178,7 +180,7 @@
           </div>
           
           <h1 class="text-[54px] text-white leading-[60px] mb-2">Common®</h1>
-          <h3 class="text-[28px] text-white font-inter">Real Estate Platform</h3>
+          <h2 class="text-[28px] text-white font-inter">>Real Estate Platform</h2>
           <p class="p-style">Seeing through the customer's eyes and designing the website interface according to the research result. Moving on to a new place is always a pain, we have to look at everything including electricity, laundry, cleaning staff, etc. We all wish that all the things come so clearly without any hidden cache, keep reading the following case study we will talk about this and get closer to the solution.</p>
           
           <div class="flex flex-col md:flex-row gap-10">
@@ -198,11 +200,11 @@
         </div>
 
         <div class="lg:w-1/2 bg-[#0f0f0f] rounded-2xl p-6 border border-white/10">
-          <img src="../assets/images/common/common-hero.avif" alt="Common Platform" class="rounded-2xl mt-[27px] w-full h-auto" / loading="lazy">
+          <img src="../assets/images/common/common-hero.avif" srcset="../assets/images/common/common-hero.avif-800.webp 800w, ../assets/images/common/common-hero.avif-1200.webp 1200w, ../assets/images/common/common-hero.avif-1600.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" alt="Common Platform" class="rounded-2xl mt-[27px] w-full h-auto" / loading="lazy"
         </div>
     </section>
 
-    <section class="mt-24 pb-10">
+    <section class="mt-24 pb-10" id="main-content">
       <div class="bg-[#0f0f0f] rounded-2xl p-6 border border-white/10">
 
         <!-- 1 -->
@@ -292,7 +294,7 @@
             
             <div class="space-y-8">
               <div class="bg-[#0f0f0f] rounded-2xl p-6 border border-white/10">
-                <h5 class="text-white text-lg font-semibold mb-4">User Persona: Jane - Financial Analyst</h5>
+                <h3 class="text-white text-lg font-semibold mb-4">>User Persona: Jane - Financial Analyst</h3>
                 <p class="text-white/60 text-sm mb-6">Jane is a 27-year-old financial analyst who represents our primary user demographic. She has a passion for photography and frequently travels on weekends, making her accommodation needs dynamic and varied. Jane values efficiency, transparency, and community building in her living arrangements.</p>
                 <img src="../assets/images/common/common-persona.png" alt="User Persona" class="w-full h-auto rounded-2xl" / loading="lazy">
               </div>

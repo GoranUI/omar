@@ -60,7 +60,9 @@
     rel="stylesheet">
 </head>
 
-<body class="bg-black min-h-screen font-['DM_Sans']">
+<body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link sr-only">Skip to main content</a> class="bg-black min-h-screen font-['DM_Sans']">
   <!-- Custom Cursor -->
   <div class="custom-cursor" id="customCursor"></div>
   
@@ -98,7 +100,7 @@
         <div class="flex items-center justify-between">
           <div class="text-white font-semibold text-lg">Omar</div>
           <!-- Hamburger Menu Button -->
-          <button id="mobileMenuBtn" class="flex flex-col justify-center items-center w-8 h-8 space-y-1.5">
+          <button id="mobileMenuBtn"id="mobileMenuBtn" class="flex flex-col justify-center items-center w-8 h-8 space-y-1.5" aria-label="Toggle mobile menu" aria-expanded="false">
             <span class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="hamburger-line-1"></span>
             <span class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="hamburger-line-2"></span>
             <span class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="hamburger-line-3"></span>
@@ -164,7 +166,7 @@
 
   <div class="max-w-7xl mx-auto px-6 xl:px-0">
 
-    <section class="mt-24 pb-10 lg:pb-24 pt-24">
+    <section class="mt-24 pb-10 lg:pb-24 pt-24" id="main-content">
       <div class="w-full flex flex-col lg:flex-row gap-4">
         <div class="lg:w-1/2 flex flex-col gap-4">
           <!-- Back to all projects button -->
@@ -183,7 +185,7 @@
           </div>
           
           <h1 class="text-[54px] text-white leading-[60px] mb-2">Hiyero</h1>
-          <h3 class="text-[28px] text-white font-inter">Personalized Experience Platform</h3>
+          <h2 class="text-[28px] text-white font-inter">>Personalized Experience Platform</h2>
           <p class="p-style">Hiyero is an innovative platform that delivers personalized experiences through intelligent design and modern user interfaces. The platform focuses on creating seamless, user-centric interactions that adapt to individual preferences and behaviors.</p>
           
           <div class="flex flex-col md:flex-row gap-10">
@@ -207,7 +209,7 @@
         </div>
     </section>
 
-    <section class="mt-24 pb-10">
+    <section class="mt-24 pb-10" id="main-content">
       <div class="bg-[#0f0f0f] rounded-2xl p-6 border border-white/10">
 
         <!-- 1 -->
@@ -254,7 +256,7 @@
                   <img src="../assets/images/hiyero/hiyero-hero.avif" alt="Hiyero Hero Section" class="w-full h-auto rounded-2xl" / loading="lazy">
                 </div>
             
-            </div>
+        </div>
 
         <!-- 2 -->
         <div class="mt-16">
@@ -282,7 +284,7 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             <div class="bg-[#080808] rounded-xl p-6">
-              <h4 class="text-white text-lg font-semibold mb-3">User Research</h4>
+              <h3 class="text-white text-lg font-semibold mb-3">>User Research</h3>
               <p class="text-white/60 text-sm">Conducted interviews and surveys to understand user personalization preferences and pain points.</p>
             </div>
             <div class="bg-[#080808] rounded-xl p-6">
@@ -297,8 +299,8 @@
               <h4 class="text-white text-lg font-semibold mb-3">User Testing</h4>
               <p class="text-white/60 text-sm">Conducted usability testing to refine the interface and personalization algorithms.</p>
             </div>
-          </div>
-          
+              </div>
+
           <!-- User Research Images -->
           <div class="mt-16">
             <h2 class="text-white text-xl font-semibold mb-8 mt-8">User Personas & Research Insights</h2>
@@ -309,9 +311,9 @@
               </div>
               <div class="bg-[#0f0f0f] rounded-2xl p-6 border border-white/10">
                 <img src="../assets/images/hiyero/hiyero-persona2.png" alt="User Persona 2" class="w-full h-auto rounded-2xl" / loading="lazy">
-              </div>
             </div>
           </div>
+        </div>
 
         <!-- 3 -->
         <div class="mt-16">
@@ -347,7 +349,7 @@
               <p class="text-white/60 text-sm">Comprehensive insights into user behavior and platform performance, enabling data-driven personalization improvements.</p>
             </div>
           </div>
-          
+
           <!-- Design System Images -->
           <div class="mt-16">
             <h4 class="text-white text-xl font-semibold mt-16 mb-8">Design System & Visual Foundation</h4>
@@ -359,10 +361,10 @@
               </div>
               <div class="bg-[#0f0f0f] rounded-2xl p-6 border border-white/10">
                 <img src="../assets/images/hiyero/hiyer-colors.png" alt="Color Palette" class="w-full h-auto rounded-2xl" / loading="lazy">
-              </div>
+          </div>
               <div class="bg-[#0f0f0f] rounded-2xl p-6 border border-white/10">
                 <img src="../assets/images/hiyero/hiyero-wfs.avif" alt="Wireframes" class="w-full h-auto rounded-2xl" / loading="lazy">
-              </div>
+            </div>
             </div>
           </div>
         </div>
@@ -395,20 +397,20 @@
               <div class="bg-[#0f0f0f] rounded-2xl p-6 border border-white/10 text-center">
                 <div class="text-3xl font-bold text-white mb-2">40%</div>
                 <p class="text-white/60 text-sm">Increase in User Engagement</p>
-              </div>
+          </div>
               <div class="bg-[#0f0f0f] rounded-2xl p-6 border border-white/10 text-center">
                 <div class="text-3xl font-bold text-white mb-2">25%</div>
                 <p class="text-white/60 text-sm">Reduction in User Churn</p>
-              </div>
+          </div>
               <div class="bg-[#0f0f0f] rounded-2xl p-6 border border-white/10 text-center">
                 <div class="text-3xl font-bold text-white mb-2">95%</div>
                 <p class="text-white/60 text-sm">User Satisfaction Score</p>
-              </div>
+          </div>
             </div>
-          
+
      
-                 </div>
-         
+            </div>
+
          <!-- Final Implementation Images -->
          <div class="mt-16">
            <h4 class="text-white text-xl font-semibold mb-8">Final Implementation & Platform Launch</h4>
@@ -416,8 +418,8 @@
            
            <div class="bg-[#0f0f0f] rounded-2xl p-6 border border-white/10">
              <img src="../assets/images/hiyero/hiyero-landing.avif" alt="Hiyero Landing Page" class="w-full h-auto rounded-2xl" / loading="lazy">
-           </div>
-         </div>
+          </div>
+          </div>
 
       </div>
     </div>
@@ -426,7 +428,7 @@
 
   </div>
 
-    <!-- Footer Section -->
+  <!-- Footer Section -->
   <footer class="max-w-[1380px] mx-auto pt-24 px-6 lg-px-0 text-white relative">
     <div class="flex flex-col gap-7 pb-8 lg:pb-32">
       <div class="text-2xl lg:mb-2">&copy; 2025</div>

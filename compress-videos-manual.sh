@@ -1,0 +1,42 @@
+#!/bin/bash
+
+echo "🎬 Manual MP4 Video Compression Commands"
+echo "========================================"
+
+echo ""
+echo "1. Web Optimized Compression (Recommended):"
+echo "   Good quality, moderate compression"
+echo ""
+echo "For each video, run:"
+echo "ffmpeg -i input.mp4 -c:v libx264 -preset medium -crf 23 -maxrate 2M -bufsize 4M -movflags +faststart -pix_fmt yuv420p -y output-compressed.mp4"
+echo ""
+
+echo "2. Aggressive Compression:"
+echo "   Smaller files, lower quality"
+echo ""
+echo "For each video, run:"
+echo "ffmpeg -i input.mp4 -c:v libx264 -preset slow -crf 28 -maxrate 1M -bufsize 2M -movflags +faststart -pix_fmt yuv420p -y output-compressed.mp4"
+echo ""
+
+echo "3. Quick Compression (Fastest):"
+echo "   Basic compression, fast processing"
+echo ""
+echo "For each video, run:"
+echo "ffmpeg -i input.mp4 -c:v libx264 -preset fast -crf 25 -y output-compressed.mp4"
+echo ""
+
+echo "📁 Your MP4 files:"
+echo "public/assets/images/duradry/Durady.mp4 (26MB)"
+echo "public/assets/images/futuri-content-cloud/Futuri.mp4 (282KB)"
+echo "public/assets/images/karma/karma-dark-mode-video.mp4 (12MB)"
+echo "public/assets/images/karma/karma-hero-video.mp4 (11MB)"
+echo "public/assets/images/morgan-and-morgan/Morgan&Morgan.mp4 (15MB)"
+echo "public/assets/images/oh-snap/oh-snap.mp4 (26MB)"
+echo ""
+
+echo "💡 Tips:"
+echo "- Always backup your original files first"
+echo "- Test on one file before processing all"
+echo "- CRF values: 18-23 (high quality), 23-28 (good), 28+ (compressed)"
+echo "- Preset options: ultrafast, superfast, veryfast, faster, fast, medium, slow, slower, veryslow"
+echo "" 
