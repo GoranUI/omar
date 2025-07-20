@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
   const dots = document.querySelectorAll(".dot-indicator");
-  const slideCount = 6; // 5 project cards + 1 CTA card
+  const slideCount = 5; // 4 project cards + 1 CTA card
 
   let currentSlide = 0;
 
