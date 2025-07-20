@@ -1,12 +1,15 @@
 # Omar Hammouda - UI/UX Designer Portfolio
 
-A modern portfolio website built with Tailwind CSS v4, featuring responsive navigation and a beautiful hero section.
+A modern portfolio website built with Tailwind CSS v4, featuring responsive navigation, beautiful hero section, and performance-optimized assets.
+
+---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 - Node.js (for npm scripts)
 - Git
+- [FFmpeg](https://ffmpeg.org/) (for image/video compression)
 
 ### Installation
 
@@ -15,39 +18,66 @@ A modern portfolio website built with Tailwind CSS v4, featuring responsive navi
    git clone https://github.com/GoranUI/omar.git
    cd omar
    ```
-
-2. **Download Tailwind CSS binary**
-   ```bash
-   # For macOS ARM64 (Apple Silicon)
-   curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-macos-arm64
-   chmod +x tailwindcss-macos-arm64
-   mv tailwindcss-macos-arm64 tailwindcss
-   
-   # For macOS Intel
-   curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-macos-x64
-   chmod +x tailwindcss-macos-x64
-   mv tailwindcss-macos-x64 tailwindcss
-   
-   # For Linux
-   curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64
-   chmod +x tailwindcss-linux-x64
-   mv tailwindcss-linux-x64 tailwindcss
-   ```
-
-3. **Install dependencies**
+2. **Install dependencies**
    ```bash
    npm install
    ```
-
-4. **Build CSS**
+3. **Build CSS**
    ```bash
    npm run build:css
    ```
-
-5. **Open in browser**
+4. **Open in browser**
    ```bash
    open public/index.html
    ```
+
+---
+
+## 🖼️ How to Add Optimized Images & Videos
+
+### 1. **Compress Images Before Uploading**
+- **Recommended format:** WebP (best for web), PNG (fallback), AVIF (optional)
+- **Resize images** to the maximum size needed (see below for typical sizes)
+- **Use responsive variants** for hero/project images:
+  - 800px wide (mobile)
+  - 1200px wide (tablet)
+  - 1600px wide (desktop)
+  - Display size (exact size used in layout)
+
+#### **Example: Compress and Create Responsive WebP Images**
+```bash
+# Requires ffmpeg installed
+# Replace input.png with your source image
+
+# 1. Create WebP variants
+ffmpeg -i input.png -vf "scale=800:-1" -c:v libwebp -quality 80 output-800.webp
+ffmpeg -i input.png -vf "scale=1200:-1" -c:v libwebp -quality 80 output-1200.webp
+ffmpeg -i input.png -vf "scale=1600:-1" -c:v libwebp -quality 80 output-1600.webp
+
+# 2. Create display-size variant (e.g., 923x467)
+ffmpeg -i input.png -vf "scale=923:467" -c:v libwebp -quality 85 output-display.webp
+```
+- **Place images** in the appropriate `public/assets/images/` subfolder.
+- **Update HTML**: Use the `<picture>` element with `srcset` for responsive loading (see existing code for examples).
+
+### 2. **Compress Videos Before Uploading**
+- **Recommended format:** MP4 (H.264, AAC audio)
+- **Target size:** Under 5MB if possible
+- **Recommended resolution:** 1280x720 or 1920x1080 (avoid 4K for web)
+
+#### **Example: Compress MP4 Video for Web**
+```bash
+# Replace input.mp4 with your source video
+ffmpeg -i input.mp4 -c:v libx264 -preset medium -crf 23 -maxrate 2M -bufsize 4M -movflags +faststart -pix_fmt yuv420p -y output-compressed.mp4
+```
+- **Place videos** in the appropriate `public/assets/images/[project]/` folder.
+- **Update HTML**: Use the `<video>` tag with `autoplay loop muted playsinline` and a poster image.
+
+### 3. **Test Your Assets**
+- Open the site locally and check image/video quality and load speed.
+- Use browser dev tools (Network tab) to verify file sizes and responsive loading.
+
+---
 
 ## 📁 Project Structure
 
@@ -58,92 +88,23 @@ omar/
 ├── public/
 │   ├── index.html         # Main HTML file
 │   └── output.css         # Generated CSS (build output)
-├── tailwindcss            # CLI binary (download separately)
+│   └── assets/
+│       └── images/        # All images and videos (organized by project)
 ├── tailwind.config.js     # Tailwind configuration
 ├── package.json           # Project dependencies
-└── .gitignore            # Git ignore rules
+└── .gitignore             # Git ignore rules
 ```
+
+---
 
 ## 🛠️ Development
 
-### Build CSS (one-time)
-```bash
-npm run build:css
-```
+- **Build CSS (one-time):**
+  ```bash
+  npm run build:css
+  ```
+- **Watch for changes (dev):**
+  ```bash
+  npm run watch:css
+  ```
 
-### Watch for changes (development)
-```bash
-npm run watch:css
-```
-
-### Manual build
-```bash
-./tailwindcss -i src/input.css -o public/output.css
-```
-
-## 🎨 Features
-
-- **Responsive Navigation** - Works on desktop and mobile
-- **Modern Hero Section** - With testimonials and project showcase
-- **Tailwind CSS v4** - Latest version with standalone CLI
-- **Clean Architecture** - Separated source and public files
-- **Performance Optimized** - Only includes used CSS classes
-
-## 📱 Responsive Design
-
-- **Desktop**: Full navigation with all links visible
-- **Mobile**: Compact design with horizontal scrolling
-- **Tablet**: Adaptive layout between desktop and mobile
-
-## 🎯 Key Components
-
-### Navigation
-- Backdrop blur effects
-- Gradient buttons with shadows
-- Smooth hover transitions
-- Mobile-friendly horizontal scrolling
-
-### Hero Section
-- Large typography with proper font weights
-- Role badge with icon
-- CTA buttons with gradient effects
-- Testimonials with subtle rotations
-- Project grid with hover animations
-
-## 🔧 Customization
-
-### Adding Custom Styles
-Edit `src/input.css`:
-```css
-@config "../tailwind.config.js";
-@import "tailwindcss";
-
-/* Your custom styles here */
-.custom-class {
-  @apply bg-blue-500 text-white;
-}
-```
-
-### Configuration
-Edit `tailwind.config.js` to customize:
-- Content paths
-- Theme colors
-- Custom utilities
-- Plugins
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📞 Contact
-
-- **Portfolio**: [omar-hammouda.com](https://omar-hammouda.com)
-- **Email**: [contact@omar-hammouda.com](mailto:contact@omar-hammouda.com)
-- **LinkedIn**: [linkedin.com/in/omar-hammouda](https://linkedin.com/in/omar-hammouda) 
