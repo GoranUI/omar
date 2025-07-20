@@ -26,3 +26,18 @@
     @apply text-[18px] font-medium leading-[1.4em] tracking-normal text-white text-left mb-5;
   }
 }
+
+@layer components {
+  @keyframes soft-bounce {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-soft-bounce {
+    animation: soft-bounce 3s ease-in-out infinite;
+  }
+}

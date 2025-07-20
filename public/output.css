@@ -1566,14 +1566,14 @@
       top: calc(var(--spacing) * 85);
     }
   }
-  .md\:right-10 {
+  .md\:right-5 {
     @media (width >= 48rem) {
-      right: calc(var(--spacing) * 10);
+      right: calc(var(--spacing) * 5);
     }
   }
-  .md\:right-80 {
+  .md\:right-40 {
     @media (width >= 48rem) {
-      right: calc(var(--spacing) * 80);
+      right: calc(var(--spacing) * 40);
     }
   }
   .md\:right-auto {
@@ -1973,14 +1973,14 @@
       top: calc(var(--spacing) * -10);
     }
   }
-  .xl\:-right-20 {
+  .xl\:-right-10 {
     @media (width >= 80rem) {
-      right: calc(var(--spacing) * -20);
+      right: calc(var(--spacing) * -10);
     }
   }
-  .xl\:right-\[15\%\] {
+  .xl\:right-\[5\%\] {
     @media (width >= 80rem) {
-      right: 15%;
+      right: 5%;
     }
   }
   .xl\:-bottom-30 {
@@ -2081,6 +2081,19 @@
     --tw-tracking: var(--tracking-normal);
     letter-spacing: var(--tracking-normal);
     color: var(--color-white);
+  }
+}
+@layer components {
+  @keyframes soft-bounce {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  .animate-soft-bounce {
+    animation: soft-bounce 3s ease-in-out infinite;
   }
 }
 @property --tw-translate-x {
