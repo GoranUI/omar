@@ -26,12 +26,12 @@ echo "ffmpeg -i input.mp4 -c:v libx264 -preset fast -crf 25 -y output-compressed
 echo ""
 
 echo "📁 Your MP4 files:"
-echo "public/assets/images/duradry/Durady.mp4 (26MB)"
-echo "public/assets/images/futuri-content-cloud/Futuri.mp4 (282KB)"
-echo "public/assets/images/karma/karma-dark-mode-video.mp4 (12MB)"
-echo "public/assets/images/karma/karma-hero-video.mp4 (11MB)"
-echo "public/assets/images/morgan-and-morgan/Morgan&Morgan.mp4 (15MB)"
-echo "public/assets/images/oh-snap/oh-snap.mp4 (26MB)"
+echo "public_html/assets/images/duradry/Durady.mp4 (26MB)"
+echo "public_html/assets/images/futuri-content-cloud/Futuri.mp4 (282KB)"
+echo "public_html/assets/images/karma/karma-dark-mode-video.mp4 (12MB)"
+echo "public_html/assets/images/karma/karma-hero-video.mp4 (11MB)"
+echo "public_html/assets/images/morgan-and-morgan/Morgan&Morgan.mp4 (15MB)"
+echo "public_html/assets/images/oh-snap/oh-snap.mp4 (26MB)"
 echo ""
 
 echo "💡 Tips:"

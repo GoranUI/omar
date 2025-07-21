@@ -28,7 +28,7 @@ A modern portfolio website built with Tailwind CSS v4, featuring responsive navi
    ```
 4. **Open in browser**
    ```bash
-   open public/index.html
+   open public_html/index.html
    ```
 
 ---
@@ -57,7 +57,7 @@ ffmpeg -i input.png -vf "scale=1600:-1" -c:v libwebp -quality 80 output-1600.web
 # 2. Create display-size variant (e.g., 923x467)
 ffmpeg -i input.png -vf "scale=923:467" -c:v libwebp -quality 85 output-display.webp
 ```
-- **Place images** in the appropriate `public/assets/images/` subfolder.
+- **Place images** in the appropriate `public_html/assets/images/` subfolder.
 - **Update HTML**: Use the `<picture>` element with `srcset` for responsive loading (see existing code for examples).
 
 ### 2. **Compress Videos Before Uploading**
@@ -70,7 +70,7 @@ ffmpeg -i input.png -vf "scale=923:467" -c:v libwebp -quality 85 output-display.
 # Replace input.mp4 with your source video
 ffmpeg -i input.mp4 -c:v libx264 -preset medium -crf 23 -maxrate 2M -bufsize 4M -movflags +faststart -pix_fmt yuv420p -y output-compressed.mp4
 ```
-- **Place videos** in the appropriate `public/assets/images/[project]/` folder.
+- **Place videos** in the appropriate `public_html/assets/images/[project]/` folder.
 - **Update HTML**: Use the `<video>` tag with `autoplay loop muted playsinline` and a poster image.
 
 ### 3. **Test Your Assets**
@@ -85,7 +85,7 @@ ffmpeg -i input.mp4 -c:v libx264 -preset medium -crf 23 -maxrate 2M -bufsize 4M 
 omar/
 ├── src/
 │   └── input.css          # Source CSS with Tailwind imports
-├── public/
+├── public_html/
 │   ├── index.html         # Main HTML file
 │   └── output.css         # Generated CSS (build output)
 │   └── assets/

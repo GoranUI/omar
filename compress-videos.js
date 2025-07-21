@@ -91,10 +91,10 @@ function main() {
     return;
   }
   
-  const mp4Files = findMp4Files('public/assets/images');
+  const mp4Files = findMp4Files('public_html/assets/images');
   
   if (mp4Files.length === 0) {
-    console.log('No MP4 files found in public/assets/images');
+    console.log('No MP4 files found in public_html/assets/images');
     return;
   }
   
@@ -123,7 +123,7 @@ function main() {
   console.log('\nUsing Web Optimized settings...\n');
   
   // Create backup directory
-  const backupDir = 'public/assets/images/video-backups';
+  const backupDir = 'public_html/assets/images/video-backups';
   if (!fs.existsSync(backupDir)) {
     fs.mkdirSync(backupDir, { recursive: true });
   }
